@@ -64,11 +64,9 @@ We grouped together the expected security recommendations by the different phase
 
 If your laptop gets lost or stolen, you would not want the data would be compromised.
 
-Mac users can encrypt their drive with 1 click.
-
-Windows users would need the Pro version and prefer laptop hardware that supports TPM
-
-### Linux users would require disk reformatting.
+* Mac users can encrypt their drive with 1 click.
+* Windows users would need the Pro version and prefer laptop hardware that supports TPM. 
+* Linux users would require disk reformatting.
 
 A note about choosing laptops. If in the future, you would need to control all laptops centrally due to compliance requirements (such as MDM), it is important to know that most vendors don’t have linux support. Mac,Windows Pro, Android, iPhone - yes. Linux usually partial support or non-existent.
 
