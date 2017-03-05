@@ -36,7 +36,7 @@ We grouped together the expected security recommendations by the different phase
 
 * The reason for sharing is to avoid a situation where only a single employee has permissions to the system, while another employee needs it.
 
-* It is preferable to have a different user for each person for each service. A middleground is to create an ‘admin’ (for special circumstances), developer (for day to day work) and ‘service’ users (for your code). The idea is that when a developer leaves, you don’t need to replace your service passwords.
+* It is preferable to have a different user for each person for each service. A middle ground is to create an ‘admin’ (for special circumstances), developer (for day to day work) and ‘service’ users (for your code). The idea is that when a developer leaves, you don’t need to replace your service passwords.
 
 * Explain to your employees that eventually they need to memorize two passwords, your laptop’s and the password manager’s. 
 
@@ -51,7 +51,7 @@ We grouped together the expected security recommendations by the different phase
 
 * If you got hacked it would most likely start with an employee clicking a link in a phishing email. As one of your fund startup activities play [phishing quiz](https://www.google.com/search?q=Phishing%2520Quiz)
 
-* Stop using email attachements. Employees that are used to opening email attachements are the first ones to accidently install a malware. Document sharing is Google Drive, or if you are in a regulatory environment then[ Box that are more expensive](https://www.box.com/security/it-admin-controls).
+* Stop using email attachments. Employees that are used to opening email attachments are the first ones to accidently install a malware. Document sharing is Google Drive, or if you are in a regulatory environment then[ Box that are more expensive](https://www.box.com/security/it-admin-controls).
 
 * For other internal communication use Slack. Email is for contacting customers and vendors.
 
@@ -94,22 +94,23 @@ Use SSL anywhere possible. In your website, your API, your back office servers, 
 For easier automation look at AWS ACM, or Let’s Encrypt ACME.
 
 Monitor your endpoint's public certificate expiration date, to detect prevent certificate expiration.
+>>>>>>> master
 
 Remember that SSL encrypts network traffic, but does not supply authentication. SSL is also not a replacement for 2FA.
 
 ### Picking a SaaS vendor
 
-* Once committed to an infrastructure vendor, it is difficult to switch them. In the future you would need to scrutinise vendors that have access to your organisation’s data. Therefore, for cloud infrastructure try choosing one of the big vendors (Amazon , Google, Microsoft), or at least a vendor with a  SOC2 Type2 certification (for infrastructure vendors), PCI for payment vendors, or any other relevant certification or compliance for that industry. 
+* Once committed to an infrastructure vendor, it is difficult to switch them. In the future you would need to screen vendors that have access to your organization's data. Therefore, for cloud infrastructure try choosing one of the big vendors (Amazon , Google, Microsoft), or at least a vendor with a  SOC2 Type2 certification (for infrastructure vendors), PCI for payment vendors, or any other relevant certification or compliance for that industry. 
 
 * This doesn’t mean their service is good. It means down the road you won’t need to replace them even if their service is good
 
-* By default AWS users choose oregon (us-west-2). If you know where is your target market is, you should start iwth a datacenter closer to the target market. 
+* By default AWS users choose Oregon (us-west-2). If you know where your target market is, you should start with a datacenter closer to the target market. 
 
-* There is also regulatory implications in which country the data center resides (Data Residency). For european customers, this could be a deal breaker, and later moving to another region might be cost prohibitive.
+* There is also regulatory implications in which country the data center resides (Data Residency). For European customers, this could be a deal breaker, and later moving to another region might be cost prohibitive.
 
 ### API key
 
-If your company expose APIs (as a service), make sure each one of your customers have their own API key, Otherwise your service could go down, when one of the customer’s QA’s has a bug in their testing script
+If your company expose APIs (as a service), make sure each one of your customers have their own api key, Otherwise your service could go down, when one of the customer’s QA’s has a bug in their testing script
 
 ### Working with Git
 
@@ -128,6 +129,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 * Mobile phone 2FA problems start when an employee lost/forgot/replaces his mobile phone, or is stuck without battery, and then he is locked out of the system. That’s why some organizations use yubikey instead (a small usb plug that can sense human finger touch). Like a Mobile App Push notification, yubikey protects against malware and hackers that keylog your password. The downside is that unlike their mobile phones, employees are more likely to loose the yubikey together with their laptop. So if the stolen laptop falls into the hands of a professional that can extract the passwords from the laptop then they could also login to any service with the yubikey. For most organisations this is not a likely attack and thus the yubikey is becoming very popular.
 
 * Using SMS as a 2nd factor is discouraged and should be disabled. An expirienced hacker can convince your mobile network customer support to [move your line to his](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/) possession. Also recently it was discovered that 800M android devices
+>>>>>>> master
  had [a malware that reads SMSs](http://thehackernews.com/2016/11/hacking-android-smartphone.html)
 
 * Using voice phone calls as a 2nd factor should also be disabled. hackers will simply try to login when your phone is offline and hack into your voice mailbox by guessing your 4 digit code, that you probably never changed.
@@ -162,7 +164,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Most products have an export/import functionality, which makes it easier to setup
 
-* There are extra protection products on top of an antivirus called EDR (Cyberreason, BlackCobalt) but these are ussually costly.  
+* There are extra protection products on top of an antivirus called EDR (Cyberreason, BlackCobalt) but these are usually costly.  
 
 ### Physical Security
 
@@ -181,7 +183,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 * [https://nvd.nist.gov/download/nvd-rss.xml](https://nvd.nist.gov/download/nvd-rss.xml) 
 ![image alt text](image_1.png)
 
-* It is very difficult at a later stage to separate the production network from the development network. In AWS security is most easily managed on an account level, so a development VPC should be on a separate account in the same organisation. Ussually there are three accounts. One for Consolidated Billing, one for production and another one for everything else (development and back office that are configured via network ACLs to communicate only with your office).
+* It is very difficult at a later stage to separate the production network from the development network. In AWS security is most easily managed on an account level, so a development VPC should be on a separate account in the same organisation. Usually there are three accounts. One for Consolidated Billing, one for production and another one for everything else (development and back office that are configured via network ACLs to communicate only with your office).
 
 * Recently Amazon announced [AWS Organisations ](https://aws.amazon.com/organizations/) that takes it one step further, by making it easier to apply policies on all of the different accounts and takes care of billing too. 
 
@@ -191,13 +193,13 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 ### Certifications and Compliance
 
-* Once your sales starts selling to large customers, they would report back on compliance requirements and certifications related to security. First thing - don’t panic. Next thing, find an employee that can handle meetings and documentations and is technical enough .
+* Once your sales starts selling to large customers, they would report back on compliance requirements and certifications related to security. First thing - don’t panic. Next thing, find an employee that can handle meetings and documentations and is technical enough.
 
-* Try to understand what sections you can get waivers, and limit the certification scope. Here are a few examples
+* Try to understand what sections you can get wavers, and limit the certification scope. Here are a few examples
 
     * Even if you need to open another amazon account and move a few services that only two employees have access to, that could be worth your effort. It can limit the certification only to that account and two employees
 
-    * Consider separating production services (that serve customers) from back office services (that serve employees) into different accounts. Ussually the production account would be more heavily regulated
+    * Consider separating production services (that serve customers) from back office services (that serve employees) into different accounts. Usually the production account would be more heavily regulated
 
     * Among other things, you would need to perform Penetration Testing. During this test you are allowing an external PT vendor to try and circumvent your security and take advantage of vulnerabilities and misconfiguration.
 
@@ -213,15 +215,15 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 ### Bring your developers onboard- they are a big part of it
 
-* Developers take it very personally (and might even get angry) when you take permissions away from them. They would feal that they are no longer being trusted, compared to other developers that get to keep the admin permissions. They could feel that whoever is the driving force behind the certification is having an ego-trip on their expense. Others might feel that they are being handcuffed, bogged-down, and that they started working for "a corporate"
+* Developers take it very personally (and might even get angry) when you take permissions away from them. They would feel that they are no longer being trusted, compared to other developers that get to keep the admin permissions. They could feel that whoever is the driving force behind the certification is having an ego-trip on their expense. Others might feel that they are being handcuffed, bogged-down, and that they started working for "a corporate"
 
-* You cannot get everyone involved in the decision making, but you can make an effort to include representatives for different opinions that are not shy to speak up. Developers ussually do not "whine", they just don’t get who needs all that stuff. Therefore it is crucial to keep pointing out which parts are crucial for the certification, and which are just backlog items that are being added into the certification effort along the way. Specify concrete customer names mapped to security requirements.
+* You cannot get everyone involved in the decision making, but you can make an effort to include representatives for different opinions that are not shy to speak up. Developers usually do not "whine", they just don’t get who needs all that stuff. Therefore it is crucial to keep pointing out which parts are crucial for the certification, and which are just backlog items that are being added into the certification effort along the way. Specify concrete customer names mapped to security requirements.
 
-* Take into account the time required for automation. Automation must be used for common tasks that until recently required elevated priveledges. For example, adding a new customer, or upgrading to a new version. Without automation everyone needs admin privileges, with proper automation (for example a jenkins task), all employees can perform that operation by themselves. Changes to the procedure would obviously require peer review (pull request).
+* Take into account the time required for automation. Automation must be used for common tasks that until recently required elevated privileges. For example, adding a new customer, or upgrading to a new version. Without automation everyone needs admin privileges, with proper automation (for example a jenkins task), all employees can perform that operation by themselves. Changes to the procedure would obviously require peer review (pull request).
 
-* Remind the team leaders and administrators not to use their admin privileges, and use automation for day-to-day tasks like anybody else. Admin privileges should not be used to make others jealous, but rather for chirorgical actions for long tail tasks that automation doesn’t cover. It’s a matter of leading by example and curtesy
+* Remind the team leaders and administrators not to use their admin privileges, and use automation for day-to-day tasks like anybody else. Admin privileges should not be used to make others jealous, but rather for surgical actions for long tail tasks that automation doesn’t cover. It’s a matter of leading by example and curtesy
 
-* Define a process for providing admin privileges for a specific component for a specific employee for a limited time. In some cases a developer needs admin privileges for two days to speed up development of a new component or automate a repetitive task. Define a process  that has a logging trail, which you can present to your auditor. This is needed so developers would not need to go to the admin ten times a day, since it would create a lot of frustration for all parties involved.
+* Define a process for providing admin privileges for a specific component for a specific employee for a limited time. In some cases a developer needs admin privileges for two days to speed up development of a new component or automate a repetitive task. Define a process that has a logging trail, which you can present to your auditor. This is needed so developers would not need to go to the admin ten times a day, since it would create a lot of frustration for all parties involved.
 
 * Some (small) companies define that all developers are admins. Your auditor might accept that and add a comment about that in his report.
 
@@ -237,7 +239,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * At a certain point the number of SaaS vendors times the number of employees makes password managers difficult to manage, especially when employees join or leave the organisation. Password is only for admins, all of the other SaaS applications should use the same identity management service (that supports Single Sign On)
 
-* Integrating such a platform takes some time. For starters, Google G-Suite can perform SSO to all sites that support OAuth or SAML . Identity as a Service providers, supports also browser based authentications, smart 2FA rules to reduce friction with employees, and integration with vpn/ssh via ldap or radius.
+* Integrating such a platform takes some time. For starters, Google G-Suite can perform SSO to all sites that support OAuth or SAML. Identity as a Service providers, supports also browser based authentications, smart 2FA rules to reduce friction with employees, and integration with vpn/ssh via ldap or radius.
 
 * Some vendors do not have an Admin privilege management service. So admins would still need to use the password manager 
 
@@ -246,13 +248,13 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * The Office Building Security and the insurance company probably require for the alarm to be active during office off-hours. It is recommended to activate it automatically at 23:00, so you won’t need to enable it manually if one of the employees forgot.
 
-* If the entrances to the office aren’t monitored by security cameras, you can buy a simple internet camera, that connects to a mobile app. So you can monitor who was the last to leave the office and forgot to lock the door/activate the alarm. And if it’s a real burglar you can see their face .
+* If the entrances to the office aren’t monitored by security cameras, you can buy a simple internet camera, that connects to a mobile app. So you can monitor who was the last to leave the office and forgot to lock the door/activate the alarm. And if it’s a real burglar you can see their face.
 
 * At this point, you would replace your front door pin-code with a chip based door system
 
-* . The rationale is that you don’t need to replace the code each time an employee leaves the company. Take into account that cleaning service would probably won’t get a chip since they may switch employees in some days. So you should have someone to lock the door after they leave. Magnetic door cards (with a magnetic stripe and a mug-shot) are ussually more expensive and smell more "corporate-like" for new employees and candidates. However it is more difficult to duplicate or hack it compare to the door chip systems.
+* . The rational is that you don’t need to replace the code each time an employee leaves the company. Take into account that cleaning service would probably won’t get a chip since they may switch employees in some days. So you should have someone to lock the door after they leave. Magnetic door cards (with a magnetic stripe and a mug-shot) are usually more expensive and smell more "corporate-like" for new employees and candidates. However it is more difficult to duplicate or hack it compare to the door chip systems.
 
-## Phase 4: Sigining a large customer, or rapid market growth
+## Phase 4: Signing a large customer, or rapid market growth
 
 ### Customer user’s management
 
@@ -316,7 +318,7 @@ Make sure the organisation’s critical data is backed-up (even if it means it w
 
 * Make sure the backup is in a different cloud account, to avoid a human error or malicious deletion of data
 
-* Make sure the backup is in a[ different data centre in a different region](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html), to avoid data-loss in case of a natural disaster.
+* Make sure the backup is in a[ different data center in a different region](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html), to avoid data-loss in case of a natural disaster.
 
 * Some even copy their data into a different cloud provider. For example, Google Cloud has a service that can [continuously backup data stored on Amazon S3](https://cloud.google.com/storage/transfer/)
 
@@ -337,6 +339,7 @@ Make sure the organisation’s critical data is backed-up (even if it means it w
 When you have a clear business need (great business success) and a respectable security budget, start looking for a Director of Security (or VP Security or CISO) that can fit into your organization. This is a process that can take many months. The reason is the requirement for high technical skills needed in the first stages, and taking responsibility off the CEO/CTO that require other traits, such as participating in the sales cycle, and signing official company papers. And of course the security officer, must fit into your organisation’s culture. A live example of such person can be found in this video:[https://www.infoq.com/presentations/security-etsy](https://www.infoq.com/presentations/security-etsy) 
 
 ### Deciding on a budget - Build a Threat Model
+
 
 A threat model is the rule of thumb you can use to decide if an investment in some security countermeasure is justified. [Mossad or Not Mossad](https://www.schneier.com/blog/archives/2015/08/mickens_on_secu.html) is a basic threat model in which we consider two types of attackers: State Actor and everyone else. 
 
@@ -566,7 +569,7 @@ Access Logs</td>
 
 #Contributing to this repository
 
-We welcome Pull Requests from Engineers that are working at a startup, which is also the target audience of this document. Try to keep it short and to the point. There is also some tention between keeping it pratical, and keeping it vendor neutral. We're open for suggestions.
+We welcome Pull Requests from Engineers that are working at a startup, which is also the target audience of this document. Try to keep it short and to the point. There is also some tension between keeping it practical, and keeping it vendor neutral. We're open for suggestions.
 
 Thanks for Shahar Keidar, Avishai Ish-Shalom, Yogev Levi Shaked, Elad Shulman and Eliran Ben-Zikri for reviewing, commenting and helping out with writing the first version of this blog post
 
