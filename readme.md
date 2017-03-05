@@ -20,7 +20,7 @@ So which security considerations are relevant at an early stage?
 
 * How long would it take you to prepare a security risk plan (see example at the bottom of this document)
 
-    * What is the impact of IP theft, business plans theft, bitcoin/ec2 theft, losing all your data ? How would it affect your sales, customers, investors?
+    * What is the impact of Intelectual Property theft, business plans theft, bitcoin/ec2 theft, losing all your data ? How would it affect your sales, customers, investors?
 
     * How can you protect against a data breach?
 
@@ -109,6 +109,7 @@ Remember that SSL encrypts network traffic, but does not supply authentication. 
 
 ### API key
 
+
 If your company expose APIs (as a service), make sure each one of your customers have their own API key, Otherwise your service could go down, when one of the customer’s QA’s has a bug in their testing script
 
 ### Working with Git
@@ -174,7 +175,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Review the cloud firewall configuration to make sure there are no embarrassing mistakes
 
-* Open an email group and name it [seurity@mycompany.com](mailto:seurity@mycompany.com) and add a page on your website to report security incidents to this email
+* Open an email group and name it [security@mycompany.com](mailto:security@mycompany.com) and add a page on your website to report security incidents to this email
 
 * In order to get alerts when there are serious known vulnerabilities, that everyone knows about (except you) open a zapper account and with a few click connect vulnerability RSS feed to Pagerduty. Here is the RSS feed and a sample Zapier filter configuration
 
@@ -250,7 +251,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * At this point, you would replace your front door pin-code with a chip based door system
 
-* . The rationale is that you don’t need to replace the code each time an employee leaves the company. Take into account that cleaning service would probably won’t get a chip since they may switch employees in some days. So you should have someone to lock the door after they leave. Magnetic door cards (with a magnetic stripe and a mug-shot) are ussually more expensive and smell more "corporate-like" for new employees and candidates. However it is more difficult to duplicate or hack it compare to the door chip systems.
+* The rationale is that you don’t need to replace the code each time an employee leaves the company. Take into account that cleaning service would probably won’t get a chip since they may switch employees in some days. So you should have someone to lock the door after they leave. Magnetic door cards (with a magnetic stripe and a mug-shot) are ussually more expensive and smell more "corporate-like" for new employees and candidates. However it is more difficult to duplicate or hack it compared to the door chip systems.
 
 ## Phase 4: Sigining a large customer, or rapid market growth
 
@@ -268,7 +269,7 @@ The financial impact of a data leak (business loss, and compensation) could brin
 The [Future of Privacy Forum published a visual guide ](https://fpf.org/wp-content/uploads/2016/04/FPF_Visual-Guide-to-Practical-Data-DeID.pdf)that can help you get started
 ![image alt text](image_2.png)
 
-* Explain to your employees you are not going to fire anyone for making a mistake. Beg them to notify you ASAP when a mishap happened so you could fix the problem and limit the damage. Stand behind this promise. Explain the difference between an intentional inside leaking data and an unfortunate human error. This needs to be talked about since different employees come from different cultural and work backgrounds and may react in the wrong way.
+* Explain to your employees you are not going to fire anyone for making a mistake. Beg them to notify you ASAP when a mishap happened so you could fix the problem and limit the damage. Stand behind this promise. Explain the difference between an intentional insider leaking data and an unfortunate human error. This needs to be talked about since different employees come from different cultural and work backgrounds and may react in the wrong way.
 
 * Reduce the potential damage of a data leak by redacting or de-identifying the data. This usually requires management to make a business decision that your organization can survive without data that is considered a "must have" today. The idea is to postpone the need for security software that smells “corporate”, by removing sensitive data or at least denying access to most employees for that data.
 
@@ -338,7 +339,7 @@ When you have a clear business need (great business success) and a respectable s
 
 ### Deciding on a budget - Build a Threat Model
 
-A threat model is the rule of thumb you can use to decide if an investment in some security countermeasure is justified. [Mossad or Not Mossad](https://www.schneier.com/blog/archives/2015/08/mickens_on_secu.html) is a basic threat model in which we consider two types of attackers: State Actor and everyone else. 
+A threat model is the rule of thumb you can use to decide if an investment in some security countermeasure is justified. [Mossad or Not Mossad](https://www.schneier.com/blog/archives/2015/08/mickens_on_secu.html) is a basic threat model in which we consider two types of attackers: State Actor and everyone else.
 
 If you are attacked by the Mossad, give up. No amount of money will protect you - The Mossad can replace your new laptop [with modified hardware en-route](https://www.schneier.com/blog/archives/2015/03/cisco_shipping_.html), break into your office unnoticed, [purchase remote jailbreak hacking tools](https://www.zerodium.com/program.html), or even extort one of your employees. Any investment into stopping this threat is a waste of money.
 
