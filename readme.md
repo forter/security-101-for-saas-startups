@@ -1,14 +1,10 @@
-
-
-So you are working on a Startup. At what point should you start putting time into security considerations and compliance? Which technical debt should be postponed for a later stage, and which systems should be hardened this instant? What are the main considerations? 
+So you are working in a Startup, and you have been wondering at what point should you start looking into security considerations and compliance? Which technical debt should be postponed for a later stage, and which systems should be hardened this instant? What are the main considerations? 
 
 Technical debt gets piled up, and in many cases it is easier to pay later rather than now. For example, if you are using elasticsearch without username/passwords, you should double check your firewall settings. After round-B your startup would probably have the manpower and budget to properly secure the elasticsearch cluster.
 
-Startup culture is a bit more difficult to change "later". Let’s take a trivial example. Developers that are used to pushing code without code review, would complain that peer review would bog down the development, and it might even smell “too corporate” for them.
+Startup culture is a bit more difficult to change "later". Let’s take a trivial example. Developers that are used to pushing code without code review, would complain that peer review would bog down the development, and it might even smell "too corporate" for them.
 
-The question is which security considerations need to be taken into consideration at an early stage?
-
- 
+So which security considerations are relevant at an early stage? 
 
 * What security concerns were raised by customers willing to pay for your product?
 
@@ -568,6 +564,9 @@ Access Logs</td>
   </tr>
 </table>
 
+#Contribution
+
+We welcome Pull Requests from Engineers that are working at a startup, which is also the target audience of this document. Try to keep it short and to the point. 
 
 Thanks for Shahar Keidar, Avishai Ish-Shalom, Yogev Levi Shaked, Elad Shulman and Eliran Ben-Zikri for reviewing, commenting and helping out with writing this blog post
 
