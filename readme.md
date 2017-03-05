@@ -94,7 +94,6 @@ Use SSL anywhere possible. In your website, your API, your back office servers, 
 For easier automation look at AWS ACM, or Let’s Encrypt ACME.
 
 Monitor your endpoint's public certificate expiration date, to detect prevent certificate expiration.
->>>>>>> master
 
 Remember that SSL encrypts network traffic, but does not supply authentication. SSL is also not a replacement for 2FA.
 
@@ -129,7 +128,6 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 * Mobile phone 2FA problems start when an employee lost/forgot/replaces his mobile phone, or is stuck without battery, and then he is locked out of the system. That’s why some organizations use yubikey instead (a small usb plug that can sense human finger touch). Like a Mobile App Push notification, yubikey protects against malware and hackers that keylog your password. The downside is that unlike their mobile phones, employees are more likely to loose the yubikey together with their laptop. So if the stolen laptop falls into the hands of a professional that can extract the passwords from the laptop then they could also login to any service with the yubikey. For most organisations this is not a likely attack and thus the yubikey is becoming very popular.
 
 * Using SMS as a 2nd factor is discouraged and should be disabled. An expirienced hacker can convince your mobile network customer support to [move your line to his](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/) possession. Also recently it was discovered that 800M android devices
->>>>>>> master
  had [a malware that reads SMSs](http://thehackernews.com/2016/11/hacking-android-smartphone.html)
 
 * Using voice phone calls as a 2nd factor should also be disabled. hackers will simply try to login when your phone is offline and hack into your voice mailbox by guessing your 4 digit code, that you probably never changed.
