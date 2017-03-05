@@ -1,3 +1,7 @@
+# Security 101 for SaaS startups
+
+## Things I wish my first boss have told me
+
 So you are working at a Startup, and you have been wondering at what point should you start looking into security considerations and compliance? Which technical debt should be postponed for a later stage, and which systems should be hardened this instant? What are the main considerations? 
 
 Technical debt gets piled up, and in many cases it is easier to pay later rather than now. For example, if you are using elasticsearch without username/passwords, you should double check your firewall settings. After round-B your startup would probably have the manpower and budget to properly secure the elasticsearch cluster.
@@ -247,7 +251,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * . The rational is that you don’t need to replace the code each time an employee leaves the company. Take into account that cleaning service would probably won’t get a chip since they may switch employees in some days. So you should have someone to lock the door after they leave. Magnetic door cards (with a magnetic stripe and a mug-shot) are ussually more expensive and smell more "corporate-like" for new employees and candidates. However it is more difficult to duplicate or hack it compare to the door chip systems.
 
-##  "Sigining a large customer, or rapid market growth" period
+## Phase 4: Sigining a large customer, or rapid market growth
 
 ### Customer user’s management
 
@@ -325,7 +329,7 @@ Make sure the organisation’s critical data is backed-up (even if it means it w
 
 * Work with your General Council (law office) and your Accounting firm, and prepare an incident response plan. These are the list of actions that needs to be done to investigate, fix and control the damage done. That also includes communicating with the customers, the end users, and the authorities. Big law and accounting firms have a network of connections and experience that can help with devising such a plan.
 
-## Phase 4: "Look!, I’m in the news." 
+## Phase 5: "Look ma!, I’m in the newspaper" 
 
 When you have a clear business need (great business success) and a respectable security budget, start looking for a Director of Security (or VP Security or CISO) that can fit into your organization. This is a process that can take many months. The reason is the requirement for high technical skills needed in the first stages, and taking responsibility off the CEO/CTO that require other traits, such as participating in the sales cycle, and signing official company papers. And of course the security officer, must fit into your organisation’s culture. A live example of such person can be found in this video:[https://www.infoq.com/presentations/security-etsy](https://www.infoq.com/presentations/security-etsy) 
 
@@ -353,9 +357,7 @@ For a high level starting point you can look at the relative statistics provided
 
 ![image alt text](image_3.png)
 
-For a more detailed list that is based on the DBIR report, look at Appendix B and C of the 
-
-[CIS CONTROLS FOR EFFECTIVE CYBER DEFENSE](https://www.cisecurity.org/critical-controls/) document
+For a more detailed list that is based on the DBIR report, look at Appendix B and C of the [CIS CONTROLS FOR EFFECTIVE CYBER DEFENSE](https://www.cisecurity.org/critical-controls/) document
 
 The next step is to make an educated guess of the potential business damage. Here is an example:
 
@@ -565,3 +567,4 @@ We welcome Pull Requests from Engineers that are working at a startup, which is 
 
 Thanks for Shahar Keidar, Avishai Ish-Shalom, Yogev Levi Shaked, Elad Shulman and Eliran Ben-Zikri for reviewing, commenting and helping out with writing the first version of this blog post
 
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
