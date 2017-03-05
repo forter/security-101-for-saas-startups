@@ -174,7 +174,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Review the cloud firewall configuration to make sure there are no embarrassing mistakes
 
-* Open an email group and name it [seurity@mycompany.com](mailto:seurity@mycompany.com) and add a page on your website to report security incidents to this email
+* Open an email group and name it [security@mycompany.com](mailto:security@mycompany.com) and add a page on your website to report security incidents to this email
 
 * In order to get alerts when there are serious known vulnerabilities, that everyone knows about (except you) open a zapper account and with a few click connect vulnerability RSS feed to Pagerduty. Here is the RSS feed and a sample Zapier filter configuration
 
@@ -337,7 +337,6 @@ Make sure the organisation’s critical data is backed-up (even if it means it w
 When you have a clear business need (great business success) and a respectable security budget, start looking for a Director of Security (or VP Security or CISO) that can fit into your organization. This is a process that can take many months. The reason is the requirement for high technical skills needed in the first stages, and taking responsibility off the CEO/CTO that require other traits, such as participating in the sales cycle, and signing official company papers. And of course the security officer, must fit into your organisation’s culture. A live example of such person can be found in this video:[https://www.infoq.com/presentations/security-etsy](https://www.infoq.com/presentations/security-etsy) 
 
 ### Deciding on a budget - Build a Threat Model
-
 
 A threat model is the rule of thumb you can use to decide if an investment in some security countermeasure is justified. [Mossad or Not Mossad](https://www.schneier.com/blog/archives/2015/08/mickens_on_secu.html) is a basic threat model in which we consider two types of attackers: State Actor and everyone else. 
 
