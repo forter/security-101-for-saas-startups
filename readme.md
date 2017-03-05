@@ -42,7 +42,8 @@ We grouped together the expected security recommendations by the different phase
 
 * Explain to your employees not to use their "home" or “personal” password. They have most likely been exposed, or would be exposed. See [https://haveibeenpwned.com](https://haveibeenpwned.com)
 
-* Explain how to choose the password manager’s password. There’s a[ short video by Sophos](https://nakedsecurity.sophos.com/2014/10/01/how-to-pick-a-proper-password) that explains it.![image alt text](image_0.png)
+* Explain how to choose the password manager’s password. There’s a[ short video by Sophos](https://nakedsecurity.sophos.com/2014/10/01/how-to-pick-a-proper-password) that explains it.
+![image alt text](image_0.png)
 
 ### Phishing emails, porn and torrents are the devil in disguise
 
@@ -126,7 +127,8 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Mobile phone 2FA problems start when an employee lost/forgot/replaces his mobile phone, or is stuck without battery, and then he is locked out of the system. That’s why some organizations use yubikey instead (a small usb plug that can sense human finger touch). Like a Mobile App Push notification, yubikey protects against malware and hackers that keylog your password. The downside is that unlike their mobile phones, employees are more likely to loose the yubikey together with their laptop. So if the stolen laptop falls into the hands of a professional that can extract the passwords from the laptop then they could also login to any service with the yubikey. For most organisations this is not a likely attack and thus the yubikey is becoming very popular.
 
-* Using SMS as a 2nd factor is discouraged and should be disabled. An expirienced hacker can convince your mobile network customer support to [move your line to his](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/) possession. Also recently it was discovered that 800M android devices had [a malware that reads SMSs](http://thehackernews.com/2016/11/hacking-android-smartphone.html)
+* Using SMS as a 2nd factor is discouraged and should be disabled. An expirienced hacker can convince your mobile network customer support to [move your line to his](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/) possession. Also recently it was discovered that 800M android devices
+ had [a malware that reads SMSs](http://thehackernews.com/2016/11/hacking-android-smartphone.html)
 
 * Using voice phone calls as a 2nd factor should also be disabled. hackers will simply try to login when your phone is offline and hack into your voice mailbox by guessing your 4 digit code, that you probably never changed.
 
@@ -172,11 +174,12 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Review the cloud firewall configuration to make sure there are no embarrassing mistakes
 
-* Open an email group and name it [seurity@mycompany.com](mailto:seurity@mycompany.com) and add a page on your website to report security incidents to this email
+* Open an email group and name it [security@mycompany.com](mailto:security@mycompany.com) and add a page on your website to report security incidents to this email
 
 * In order to get alerts when there are serious known vulnerabilities, that everyone knows about (except you) open a zapper account and with a few click connect vulnerability RSS feed to Pagerduty. Here is the RSS feed and a sample Zapier filter configuration
 
-* [https://nvd.nist.gov/download/nvd-rss.xml](https://nvd.nist.gov/download/nvd-rss.xml) ![image alt text](image_1.png)
+* [https://nvd.nist.gov/download/nvd-rss.xml](https://nvd.nist.gov/download/nvd-rss.xml) 
+![image alt text](image_1.png)
 
 * It is very difficult at a later stage to separate the production network from the develop network. In AWS security is most easily managed on an account level, so a develop VPC should be on a separate account in the same organisation. Ussually there are three accounts. One for Consolidated Billing, one for production and another one for everything else (developement and back office that are configured via network ACLs to communicate only with your office).
 
@@ -261,7 +264,9 @@ They also provide self service and apis to provision and deprovision users. Alth
 
 The financial impact of a data leak (business loss, and compensation) could bring a startup to bankruptcy.
 
-* As part of your security training explain to employees what consists of private information, and how do you handle it in your organization. The [Future of Privacy Forum published a visual guide ](https://fpf.org/wp-content/uploads/2016/04/FPF_Visual-Guide-to-Practical-Data-DeID.pdf)that can help you get started![image alt text](image_2.png)
+* As part of your security training explain to employees what consists of private information, and how do you handle it in your organization. 
+The [Future of Privacy Forum published a visual guide ](https://fpf.org/wp-content/uploads/2016/04/FPF_Visual-Guide-to-Practical-Data-DeID.pdf)that can help you get started
+![image alt text](image_2.png)
 
 * Explain to your employees you are not going to fire anyone for making a mistake. Beg them to notify you AFAIK when a mishap happened so you could fix the problem and limit the damage. Stand behind this promise. Explain the difference between an intentional inside leaking data and an unfortunate human error. This needs to be talked about since different employees come from different cultural and work backgrounds and may react in the wrong way.
 
