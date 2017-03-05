@@ -20,7 +20,7 @@ So which security considerations are relevant at an early stage?
 
 * How long would it take you to prepare a security risk plan (see example at the bottom of this document)
 
-    * What is the impact of Intelectual Property theft, business plans theft, bitcoin/ec2 theft, losing all your data ? How would it affect your sales, customers, investors?
+    * What is the impact of Intellectual Property theft, business plans theft, bitcoin/ec2 theft, losing all your data ? How would it affect your sales, customers, investors?
 
     * How can you protect against a data breach?
 
@@ -69,7 +69,7 @@ If your laptop gets lost or stolen, you would not want the data would be comprom
 * Windows users would need the Pro version and prefer laptop hardware that supports TPM.
 * Linux users would require disk reformatting.
 
-A note about choosing laptops. If in the future, you would need to control all laptops centrally due to compliance requirements (such as MDM), it is important to know that most vendors don't have linux support. Mac,Windows Pro, Android, iPhone - yes. Linux usually partial support or non-existent.
+A note about choosing laptops. If in the future, you would need to control all laptops centrally due to compliance requirements (such as MDM), it is important to know that most vendors don't have linux support. Mac, Windows Pro, Android, iPhone - yes. Linux usually partial support or non-existent.
 
 non-jailbroken iPhone are much more difficult to hack compared to Android. They also have screen lock and encryption enabled by default. Make sure that your managers and admins have screen lock on their phones, and encryption enabled.
 
@@ -83,7 +83,7 @@ You would need at least one domain for your website, one for your API, and one f
 
 * The first domain is usually the company's official name or brand. It used for outbound marketing (the website) and for employee emails. Both would probably be managed by an external service provider. Protect this email domain with SPF and DKIM. It's not that complicated and reduces phishing attempts in which hackers imposter your managers or admins. Many security incidents start with an employee opening a phishing email so this is important.
 
-* The second domain is required for the service itself (for example the rest api endpoint). This domain requires extra care, and unlike the company domain it would probably be hosted in AWS route 53 and managed by the engineering. There are two main reasons for this domain. First the company's domain is protected by SPF which makes it more difficult to send automated emails from AWS SES without it ending up in a spam folder. The other reason is that automated outgoing emails could be marked as spam by the receiver. This is bad enough without it affecting all of your  employee's emails (ending up in spam boxes too)
+* The second domain is required for the service itself (for example the rest api endpoint). This domain requires extra care, and unlike the company domain it would probably be hosted in AWS route 53 and managed by the engineering. There are two main reasons for this domain. First the company's domain is protected by SPF which makes it more difficult to send automated emails from AWS SES without it ending up in a spam folder. The other reason is that automated outgoing emails could be marked as spam by the receiver. This is bad enough without it affecting all of your employee's emails (ending up in spam boxes too)
 
 * A third domain is needed for internal use and back office. This domain would probably be registered anonymously, so it would be a little more difficult to find.
 
@@ -99,11 +99,11 @@ Remember that SSL encrypts network traffic, but does not supply authentication. 
 
 ### Picking a SaaS vendor
 
-* Once committed to an infrastructure vendor, it is difficult to switch them. In the future you would need to scrutinise vendors that have access to your organisation's data. Therefore, for cloud infrastructure try choosing one of the big vendors (Amazon , Google, Microsoft), or at least a vendor with a  SOC2 Type2 certification (for infrastructure vendors), PCI for payment vendors, or any other relevant certification or compliance for that industry.
+* Once committed to an infrastructure vendor, it is difficult to switch them. In the future you would need to screen vendors that have access to your organisation's data. Therefore, for cloud infrastructure try choosing one of the big vendors (Amazon , Google, Microsoft), or at least a vendor with a  SOC2 Type2 certification (for infrastructure vendors), PCI for payment vendors, or any other relevant certification or compliance for that industry.
 
 * This doesn't mean their service is good. It means down the road you won't need to replace them even if their service is good
 
-* By default AWS users choose Oregon (us-west-2). If you know where is your target market is, you should start with a datacenter closer to the target market.
+* By default AWS users choose Oregon (us-west-2). If you know where your target market is, you should start with a datacenter closer to the target market.
 
 * There is also regulatory implications in which country the data center resides (Data Residency). For European customers, this could be a deal breaker, and later moving to another region might be cost prohibitive.
 
@@ -219,9 +219,9 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Take into account the time required for automation. Automation must be used for common tasks that until recently required elevated privileges. For example, adding a new customer, or upgrading to a new version. Without automation everyone needs admin privileges, with proper automation (for example a Jenkins task), all employees can perform that operation by themselves. Changes to the procedure would obviously require peer review (pull request).
 
-* Remind the team leaders and administrators not to use their admin privileges, and use automation for day-to-day tasks like anybody else. Admin privileges should not be used to make others jealous, but rather for chirorgical actions for long tail tasks that automation doesn't cover. It's a matter of leading by example and curtesy
+* Remind the team leaders and administrators not to use their admin privileges, and use automation for day-to-day tasks like anybody else. Admin privileges should not be used to make others jealous, but rather for surgical actions for long tail tasks that automation doesn't cover. It's a matter of leading by example and curtesy
 
-* Define a process for providing admin privileges for a specific component for a specific employee for a limited time. In some cases a developer needs admin privileges for two days to speed up development of a new component or automate a repetitive task. Define a process  that has a logging trail, which you can present to your auditor. This is needed so developers would not need to go to the admin ten times a day, since it would create a lot of frustration for all parties involved.
+* Define a process for providing admin privileges for a specific component for a specific employee for a limited time. In some cases a developer needs admin privileges for two days to speed up development of a new component or automate a repetitive task. Define a process that has a logging trail, which you can present to your auditor. This is needed so developers would not need to go to the admin ten times a day, since it would create a lot of frustration for all parties involved.
 
 * Some (small) companies define that all developers are admins. Your auditor might accept that and add a comment about that in his report.
 
@@ -246,13 +246,13 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * The Office Building Security and the insurance company probably require for the alarm to be active during office off-hours. It is recommended to activate it automatically at 23:00, so you won't need to enable it manually if one of the employees forgot.
 
-* If the entrances to the office aren't monitored by security cameras, you can buy a simple internet camera, that connects to a mobile app. So you can monitor who was the last to leave the office and forgot to lock the door/activate the alarm. And if it's a real burglar you can see their face .
+* If the entrances to the office aren't monitored by security cameras, you can buy a simple internet camera, that connects to a mobile app. So you can monitor who was the last to leave the office and forgot to lock the door/activate the alarm. And if it's a real burglar you can see their face.
 
 * At this point, you would replace your front door pin-code with a chip based door system
 
 * The rationale is that you don't need to replace the code each time an employee leaves the company. Take into account that cleaning service would probably won't get a chip since they may switch employees in some days. So you should have someone to lock the door after they leave. Magnetic door cards (with a magnetic stripe and a mug-shot) are usually more expensive and smell more "corporate-like" for new employees and candidates. However it is more difficult to duplicate or hack it compare to the door chip systems.
 
-## Phase 4: Sigining a large customer, or rapid market growth
+## Phase 4: Signing a large customer, or rapid market growth
 
 ### Customer user's management
 
