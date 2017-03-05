@@ -222,7 +222,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Some (small) companies define that all developers are admins. Your auditor might accept that and add a comment about that in his report.
 
-### Every customer affecting change requires change management 
+### Use change management for every production-affecting change
 
 * At this point you should already have automated testing, and (at least semi-) automatic of upgrading and downgrading production versions. The next step is to make sure the production system is immutable. Meaning, any change of code, database, toggles must go through change management (like a pull request, or similar system)
 
