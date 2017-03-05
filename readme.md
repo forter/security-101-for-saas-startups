@@ -20,7 +20,7 @@ So which security considerations are relevant at an early stage?
 
 * How long would it take you to prepare a security risk plan (see example at the bottom of this document)
 
-    * What is the impact of ip theft, business plans theft, bitcoin/ec2 theft, losing all your data ? How would it affect your sales, customers, investors?
+    * What is the impact of Intelectual Property theft, business plans theft, bitcoin/ec2 theft, losing all your data ? How would it affect your sales, customers, investors?
 
     * How can you protect against a data breach?
 
@@ -89,7 +89,7 @@ You would need at least one domain for your website, one for your API, and one f
 
 ### Use SSL where possible
 
-Use SSL anywhere possible. In your website, your api, your back office servers, and if it’s not too difficult even between internal services.
+Use SSL anywhere possible. In your website, your API, your back office servers, and if it’s not too difficult even between internal services.
 
 For easier automation look at AWS ACM, or Let’s Encrypt ACME.
 
@@ -169,7 +169,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Remind employees to lock all the doors and windows before they go home, and to enable the alarm
 
-* Add a code to the front door during office hours, to deter office-thefts. Ask employees to approach strangers in the office if they are not with another employee
+* Add a code to the front door during office hours, to deter office thefts. Ask employees to approach strangers in the office if they are not with another employee
 
 ### Preventing your cloud servers from being compromised
 
@@ -339,8 +339,10 @@ When you have a clear business need (great business success) and a respectable s
 
 ### Deciding on a budget - Build a Threat Model
 
-A threat model is the rule of thumb you can use to decide if an investment in some security countermeasure is justified. [Mossad or Not Mossad](https://www.schneier.com/blog/archives/2015/08/mickens_on_secu.html) is a basic threat model in which we consider two types of attackers: State Actor and everyone else. 
+A threat model is the rule of thumb you can use to decide if an investment in some security countermeasure is justified. [Mossad or Not Mossad](https://www.schneier.com/blog/archives/2015/08/mickens_on_secu.html) is a basic threat model in which we consider two types of attackers: State Actor and everyone else.
+
 If you are attacked by the Mossad, give up. No amount of money will protect you - The Mossad can replace your new laptop [with modified hardware en-route](https://www.schneier.com/blog/archives/2015/03/cisco_shipping_.html), break into your office unnoticed, [purchase remote jailbreak hacking tools](https://www.zerodium.com/program.html), or even extort one of your employees. Any investment into stopping this threat is a waste of money.
+
 If however you are attacked by not-Mossad you can actually protect yourself effectively with a reasonable investment. A good benchmark for deciding when your investment has transitioned from Not-Mossad to Mossad is to consider a possible, hard to stop, highly illegal attack - e.g. bribing an employee with privileged access. In other words, if the cost of hacking your passwords (i.e. brute forcing your passwords) is higher than the cost of bribing an employee with access, than there is no sense in investing more resources to protect it.
 
 ### Deciding on  budget - various considerations
