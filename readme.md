@@ -85,7 +85,7 @@ You would need at least one domain for your website, one for your API, and one f
 
 * The second domain is required for the service itself (for example the rest api endpoint). This domain requires extra care, and unlike the company domain it would probably be hosted in AWS route 53 and managed by the engineering. There are two main reasons for this domain. First the company’s domain is protectedd by SPF which makes it more difficult to send automated emails from AWS SES without it ending up in a spam folder. The other reason is that automated outgoing emails could be marked as spam by the receiver. This is bad enough without it affecting all of your  employee’s emails (ending up in spam boxes too) 
 
-* A third domain is needed for internal use and back office. This domain would probably be registered unanimously, so it would be a little more difficult to find.
+* A third domain is needed for internal use and back office. This domain would probably be registered anonymously, so it would be a little more difficult to find.
 
 ### Use SSL where possible
 
@@ -93,7 +93,7 @@ Use SSL anywhere possible. In your website, your api, your back office servers, 
 
 For easier automation look at AWS ACM, or Let’s Encrypt ACME.
 
-Monitor your endpoints public certificate expiration date, to detect prevent certificate expiration.
+Monitor your endpoint's public certificate expiration date, to detect prevent certificate expiration.
 
 Remember that SSL encrypts network traffic, but does not supply authentication. SSL is also not a replacement for 2FA.
 
@@ -109,13 +109,14 @@ Remember that SSL encrypts network traffic, but does not supply authentication. 
 
 ### API key
 
-If your company expose APIs (as a service), make sure each one of your customers have their own api key, Otherwise your service could go down, when one of the customer’s QA’s has a bug in their testing script
+
+If your company expose APIs (as a service), make sure each one of your customers have their own API key, Otherwise your service could go down, when one of the customer’s QA’s has a bug in their testing script
 
 ### Working with Git
 
-Working with git and pull-requests is the de-factor standard way of performing change management. Part of compliance requirements you would need to show that your startup has proper change management controls and tests. Better start now.
+Working with git and pull-requests is the de-facto standard way of performing change management. Part of compliance requirements you would need to show that your startup has proper change management controls and tests. Better start now.
 
-Using git would allow you to add outsource/freelance developers for a limited time, by giving and then taking commit permissions.
+Using git would allow you to add outsource/freelance developers for a limited time, by giving and then revoking commit permissions.
 
 ## Phase 2: Signing your first customer / Round A
 
@@ -138,7 +139,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Check Google Docs logs (or similar) if a terminated employee has downloaded sensitive information. 
 
-* Most Endpoint Security Products can also be configured to prevent the usage of devices (such as USB,Bluetooth,Mobiles) for copying data out of the laptops. 
+* Most Endpoint Security Products can also be configured to prevent the usage of devices (such as USB, Bluetooth, Mobiles) for copying data out of the laptops. 
 
 * In case the terminated employee had access to admin passwords, it is recommended to replace passwords to sensitive systems.
 
@@ -168,7 +169,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Remind employees to lock all the doors and windows before they go home, and to enable the alarm
 
-* Add a code to the front door during office hours, to deter office-theifs. Ask employees to approach strangers in the office if they are not with another employee
+* Add a code to the front door during office hours, to deter office-thefts. Ask employees to approach strangers in the office if they are not with another employee
 
 ### Preventing your cloud servers from being compromised
 
@@ -181,11 +182,11 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 * [https://nvd.nist.gov/download/nvd-rss.xml](https://nvd.nist.gov/download/nvd-rss.xml) 
 ![image alt text](image_1.png)
 
-* It is very difficult at a later stage to separate the production network from the develop network. In AWS security is most easily managed on an account level, so a develop VPC should be on a separate account in the same organisation. Ussually there are three accounts. One for Consolidated Billing, one for production and another one for everything else (developement and back office that are configured via network ACLs to communicate only with your office).
+* It is very difficult at a later stage to separate the production network from the development network. In AWS security is most easily managed on an account level, so a development VPC should be on a separate account in the same organisation. Ussually there are three accounts. One for Consolidated Billing, one for production and another one for everything else (development and back office that are configured via network ACLs to communicate only with your office).
 
 * Recently Amazon announced [AWS Organisations ](https://aws.amazon.com/organizations/) that takes it one step further, by making it easier to apply policies on all of the different accounts and takes care of billing too. 
 
-* The downside of separating production from develop is that in some cases you would want to copy data from production to develop (or vice versa) which would require VPC peering and custom ACL rules. It’s not rocket science but requires attention
+* The downside of separating production from development is that in some cases you would want to copy data from production to development (or vice versa) which would require VPC peering and custom ACL rules. It’s not rocket science but requires attention
 
 ## Phase 3: Mass Market or Enterprise Customers
 
@@ -193,7 +194,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Once your sales starts selling to large customers, they would report back on compliance requirements and certifications related to security. First thing - don’t panic. Next thing, find an employee that can handle meetings and documentations and is technical enough .
 
-* Try to understand what sections you can get wavers, and limit the certification scope. Here are a few examples
+* Try to understand what sections you can get waivers, and limit the certification scope. Here are a few examples
 
     * Even if you need to open another amazon account and move a few services that only two employees have access to, that could be worth your effort. It can limit the certification only to that account and two employees
 
@@ -205,7 +206,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
     * In other cases you would also allow the PT to review your codebase. The price depends on the complexity of the service, the hacker experience and the lines-of-codes
 
-* There is an important concept called compensating controls. This is an ace card that you could use (sparsly) when you cannot enforce a certain bullet point. For example, a slack-bot that sends a message to a manager when there is a violation of a policy, is a compensating control for this policy not being enforced. In small organisations it ussually makes a lot of sense to alert on rare cases, rather than enforce them
+* There is an important concept called compensating controls. This is an ace card that you could use (sparingly) when you cannot enforce a certain bullet point. For example, a slack-bot that sends a message to a manager when there is a violation of a policy, is a compensating control for this policy not being enforced. In small organisations it ussually makes a lot of sense to alert on rare cases, rather than enforce them
 
 * A big part of certifications is about processes and process documentation of various parts of the company. For small startups, open a google doc that explains when you use git, and when google docs, and which doors you lock when you are the last one to leave the office. Write it as a new employee first-day reading material and keep it up to date. This way it is both useful and would be qualified for many certifications. You might need to annotate some sentences with references to req 1.2.3, so it is easier to look it up.
 
@@ -213,7 +214,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 ### Bring your developers onboard- they are a big part of it
 
-* Developers take it very personal (and might even get angry) when you take permissions away from them. They would feal that they are no longer being trusted, compared to other developers that get to keep the admin permissions. They could feel that whoever is the driving force behind the certification is having an ego-trip on their expense. Others might feel that they are being handcuffed, bogged-down, and that they started working for "a corporate"
+* Developers take it very personally (and might even get angry) when you take permissions away from them. They would feal that they are no longer being trusted, compared to other developers that get to keep the admin permissions. They could feel that whoever is the driving force behind the certification is having an ego-trip on their expense. Others might feel that they are being handcuffed, bogged-down, and that they started working for "a corporate"
 
 * You cannot get everyone involved in the decision making, but you can make an effort to include representatives for different opinions that are not shy to speak up. Developers ussually do not "whine", they just don’t get who needs all that stuff. Therefore it is crucial to keep pointing out which parts are crucial for the certification, and which are just backlog items that are being added into the certification effort along the way. Specify concrete customer names mapped to security requirements.
 
@@ -229,9 +230,9 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * At this point you should already have automated testing, and (at least semi-) automatic of upgrading and downgrading production versions. The next step is to make sure the production system is immutable. Meaning, any change of code, database, toggles must go through change management (like a pull request, or similar system)
 
-* The downside is that if the automation server is down, or even a few tests fail sporadicly, the organisation grinds to a halt. With a little help from murphy that would happen exactly when you need to deploy an urgent quick-fix to production. 
+* The downside is that if the automation server is down, or even a few tests fail sporadically, the organisation grinds to a halt. With a little help from murphy that would happen exactly when you need to deploy an urgent quick-fix to production. 
 
-* What follows is that you need a way to override this automation. It doesn’t have to be admin privileges. It could also be a tag that means pushing to production an untested artifact. You can send a notification to the managers/admins when a developer uses this tag as a compensation control.
+* What follows is that you need a way to override this automation. It doesn’t have to be admin privileges. It could also be a tag that means pushing to production an untested artifact. You can send a notification to the managers/admins when a developer uses this tag as a compensating control.
 
 ### Identity Management and SSO
 
@@ -250,7 +251,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * At this point, you would replace your front door pin-code with a chip based door system
 
-* . The rational is that you don’t need to replace the code each time an employee leaves the company. Take into account that cleaning service would probably won’t get a chip since they may switch employees in some days. So you should have someone to lock the door after they leave. Magnetic door cards (with a magnetic stripe and a mug-shot) are ussually more expensive and smell more "corporate-like" for new employees and candidates. However it is more difficult to duplicate or hack it compare to the door chip systems.
+* The rationale is that you don’t need to replace the code each time an employee leaves the company. Take into account that cleaning service would probably won’t get a chip since they may switch employees in some days. So you should have someone to lock the door after they leave. Magnetic door cards (with a magnetic stripe and a mug-shot) are ussually more expensive and smell more "corporate-like" for new employees and candidates. However it is more difficult to duplicate or hack it compared to the door chip systems.
 
 ## Phase 4: Sigining a large customer, or rapid market growth
 
@@ -268,9 +269,9 @@ The financial impact of a data leak (business loss, and compensation) could brin
 The [Future of Privacy Forum published a visual guide ](https://fpf.org/wp-content/uploads/2016/04/FPF_Visual-Guide-to-Practical-Data-DeID.pdf)that can help you get started
 ![image alt text](image_2.png)
 
-* Explain to your employees you are not going to fire anyone for making a mistake. Beg them to notify you AFAIK when a mishap happened so you could fix the problem and limit the damage. Stand behind this promise. Explain the difference between an intentional inside leaking data and an unfortunate human error. This needs to be talked about since different employees come from different cultural and work backgrounds and may react in the wrong way.
+* Explain to your employees you are not going to fire anyone for making a mistake. Beg them to notify you ASAP when a mishap happened so you could fix the problem and limit the damage. Stand behind this promise. Explain the difference between an intentional insider leaking data and an unfortunate human error. This needs to be talked about since different employees come from different cultural and work backgrounds and may react in the wrong way.
 
-* Reduce the potential damage of a data leak by redacting or de-identifying the data. This ussually requires management to make a business decision that your organization can survive without data that is considered a "must have" today. The idea is to postpone the need for security software that smells “corporate”, by removing sensitive data or at least denying access to most employees for that data.
+* Reduce the potential damage of a data leak by redacting or de-identifying the data. This usually requires management to make a business decision that your organization can survive without data that is considered a "must have" today. The idea is to postpone the need for security software that smells “corporate”, by removing sensitive data or at least denying access to most employees for that data.
 
 * Prevent data breaches by using the right tool at the right places:
 
@@ -294,7 +295,7 @@ The [Future of Privacy Forum published a visual guide ](https://fpf.org/wp-conte
 
 * Run external vulnerability scans (outside of your network). This should protect you against "Kiddy Scripts" looking for easy targets.
 
-* Run internal vulnerabilities scan (within the firewalls). This should protect you against a hacker that gained foothold on one server, and is trying to make a lateral movement to the heart of the system. This requires ussually an agent or ssh access, and ability to scan without any firewalls.
+* Run internal vulnerabilities scan (within the firewalls). This should protect you against a hacker that gained foothold on one server, and is trying to make a lateral movement to the heart of the system. This requires usually an agent or ssh access, and ability to scan without any firewalls.
 
 * Use Penetration Tests and Bug Bounty Programs. This is where you pay a real hacker to try and find specific vulnerabilities. During this test you are allowing an external PT vendor to try and circumvent your security and take advantage of vulnerabilities and misconfiguration.
 
@@ -330,7 +331,7 @@ Make sure the organisation’s critical data is backed-up (even if it means it w
 
 * Enable logs for any possible cloud service, even if it costs a little more. Centralise logs all applications and server infrastructure. Save the logs for at least 1 year period
 
-* Work with your General Council (law office) and your Accounting firm, and prepare an incident response plan. These are the list of actions that needs to be done to investigate, fix and control the damage done. That also includes communicating with the customers, the end users, and the authorities. Big law and accounting firms have a network of connections and experience that can help with devising such a plan.
+* Work with your General Counsel (law office) and your Accounting firm, and prepare an incident response plan. These are the list of actions that needs to be done to investigate, fix and control the damage done. That also includes communicating with the customers, the end users, and the authorities. Big law and accounting firms have a network of connections and experience that can help with devising such a plan.
 
 ## Phase 5: "Look ma!, I’m in the newspaper" 
 
@@ -338,11 +339,9 @@ When you have a clear business need (great business success) and a respectable s
 
 ### Deciding on a budget - Build a Threat Model
 
-A threat model is the thumb rule you can use to decide if an investment in some security countermeasure is justified. [Mossad or Not Mossad](https://www.schneier.com/blog/archives/2015/08/mickens_on_secu.html) is a basic threat model in which we consider two types of attackers: State Actor and everyone else. 
-
+A threat model is the rule of thumb you can use to decide if an investment in some security countermeasure is justified. [Mossad or Not Mossad](https://www.schneier.com/blog/archives/2015/08/mickens_on_secu.html) is a basic threat model in which we consider two types of attackers: State Actor and everyone else. 
 If you are attacked by the Mossad, give up. No amount of money will protect you - The Mossad can replace your new laptop [with modified hardware en-route](https://www.schneier.com/blog/archives/2015/03/cisco_shipping_.html), break into your office unnoticed, [purchase remote jailbreak hacking tools](https://www.zerodium.com/program.html), or even extort one of your employees. Any investment into stopping this threat is a waste of money.
-
-If however you are attacked by not-mossad you can actually protect yourself effectively with a reasonable investment. A good benchmark for deciding when your investment has transitioned from Not-Mossad to Mossad is to consider a possible, hard to stop, highly illegal attack - e.g. bribing an employee with privileged access. In other words, if the cost of hacking your passwords (i.e. brute forcing your passwords) is higher than the cost of bribing an employee with access, than there is no sense in investing more resources to protect it.
+If however you are attacked by not-Mossad you can actually protect yourself effectively with a reasonable investment. A good benchmark for deciding when your investment has transitioned from Not-Mossad to Mossad is to consider a possible, hard to stop, highly illegal attack - e.g. bribing an employee with privileged access. In other words, if the cost of hacking your passwords (i.e. brute forcing your passwords) is higher than the cost of bribing an employee with access, than there is no sense in investing more resources to protect it.
 
 ### Deciding on  budget - various considerations
 
