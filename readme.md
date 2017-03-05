@@ -1,4 +1,4 @@
-So you are working in a Startup, and you have been wondering at what point should you start looking into security considerations and compliance? Which technical debt should be postponed for a later stage, and which systems should be hardened this instant? What are the main considerations? 
+So you are working at a Startup, and you have been wondering at what point should you start looking into security considerations and compliance? Which technical debt should be postponed for a later stage, and which systems should be hardened this instant? What are the main considerations? 
 
 Technical debt gets piled up, and in many cases it is easier to pay later rather than now. For example, if you are using elasticsearch without username/passwords, you should double check your firewall settings. After round-B your startup would probably have the manpower and budget to properly secure the elasticsearch cluster.
 
