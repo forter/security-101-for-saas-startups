@@ -22,9 +22,9 @@ So which security considerations are relevant at an early stage?
 
     * How can you reduce the exposure after a data breach?
 
-We grouped together the expected security recommendations by the different phases a start-up goes through. The more money and data the startup handles, the bigger the investment in security: 
+We grouped together the expected security recommendations by the different phases a start-up goes through. The more money and data the startup handles, the bigger the investment in security:
 
-## Working in the living room (or living at work) phase:
+## Phase 1: Working in the living room (or living at work)
 
 ### Sharing Admin Passwords
 
@@ -114,7 +114,7 @@ Working with git and pull-requests is the de-factor standard way of performing c
 
 Using git would allow you to add outsource/freelance developers for a limited time, by giving and then taking commit permissions.
 
-## Signing your first customer/ Round A Stage
+## Phase 2: Signing your first customer / Round A
 
 ### Be a little paranoid
 
@@ -178,17 +178,11 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * It is very difficult at a later stage to separate the production network from the develop network. In AWS security is most easily managed on an account level, so a develop VPC should be on a separate account in the same organisation. Ussually there are three accounts. One for Consolidated Billing, one for production and another one for everything else (developement and back office that are configured via network ACLs to communicate only with your office).
 
-* Recently Amazon announced  
-
-* [AWS Organisations ](https://aws.amazon.com/organizations/)
-
-* that takes it one step further, by making it easier to apply policies on all of the different accounts and takes care of billing too. 
+* Recently Amazon announced [AWS Organisations ](https://aws.amazon.com/organizations/) that takes it one step further, by making it easier to apply policies on all of the different accounts and takes care of billing too. 
 
 * The downside of separating production from develop is that in some cases you would want to copy data from production to develop (or vice versa) which would require VPC peering and custom ACL rules. It’s not rocket science but requires attention
 
-## 
-
-##  phase Mass Market or Enterprise Customers
+## Phase 3: Mass Market or Enterprise Customers
 
 ### Certifications and Compliance
 
@@ -331,11 +325,11 @@ Make sure the organisation’s critical data is backed-up (even if it means it w
 
 * Work with your General Council (law office) and your Accounting firm, and prepare an incident response plan. These are the list of actions that needs to be done to investigate, fix and control the damage done. That also includes communicating with the customers, the end users, and the authorities. Big law and accounting firms have a network of connections and experience that can help with devising such a plan.
 
-"Look, I’m in the newspaper" phase
+## Phase 4: "Look!, I’m in the news." 
 
 When you have a clear business need (great business success) and a respectable security budget, start looking for a Director of Security (or VP Security or CISO) that can fit into your organization. This is a process that can take many months. The reason is the requirement for high technical skills needed in the first stages, and taking responsibility off the CEO/CTO that require other traits, such as participating in the sales cycle, and signing official company papers. And of course the security officer, must fit into your organisation’s culture. A live example of such person can be found in this video:[https://www.infoq.com/presentations/security-etsy](https://www.infoq.com/presentations/security-etsy) 
 
-## Deciding on a budget - Build a Threat Model
+### Deciding on a budget - Build a Threat Model
 
 A threat model is the thumb rule you can use to decide if an investment in some security countermeasure is justified. [Mossad or Not Mossad](https://www.schneier.com/blog/archives/2015/08/mickens_on_secu.html) is a basic threat model in which we consider two types of attackers: State Actor and everyone else. 
 
@@ -564,9 +558,10 @@ Access Logs</td>
   </tr>
 </table>
 
-#Contribution
 
-We welcome Pull Requests from Engineers that are working at a startup, which is also the target audience of this document. Try to keep it short and to the point. There is also some tention between keeping it pratical, and keeping it vendor neutral. We are still thinking on how to handle vendor specific advice.
+#Contributing to this repository
+
+We welcome Pull Requests from Engineers that are working at a startup, which is also the target audience of this document. Try to keep it short and to the point. There is also some tention between keeping it pratical, and keeping it vendor neutral. We're open for suggestions.
 
 Thanks for Shahar Keidar, Avishai Ish-Shalom, Yogev Levi Shaked, Elad Shulman and Eliran Ben-Zikri for reviewing, commenting and helping out with writing the first version of this blog post
 
