@@ -43,7 +43,7 @@ We grouped together the expected security recommendations by the different phase
 * Explain to your employees not to use their "home" or “personal” password. They have most likely been exposed, or would be exposed. See [https://haveibeenpwned.com](https://haveibeenpwned.com)
 
 * Explain how to choose the password manager's password. There's a[ short video by Sophos](https://nakedsecurity.sophos.com/2014/10/01/how-to-pick-a-proper-password) that explains it.
-![image alt text](https://github.com/forter/security-101-for-saas-startups/blob/master/image_0.png)
+![image alt text](https://github.com/forter/security-101-for-saas-startups/blob/master/images/image_0.png)
 ### Phishing emails, porn and torrents are the devil in disguise
 
 * Employees would probably use their work laptop at home for their personal needs. That's fine. Nevertheless, from day one, explain your employees not to use it for torrents downloads or porn or any other shady website. Ask them to buy a 2nd hand laptop for that kind of stuff.
@@ -178,8 +178,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 * In order to get alerts when there are serious known vulnerabilities, that everyone knows about (except you) open a Zapier account and with a few click connect vulnerability RSS feed to Pagerduty. Here is the RSS feed and a sample Zapier filter configuration
 
 * [https://nvd.nist.gov/download/nvd-rss.xml](https://nvd.nist.gov/download/nvd-rss.xml)
-![image alt text](image_1.png)
-
+![image alt text](https://github.com/forter/security-101-for-saas-startups/blob/master/images/image_1.png)
 * It is very difficult at a later stage to separate the production network from the development network. In AWS security is most easily managed on an account level, so a development VPC should be on a separate account in the same organisation. Usually there are three accounts. One for Consolidated Billing, one for production and another one for everything else (development and back office that are configured via network ACLs to communicate only with your office).
 
 * Recently Amazon announced [AWS Organisations](https://aws.amazon.com/organizations/) that takes it one step further, by making it easier to apply policies on all of the different accounts and takes care of billing too.
@@ -265,7 +264,7 @@ The financial impact of a data leak (business loss, and compensation) could brin
 
 * As part of your security training explain to employees what consists of private information, and how do you handle it in your organization.
 The [Future of Privacy Forum published a visual guide](https://fpf.org/wp-content/uploads/2016/04/FPF_Visual-Guide-to-Practical-Data-DeID.pdf) that can help you get started.
-![image alt text](image_2.png)
+![image alt text](https://github.com/forter/security-101-for-saas-startups/blob/master/images/image_2.png)
 
 * Explain to your employees you are not going to fire anyone for making a mistake. Beg them to notify you ASAP when a mishap happened so you could fix the problem and limit the damage. Stand behind this promise. Explain the difference between an intentional insider leaking data and an unfortunate human error. This needs to be talked about since different employees come from different cultural and work backgrounds and may react in the wrong way.
 
@@ -357,7 +356,7 @@ One of the first steps the new security manager will do, is to assess the differ
 
 For a high level starting point you can look at the relative statistics provided by the DBIR Report:
 
-![image alt text](image_3.png)
+![image alt text](https://github.com/forter/security-101-for-saas-startups/blob/master/images/image_3.png)
 
 For a more detailed list that is based on the DBIR report, look at Appendix B and C of the [CIS CONTROLS FOR EFFECTIVE CYBER DEFENSE](https://www.cisecurity.org/critical-controls/) document.
 
