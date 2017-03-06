@@ -28,4 +28,4 @@ So which security considerations are relevant at an early stage?
 
 We grouped together the expected security recommendations by the different phases a start-up goes through. The more money and data the startup handles, the bigger the investment in security:
 
-[continue reading](https://github.com/forter/security-101-for-saas-startups/blob/master/security.md)
+[continue reading](https://github.com/forter/security-101-for-saas-startups/blob/master/secuirty.md)
