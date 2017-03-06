@@ -43,8 +43,7 @@ We grouped together the expected security recommendations by the different phase
 * Explain to your employees not to use their "home" or “personal” password. They have most likely been exposed, or would be exposed. See [https://haveibeenpwned.com](https://haveibeenpwned.com)
 
 * Explain how to choose the password manager's password. There's a[ short video by Sophos](https://nakedsecurity.sophos.com/2014/10/01/how-to-pick-a-proper-password) that explains it.
-![image alt text](image_0.png)
-
+![image alt text](https://github.com/forter/security-101-for-saas-startups/blob/master/image_0.png)
 ### Phishing emails, porn and torrents are the devil in disguise
 
 * Employees would probably use their work laptop at home for their personal needs. That's fine. Nevertheless, from day one, explain your employees not to use it for torrents downloads or porn or any other shady website. Ask them to buy a 2nd hand laptop for that kind of stuff.
