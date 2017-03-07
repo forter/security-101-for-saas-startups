@@ -27,7 +27,7 @@
 
 * Use your password manager to share passwords, credentials and secret notes.
 
-* Stop using disk-on-keys.
+* Stop using thumb drives.
 
 * For more background information read the [DBIR Report](https://www.google.com/search?q=DBIR%2520Report).
 
