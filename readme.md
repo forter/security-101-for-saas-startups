@@ -16,7 +16,7 @@ So which security considerations are relevant at an early stage?
 
 * What are the target market (country) regulations (Data Privacy, Data Residency)? Europeans are known to have tougher regulations. Different US States have different regulations.
 
-* Which tools and policies would not hurt your team's moral.
+* Which tools and policies would not hurt your team's morale.
 
 * How long would it take you to prepare a security risk plan (see example at the bottom of this document)?
 
