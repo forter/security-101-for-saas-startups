@@ -197,7 +197,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 ### Use change management for every production-affecting change
 
-* At this point you should already have automated testing, and (at least semi-) automatic of upgrading and downgrading production versions. The next step is to make sure the production system is immutable. Meaning, any change of code, database, toggles must go through change management (like a pull request, or similar system).
+* At this point you should already have automated testing, and (at least semi-) automatic of upgrading and downgrading production versions. The next step is to make sure the production system is immutable. Meaning, [a server that is once deployed, is never modified](https://martinfowler.com/bliki/ImmutableServer.html), merely replaced with a new updated instance. Any change of code, database, toggles must go through change management (like a pull request, or similar system).
 
 * The downside is that if the automation server is down, or even a few tests fail sporadically, the organisation grinds to a halt. With a little help from murphy that would happen exactly when you need to deploy an urgent quick-fix to production.
 
