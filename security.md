@@ -19,7 +19,7 @@
 
 * Employees would probably use their work laptop at home for their personal needs. That's fine. Nevertheless, from day one, explain your employees not to use it for torrents downloads or porn or any other shady website. Ask them to buy a 2nd hand laptop for that kind of stuff.
 
-* If you got hacked it would most likely start with an employee clicking a link in a phishing email. As one of your fun startup activities play [phishing quiz](https://www.google.com/search?q=Phishing%2520Quiz).
+* If you got hacked it would most likely start with an employee clicking a link in a phishing email. As one of your fun startup activities play [phishing quiz](https://www.google.com/search?q=Phishing+Quiz).
 
 * Stop using email attachments. Employees that are used to opening email attachments are the first ones to accidentally install a malware. Document sharing is Google Drive, or if you are in a regulatory environment then [Box that are more expensive](https://www.box.com/security/it-admin-controls).
 
