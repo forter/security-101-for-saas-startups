@@ -328,7 +328,7 @@ One of the first steps the new security manager will do, is to assess the differ
 
 For a high level starting point you can look at the relative statistics provided by the DBIR Report:
 
-![DBIR report industry stats(https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_3.png)
+![DBIR report industry stats](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_3.png)
 
 For a more detailed list that is based on the DBIR report, look at Appendix B and C of the [CIS CONTROLS FOR EFFECTIVE CYBER DEFENSE](https://www.cisecurity.org/critical-controls/) document.
 
