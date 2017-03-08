@@ -59,7 +59,7 @@ You would need at least one domain for your website, one for your API, and one f
 
 ### Use SSL where possible
 
-Use SSL anywhere possible. In your website, your API, your back office servers, and if it's not too difficult even between internal services.
+Use SSL anywhere possible. In your website, your API, your back office servers, and if it's not too difficult even between internal services. You can even get away with [free SSL using CloudFlare](https://www.troyhunt.com/how-to-get-your-ssl-for-free-on-shared/) for some time before you need to pay for it.
 
 For easier automation look at AWS ACM, or Let's Encrypt ACME.
 
