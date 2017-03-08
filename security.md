@@ -69,13 +69,17 @@ Remember that SSL encrypts network traffic, but does not supply authentication. 
 
 ### Hash your customer's passwords with a proper password hashing function
 
-This might seem to technical and for your developers eyes mostly but you need to be prepared for that data breach and this is low effort - high reward! If your database was breahed and published it's much worse when your customers' passwords are included and easily cracked - folks reuse passwords. [It's true](http://mashable.com/2017/02/28/passwords-reuse-study-keeper-security).
+
+If you can afford it, use a [third party authentication service](#idaas_customers) to handle password storage, password management and password recovery. 
+
+However, if you decide to develop your own password implementation, try doing it according to the [OWASP authentication guidelines](https://www.owasp.org/index.php/Authentication_Cheat_Sheet) . 
+
+* If your database was breached and published it's much worse when your customers' passwords are included and easily cracked - folks reuse passwords. [It's true](http://mashable.com/2017/02/28/passwords-reuse-study-keeper-security).
 
 * Use a well known hashing algorithm to store customers passwords in your database: bcrypt, PBKDF2 or scrypt with a work factor that takes [about 1 second for the password hash](http://security.stackexchange.com/a/3993/69959).
 
 * Do not use MD5, SHA1 or other hashes that are *not specifically designed for passwords*. Passwords stored like this are cracked in seconds usually.
 
-* [Follow the OWASP guidance](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet) and demand your developers hash passwords using one of the above.
 
 ### Picking a SaaS vendor
 
@@ -234,7 +238,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 ## Phase 4: Signing a large customer, or rapid market growth
 
-### Customer user's management
+### <a href="idaas_customers"></a>Customer user's management
 
 There are a number of Identity as a Service vendors that supply login and customer's password management services. If such a vendor is SOC2 Compliant they probably do a better job than you saving the customer's password in your database.
 
