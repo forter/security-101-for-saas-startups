@@ -136,7 +136,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 ### Physical Security
 
-* Configure laptops to sleep after 5 minutes you are away from your desk, and require a password to re-open it.
+* Configure laptops to sleep after (at most) 5 minutes you are away from your desk, and require a password to re-open it. It would have been even better if employees were to use [hot corners](https://support.apple.com/kb/PH18796) to start sleep mode each time they leave their desk.
 
 * Never let a stranger within arms reach of a computer (especially if it has a USB port). Physical access is the fastest way to getting your system and product and customers compromised.
 
