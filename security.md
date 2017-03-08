@@ -33,7 +33,7 @@
 
 ### Encryption today is only one click away
 
-If your laptop gets lost or stolen, you would not want the data would be compromised.
+If your laptop gets lost or stolen, you would not want the data to be compromised.
 
 * Mac users can encrypt their drive with 1 click.
 * Windows users would need the Pro version and prefer laptop hardware that supports TPM.
