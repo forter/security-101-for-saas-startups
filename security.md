@@ -242,7 +242,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 There are a number of Identity as a Service vendors that supply login and customer's password management services. If such a vendor is SOC2 Compliant they probably do a better job than you saving the customer's password in your database.
 
-They also provide self service and apis to provision and de-provision users. Although, large customers might want integration with their own Identity management solution.
+They also provide self service and apis to provision and de-provision users, enforce password policies, and recover lost passwords. Although, large customers might want integration with their own Identity management solution.
 
 ### Sensitive Data Leaks
 
