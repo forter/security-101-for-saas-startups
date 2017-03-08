@@ -211,7 +211,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 At this point you should already have automated testing, and (at least semi-) automatic of upgrading and downgrading production versions. The next step is to make sure the production system is immutable. Meaning, [a server that is once deployed, is never modified](https://martinfowler.com/bliki/ImmutableServer.html), merely replaced with a new updated instance.
 
-* The downside is that if the automation server is down, or even a few tests fail sporadically, the organisation grinds to a halt. With a little help from murphy that would happen exactly when you need to deploy an urgent quick-fix to production.
+* The downside is that if the automation server is down, or even a few tests fail sporadically, the organisation grinds to a halt. With a little help from Murphy that would happen exactly when you need to deploy an urgent quick-fix to production.
 
 * What follows is that you need a way to override this automation. It doesn't have to be admin privileges. It could also be a tag that means pushing to production an untested artifact. You can send a notification to the managers/admins when a developer uses this tag as a compensating control.
 
