@@ -292,6 +292,8 @@ Make sure the organisation's critical data is backed-up (even if it means it wou
 
 * Not all data is equally important for the business survival. If the amount of data and backup costs is too high, start with only the critical data.
 
+* Ensure that the restore procedure is both well documented and tested. You don't want to discover that what you thought were useful backups aren't usable when trying to recover from data loss.
+
 * Almost any certification or big customer would ask for a copy of your annual backup/restore practice.
 
 
