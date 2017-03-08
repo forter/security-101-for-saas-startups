@@ -19,7 +19,7 @@
 
 * Employees would probably use their work laptop at home for their personal needs. That's fine. Nevertheless, from day one, explain your employees not to use it for torrents downloads or porn or any other shady website. Ask them to buy a 2nd hand laptop for that kind of stuff.
 
-* If you got hacked it would most likely start with an employee clicking a link in a phishing email. As one of your fun startup activities play [phishing quiz](https://www.google.com/search?q=Phishing%2520Quiz).
+* If you got hacked it would most likely start with an employee clicking a link in a phishing email. As one of your fun startup activities play [phishing quiz](https://www.google.com/search?q=Phishing+Quiz).
 
 * Stop using email attachments. Employees that are used to opening email attachments are the first ones to accidentally install a malware. Document sharing is Google Drive, or if you are in a regulatory environment then [Box that are more expensive](https://www.box.com/security/it-admin-controls).
 
@@ -33,7 +33,7 @@
 
 ### Encryption today is only one click away
 
-If your laptop gets lost or stolen, you would not want the data would be compromised.
+If your laptop gets lost or stolen, you would not want the data to be compromised.
 
 * Mac users can encrypt their drive with 1 click.
 * Windows users would need the Pro version and prefer laptop hardware that supports TPM.
@@ -66,6 +66,16 @@ For easier automation look at AWS ACM, or Let's Encrypt ACME.
 Monitor your endpoint's public certificate expiration date, to detect prevent certificate expiration.
 
 Remember that SSL encrypts network traffic, but does not supply authentication. SSL is also not a replacement for 2FA.
+
+### Hash your customer's passwords with a proper password hashing function
+
+This might seem to technical and for your developers eyes mostly but you need to be prepared for that data breach and this is low effort - high reward! If your database was breahed and published it's much worse when your customers' passwords are included and easily cracked - folks reuse passwords. [It's true](http://mashable.com/2017/02/28/passwords-reuse-study-keeper-security).
+
+* Use a well known hashing algorithm to store customers passwords in your database: bcrypt, PBKDF2 or scrypt with a work factor that takes [about 1 second for the password hash](http://security.stackexchange.com/a/3993/69959).
+
+* Do not use MD5, SHA1 or other hashes that are *not specifically designed for passwords*. Passwords stored like this are cracked in seconds usually.
+
+* [Follow the OWASP guidance](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet) and demand your developers hash passwords using one of the above.
 
 ### Picking a SaaS vendor
 
@@ -293,6 +303,8 @@ Make sure the organisation's critical data is backed-up (even if it means it wou
 * Some even copy their data into a different cloud provider. For example, Google Cloud has a service that can [continuously backup data stored on Amazon S3](https://cloud.google.com/storage/transfer/).
 
 * Not all data is equally important for the business survival. If the amount of data and backup costs is too high, start with only the critical data.
+
+* Ensure that the restore procedure is both well documented and tested. You don't want to discover that what you thought were useful backups aren't usable when trying to recover from data loss.
 
 * Almost any certification or big customer would ask for a copy of your annual backup/restore practice.
 
