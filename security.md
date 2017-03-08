@@ -27,7 +27,7 @@
 
 * Use your password manager to share passwords, credentials and secret notes.
 
-* Stop using thumb drives.
+* Stop using USB thumb drives: make it a black-and-white company culture to keep those nasty devices completely away from any computer. They are the [fastest way for a hacker to take control of your system](https://www.youtube.com/watch?v=CvI_mrQYaF8). Teach your staff to recognose and identify them as a major threat!
 
 * For more background information read the [DBIR Report](https://www.google.com/search?q=DBIR%2520Report).
 
@@ -91,11 +91,11 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 ### Be a little paranoid
 
-* Every service you use requires a 2nd authentication factor (2FA). Usually it's a mobile app that receives a push notification on each login, where the user is required to tap once on the phone. In other cases the user would have to type in a 6 digit code.
+* Turn on 2FA for every service that you use. This is especially critical for your development team as those are the services that will take your product offline if they're compromised. Google accounts, Dropbox, Github, Microsoft, etc - all of them!
 
 * Startups that target enterprise customers or that work in a regulated environment usually enable 2FA from day one.
 
-* Mobile phone 2FA problems start when an employee lost/forgot/replaces his mobile phone, or is stuck without battery, and then he is locked out of the system. That's why some organizations use yubikey instead (a small usb plug that can sense human finger touch). Like a Mobile App Push notification, yubikey protects against malware and hackers that keylog your password. The downside is that unlike their mobile phones, employees are more likely to loose the yubikey together with their laptop. So if the stolen laptop falls into the hands of a professional that can extract the passwords from the laptop then they could also login to any service with the yubikey. For most organisations this is not a likely attack and thus the yubikey is becoming very popular.
+* For your app/service, use a [TOTP 2FA implimentation](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm). Customers can install [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) or others in the same space. This is a well established standard and is very easy to use.
 
 * Using SMS as a 2nd factor is discouraged and should be disabled. An experienced hacker can convince your mobile network customer support to [move your line to his](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/) possession. Also recently it was discovered that 800M android devices
  had [a malware that reads SMSs](http://thehackernews.com/2016/11/hacking-android-smartphone.html).
