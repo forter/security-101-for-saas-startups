@@ -70,7 +70,7 @@ Remember that SSL encrypts network traffic, but does not supply authentication. 
 ### Hash your customer's passwords with a proper password hashing function
 
 
-If you can afford it, use a [third party authentication service](#Customer user's management) to handle password storage, password management and password recovery. 
+If you can afford it, use a [third party authentication service](#customer-users-management) to handle password storage, password management and password recovery. 
 
 However, if you decide to develop your own password implementation, try doing it according to the [OWASP authentication guidelines](https://www.owasp.org/index.php/Authentication_Cheat_Sheet) . 
 
