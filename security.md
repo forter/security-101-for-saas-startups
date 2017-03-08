@@ -105,12 +105,14 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Startups that target enterprise customers or that work in a regulated environment usually enable 2FA from day one.
 
-* Mobile phone 2FA problems start when an employee lost/forgot/replaces his mobile phone, or is stuck without battery, and then he is locked out of the system. That's why some organizations use yubikey instead (a small usb plug that can sense human finger touch). Like a Mobile App Push notification, yubikey protects against malware and hackers that keylog your password. The downside is that unlike their mobile phones, employees are more likely to lose the yubikey together with their laptop. So if the stolen laptop falls into the hands of a professional that can extract the passwords from the laptop then they could also login to any service with the yubikey. For most organisations this is not a likely attack and thus the yubikey is becoming very popular.
+* Mobile phone 2FA problems start when an employee lost/forgot/replaces their mobile phone, or is stuck without battery, and then they are locked out of the system. That's why some organizations use yubikey instead (a small usb plug that can sense human finger touch). Like a Mobile App Push notification, yubikey protects against malware and hackers that keylog your password. The downside is that unlike their mobile phones, employees are more likely to lose the yubikey together with their laptop. So if the stolen laptop falls into the hands of a professional that can extract the passwords from the laptop then they could also login to any service with the yubikey. For most organisations this is not a likely attack and thus the yubikey is becoming very popular.
 
 * Using SMS as a 2nd factor is discouraged and should be disabled. An experienced hacker can convince your mobile network customer support to [move your line to his](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/) possession. Also recently it was discovered that 800M android devices
  had [a malware that reads SMSs](http://thehackernews.com/2016/11/hacking-android-smartphone.html).
 
-* Using voice phone calls as a 2nd factor should also be disabled. Hackers will simply try to login when your phone is offline and hack into your voice mailbox by guessing your 4 digit code, that you probably never changed.
+* Using voice phone calls as a 2nd factor should also be disabled. Hackers will simply try to log in when your phone is offline and hack into your voice mailbox by guessing your 4 digit code, that you probably never changed.
+
+* If an employee asks for a password reset remotely, ask them to come into the office in person if possible. If this is not feasible (or time-sensitive), verify their identify: do not trust that you can recognize your employee's voice. Never email passwords.
 
 ### Insider stealing information from the organisation
 
@@ -122,15 +124,15 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * In case the terminated employee had access to admin passwords, it is recommended to replace passwords to sensitive systems.
 
-* When hiring a new employee ask his former colleagues about his personality type, and the way he left their previous company. Please note that at least in Israel it's illegal to ask an employee to present a criminal record sheet.
+* When hiring a new employee ask their former colleagues about their personality type, and the way they left their previous company. Please note that at least in Israel it's illegal to ask an employee to present a criminal record sheet.
 
 ### VPN
 
 * It is relatively easy to find integration vendors that can install an office VPN (don't do it yourself).
 
-* A combination of a VPN deployed in the office and a static ip address for the office internet, allows to restrict management access to servers. For example, instead of opening port 22 (SSH) to the entire internet, you allow only access from the office, or from home when connected to the office's VPN.
+* A combination of a VPN deployed in the office and a static IP address for the office internet allows you to restrict management access to servers. For example, instead of opening port 22 (SSH) to the entire internet, you allow only access from the office, or from home when connected to the office's VPN.
 
-* Alternatively a cloud based VPN (installed on ec2 for example) has a few more advantages. First all of the communication between the office and the cloud is encrypted (especially important if you are accessing data stores such as elastic search without SSL). The network performance is much better for remote workers that are physically located far from the office. Also it relaxes the need for physical security somewhat since there is no network equipment there (the office is just another coffee shop). The downside is that each time you get disconnected from the office network you need to reconnect to the VPN.
+* Alternatively a cloud based VPN (installed on ec2 for example) has a few more advantages. First, all of the communication between the office and the cloud is encrypted (especially important if you are accessing data stores such as elastic search without SSL). The network performance is much better for remote workers that are physically located far from the office. Also, it relaxes the need for physical security somewhat since there is no network equipment there (the office is just another coffee shop). The downside is that each time you get disconnected from the office network you need to reconnect to the VPN.
 
 * VPN connection should have 2nd factor enabled too.
 
@@ -138,9 +140,9 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * It's very easy to install an Endpoint Security Product. Make sure the product supports the operating system of all of your laptops. Configure automatic updates, send an email alerts (could be noisy), and block all incoming connections. The last one is important for developers running servers locally.
 
-* It is better to install the antivirus before the employee arrives, as there are many developers that installing an anti-virus turns them down.
+* It is better to install the antivirus before the employee arrives, as there are many developers that installing an antivirus turns them down.
 
-* Most products have an export/import functionality, which makes it easier to setup.
+* Most products have an export/import functionality, which makes it easier to set up.
 
 * There are extra protection products on top of an antivirus called EDR (Cyberreason, BlackCobalt) but these are usually costly.  
 
@@ -161,7 +163,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 * [https://nvd.nist.gov/download/nvd-rss.xml](https://nvd.nist.gov/download/nvd-rss.xml)
 ![security rss filter](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_1.png)
 
-* It is very difficult at a later stage to separate the production network from the development network. In AWS security is most easily managed on an account level, so a development VPC should be on a separate account in the same organisation. Usually there are three accounts. One for Consolidated Billing, one for production and another one for everything else (development and back office that are configured via network ACLs to communicate only with your office).
+* It is very difficult at a later stage to separate the production network from the development network. In AWS, security is most easily managed on an account level, so a development VPC should be on a separate account in the same organisation. Usually there are three accounts. One for Consolidated Billing, one for production, and another one for everything else (development and back office that are configured via network ACLs to communicate only with your office).
 
 * Recently Amazon announced [AWS Organisations](https://aws.amazon.com/organizations/) that takes it one step further, by making it easier to apply policies on all of the different accounts and takes care of billing too.
 
@@ -203,15 +205,17 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Define a process for providing admin privileges for a specific component for a specific employee for a limited time. In some cases a developer needs admin privileges for two days to speed up development of a new component or automate a repetitive task. Define a process that has a logging trail, which you can present to your auditor. This is needed so developers would not need to go to the admin ten times a day, since it would create a lot of frustration for all parties involved.
 
-* Some (small) companies define that all developers are admins. Your auditor might accept that and add a comment about that in his report.
+* Some (small) companies define that all developers are admins. Your auditor might accept that and add a comment about that in their report.
 
 ### Use change management for every production-affecting change
 
-* At this point you should already have automated testing, and (at least semi-) automatic of upgrading and downgrading production versions. The next step is to make sure the production system is immutable. Meaning, [a server that is once deployed, is never modified](https://martinfowler.com/bliki/ImmutableServer.html), merely replaced with a new updated instance. Any change of code, database, toggles must go through change management (like a pull request, or similar system).
+At this point you should already have automated testing, and (at least semi-) automatic of upgrading and downgrading production versions. The next step is to make sure the production system is immutable. Meaning, [a server that is once deployed, is never modified](https://martinfowler.com/bliki/ImmutableServer.html), merely replaced with a new updated instance.
 
 * The downside is that if the automation server is down, or even a few tests fail sporadically, the organisation grinds to a halt. With a little help from murphy that would happen exactly when you need to deploy an urgent quick-fix to production.
 
 * What follows is that you need a way to override this automation. It doesn't have to be admin privileges. It could also be a tag that means pushing to production an untested artifact. You can send a notification to the managers/admins when a developer uses this tag as a compensating control.
+
+* Any change of database values or toggles that affects production behavior must go through change management (like a pull request, or similar system).
 
 ### Identity Management and SSO
 
@@ -316,7 +320,7 @@ Make sure the organisation's critical data is backed-up (even if it means it wou
 
 ## Phase 5: "Look ma!, I'm in the newspaper"
 
-When you have a clear business need (great business success) and a respectable security budget, start looking for a Director of Security (or VP Security or CISO) that can fit into your organization. This is a process that can take many months. The reason is the requirement for high technical skills needed in the first stages, and taking responsibility off the CEO/CTO that require other traits, such as participating in the sales cycle, and signing official company papers. And of course the security officer, must fit into your organisation's culture. A live example of such person can be found in this video:[https://www.infoq.com/presentations/security-etsy](https://www.infoq.com/presentations/security-etsy).
+When you have a clear business need (great business success) and a respectable security budget, start looking for a Director of Security (or VP Security or CISO) that can fit into your organization. This is a process that can take many months. The reason is the requirement for high technical skills needed in the first stages, and taking responsibility off the CEO/CTO that require other traits, such as participating in the sales cycle, and signing official company papers. And of course the security officer must fit into your organisation's culture. A live example of such person can be found in this video:[https://www.infoq.com/presentations/security-etsy](https://www.infoq.com/presentations/security-etsy).
 
 ### Deciding on a budget - Build a Threat Model
 
