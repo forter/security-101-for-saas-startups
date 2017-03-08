@@ -67,6 +67,16 @@ Monitor your endpoint's public certificate expiration date, to detect prevent ce
 
 Remember that SSL encrypts network traffic, but does not supply authentication. SSL is also not a replacement for 2FA.
 
+### Hash your customer's passwords with a proper password hashing function
+
+This might seem to technical and for your developers eyes mostly but you need to be prepared for that data breach and this is low effort - high reward! If your database was breahed and published it's much worse when your customers' passwords are included and easily cracked - folks reuse passwords. [It's true](http://mashable.com/2017/02/28/passwords-reuse-study-keeper-security).
+
+* Use a well known hashing algorithm to store customers passwords in your database: bcrypt, PBKDF2 or scrypt with a work factor that takes [about 1 second for the password hash](http://security.stackexchange.com/a/3993/69959).
+
+* Do not use MD5, SHA1 or other hashes that are *not specifically designed for passwords*. Passwords stored like this are cracked in seconds usually.
+
+* [Follow the OWASP guidance](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet) and demand your developers hash passwords using one of the above.
+
 ### Picking a SaaS vendor
 
 * Once committed to an infrastructure vendor, it is difficult to switch them. In the future you would need to screen vendors that have access to your organisation's data. Therefore, for cloud infrastructure try choosing one of the big vendors (Amazon, Google, Microsoft), or at least a vendor with a SOC2 Type2 certification (for infrastructure vendors), PCI for payment vendors, or any other relevant certification or compliance for that industry.
