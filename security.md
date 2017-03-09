@@ -67,15 +67,6 @@ Monitor your endpoint's public certificate expiration date, to detect prevent ce
 
 Remember that SSL encrypts network traffic, but does not supply authentication. SSL is also not a replacement for 2FA.
 
-### Hash your customer's passwords with a proper password hashing function
-
-
-If you can afford it, use a [third party authentication service](#customer-users-management) to handle password storage, password management and password recovery. 
-
-However, if you decide to develop your own password implementation, try doing it according to the [OWASP authentication guidelines](https://www.owasp.org/index.php/Authentication_Cheat_Sheet) . 
-
-* If your database was breached and published it's much worse when your customers' passwords are included and easily cracked - folks reuse passwords. [It's true](http://mashable.com/2017/02/28/passwords-reuse-study-keeper-security). Therefore, always use a well known hashing algorithm to store customers passwords in your database: bcrypt, PBKDF2 or scrypt with a work factor that takes [about 1 second for the password hash](http://security.stackexchange.com/a/3993/69959). Do not use MD5, SHA1 or other hashes that are *not specifically designed for passwords*. Passwords stored like this are cracked in seconds usually.
-
 
 ### Picking a SaaS vendor
 
@@ -148,6 +139,16 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 * Most products have an export/import functionality, which makes it easier to set up.
 
 * There are extra protection products on top of an antivirus called EDR (Cyberreason, BlackCobalt) but these are usually costly.  
+
+### Hash your customer's passwords with a proper password hashing function
+
+
+If you can afford it, use a [third party authentication service](#customer-users-management) to handle password storage, password management and password recovery. 
+
+However, if you decide to develop your own password implementation, try doing it according to the [OWASP authentication guidelines](https://www.owasp.org/index.php/Authentication_Cheat_Sheet) . 
+
+* If your database was breached and published it's much worse when your customers' passwords are included and easily cracked - folks reuse passwords. [It's true](http://mashable.com/2017/02/28/passwords-reuse-study-keeper-security). Therefore, always use a well known hashing algorithm to store customers passwords in your database: bcrypt, PBKDF2 or scrypt with a work factor that takes [about 1 second for the password hash](http://security.stackexchange.com/a/3993/69959). Do not use MD5, SHA1 or other hashes that are *not specifically designed for passwords*. Passwords stored like this are cracked in seconds usually.
+
 
 ### Physical Security
 
