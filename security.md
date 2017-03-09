@@ -143,7 +143,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 ### Hash your customer's passwords with a proper password hashing function
 
 
-If you can afford it, use a [third party authentication service](#customer-users-management) to handle password storage, password management and password recovery. Some vendors offer Monthly Active Users pricing which can fit your budget.
+If you can afford it, use a [third party authentication service](#customer-users-management) to handle password storage, password management, password recovery, two factor auth and more. Some vendors offer Monthly Active Users pricing which can fit your budget.
 
 However, if you decide to develop your own authentication implementation, follow the [OWASP authentication guidelines](https://www.owasp.org/index.php/Authentication_Cheat_Sheet) . 
 
