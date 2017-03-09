@@ -53,9 +53,9 @@ You would need at least one domain for your website, one for your API, and one f
 
 * The first domain is usually the company's official name or brand. It used for outbound marketing (the website) and for employee emails. Both would probably be managed by an external service provider. Protect this email domain with SPF and DKIM. It's not that complicated and reduces phishing attempts in which hackers imposter your managers or admins. Many security incidents start with an employee opening a phishing email so this is important.
 
-* The second domain is required for the service itself (for example the rest api endpoint). This domain requires extra care, and unlike the company domain it would probably be hosted in AWS route 53 and managed by the engineering. There are two main reasons for this domain. First the company's domain is protected by SPF which makes it more difficult to send automated emails from AWS SES without it ending up in a spam folder. The other reason is that automated outgoing emails could be marked as spam by the receiver. This is bad enough without it affecting all of your employee's emails (ending up in spam boxes too).
+* The second domain is required for the saas service itself - for example the rest api endpoint. Think www.google.com vs www.gmail.com vs maps.googleapis.com . This domain requires extra care, and unlike the company domain it would probably be hosted in AWS route 53 and managed by the service engineering team itself.
 
-* A third domain is needed for internal use and back office. This domain would probably be registered anonymously, so it would be a little more difficult to find.
+* A third domain is needed for internal use and back office. This domain should be instantly and recognisably distinct, easy and quick to type. Some companies use a subdomain of the company domain. However, this means it could not be managed by backoffice service developers that need to update it frequently for small internal services. A subdmoain might also cause confusion which sites are internal, and which sites are public. There is also a side benefit if you register this domain anonymously. In most cases the domain name resolution server is internal too (private Route53 domains).
 
 ### Use SSL/TLS/HTTPS everywhere!
 
