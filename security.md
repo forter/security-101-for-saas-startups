@@ -203,7 +203,7 @@ However, if you decide to develop your own authentication implementation, follow
 
 ### Bring your developers onboard - they are a big part of it
 
-* Developers take it very personally (and might even get angry) when you take permissions away from them. They would feel that they are no longer being trusted, compared to other developers that get to keep the admin permissions. They could feel that whoever is the driving force behind the certification is having an ego-trip on their expense. Others might feel that they are being handcuffed, bogged-down, and that they started working for "a corporate".
+* Developers take it very personally (and might even get angry) when you take permissions away from them. They would feel that they are no longer being trusted, compared to other developers that get to keep the admin permissions. They could feel that whoever is the driving force behind the certification is having an ego-trip at their expense. Others might feel that they are being handcuffed, bogged-down, and that they started working for "a corporate".
 
 * You cannot get everyone involved in the decision making, but you can make an effort to include representatives for different opinions that are not shy to speak up. Developers usually do not "whine", they just don't get who needs all that stuff. Therefore it is crucial to keep pointing out which parts are crucial for the certification, and which are just backlog items that are being added into the certification effort along the way. Specify concrete customer names mapped to security requirements.
 
