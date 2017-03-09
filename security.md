@@ -19,7 +19,7 @@
 
 * Employees would probably use their work laptop at home for their personal needs. That's fine. Nevertheless, from day one, explain your employees not to use it for torrents downloads or porn or any other shady website. Ask them to buy a 2nd hand laptop for that kind of stuff.
 
-* If you got hacked it would most likely start with an employee clicking a link in a phishing email. As one of your fun startup activities play [phishing quiz](https://www.google.com/search?q=Phishing%2520Quiz).
+* If you got hacked it would most likely start with an employee clicking a link in a phishing email. As one of your fun startup activities play [phishing quiz](https://www.google.com/search?q=Phishing+Quiz).
 
 * Stop using email attachments. Employees that are used to opening email attachments are the first ones to accidentally install a malware. Document sharing is Google Drive, or if you are in a regulatory environment then [Box that are more expensive](https://www.box.com/security/it-admin-controls).
 
@@ -27,13 +27,13 @@
 
 * Use your password manager to share passwords, credentials and secret notes.
 
-* Stop using thumb drives.
+* Stop using USB thumb drives: make it a black-and-white company culture to keep those nasty devices completely away from any computer. They are the [fastest way for a hacker to take control of your system](https://www.youtube.com/watch?v=CvI_mrQYaF8). Teach your staff to recognose and identify them as a major threat!
 
 * For more background information read the [DBIR Report](https://www.google.com/search?q=DBIR%2520Report).
 
 ### Encryption today is only one click away
 
-If your laptop gets lost or stolen, you would not want the data would be compromised.
+If your laptop gets lost or stolen, you would not want the data to be compromised.
 
 * Mac users can encrypt their drive with 1 click.
 * Windows users would need the Pro version and prefer laptop hardware that supports TPM.
@@ -57,7 +57,7 @@ You would need at least one domain for your website, one for your API, and one f
 
 * A third domain is needed for internal use and back office. This domain would probably be registered anonymously, so it would be a little more difficult to find.
 
-### Use SSL where possible
+### Use SSL/TLS/HTTPS everywhere!
 
 Use SSL anywhere possible. In your website, your API, your back office servers, and if it's not too difficult even between internal services.
 
@@ -101,16 +101,21 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 ### Be a little paranoid
 
-* Every service you use requires a 2nd authentication factor (2FA). Usually it's a mobile app that receives a push notification on each login, where the user is required to tap once on the phone. In other cases the user would have to type in a 6 digit code.
+* Turn on 2FA for every service that you use. This is especially critical for your development team as those are the services that will take your product offline if they're compromised. Google accounts, Dropbox, Github, Microsoft, etc - all of them!
 
 * Startups that target enterprise customers or that work in a regulated environment usually enable 2FA from day one.
 
-* Mobile phone 2FA problems start when an employee lost/forgot/replaces his mobile phone, or is stuck without battery, and then he is locked out of the system. That's why some organizations use yubikey instead (a small usb plug that can sense human finger touch). Like a Mobile App Push notification, yubikey protects against malware and hackers that keylog your password. The downside is that unlike their mobile phones, employees are more likely to loose the yubikey together with their laptop. So if the stolen laptop falls into the hands of a professional that can extract the passwords from the laptop then they could also login to any service with the yubikey. For most organisations this is not a likely attack and thus the yubikey is becoming very popular.
+* A well established and easy to use 2FA implementation is [TOTP 2FA implimentation](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm). Employees can install [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) on their mobile phone and it would produce a one-time 6 digit code that needs to be typed in addition to the password 
 
+* A slightly more usable approach are push notifications. Many SaaS vendors support an app that instead of generating codes, sends you a push notification. That is more convinient than copying 6 digits each time you need to log-in. The downside is that you would probably need different apps for each service, and that it won't work without an internet connection, or when the push notification vendor has downtime.
+
+* Mobile phone 2FA problems start when an employee lost/forgot/replaces their mobile phone, or is stuck without battery, and then they are locked out of the system. Some employees don't like hardening their phone (encryption and screenlock to protect the 2FA app), and feel that the company needs to buy the phone for the 2FA app to run on. That's why some organizations use yubikey instead (a small usb plug that can sense human finger touch). Like a Mobile App Push notification, yubikey protects against malware and hackers that keylog your password. The downside is that unlike their mobile phones, employees are more likely to lose the yubikey together with their laptop. So if the stolen laptop falls into the hands of a professional that can extract the passwords from the laptop then they could also login to any service with the yubikey. Another problem is that the yubikey is a USB device, and you would need to make the distinction between USB storage devices (not allowed) and the yubikey (allowed). 
 * Using SMS as a 2nd factor is discouraged and should be disabled. An experienced hacker can convince your mobile network customer support to [move your line to his](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/) possession. Also recently it was discovered that 800M android devices
  had [a malware that reads SMSs](http://thehackernews.com/2016/11/hacking-android-smartphone.html).
 
-* Using voice phone calls as a 2nd factor should also be disabled. Hackers will simply try to login when your phone is offline and hack into your voice mailbox by guessing your 4 digit code, that you probably never changed.
+* Using voice phone calls as a 2nd factor should also be disabled. Hackers will simply try to log in when your phone is offline and hack into your voice mailbox by guessing your 4 digit code, that you probably never changed.
+
+* If an employee asks for a password reset remotely, ask them to come into the office in person if possible. If this is not feasible (or time-sensitive), verify their identify: do not trust that you can recognize your employee's voice. Never email passwords.
 
 ### Insider stealing information from the organisation
 
@@ -122,15 +127,15 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * In case the terminated employee had access to admin passwords, it is recommended to replace passwords to sensitive systems.
 
-* When hiring a new employee ask his former colleagues about his personality type, and the way he left their previous company. Please note that at least in Israel it's illegal to ask an employee to present a criminal record sheet.
+* When hiring a new employee ask their former colleagues about their personality type, and the way they left their previous company. Please note that at least in Israel it's illegal to ask an employee to present a criminal record sheet.
 
 ### VPN
 
 * It is relatively easy to find integration vendors that can install an office VPN (don't do it yourself).
 
-* A combination of a VPN deployed in the office and a static ip address for the office internet, allows to restrict management access to servers. For example, instead of opening port 22 (SSH) to the entire internet, you allow only access from the office, or from home when connected to the office's VPN.
+* A combination of a VPN deployed in the office and a static IP address for the office internet allows you to restrict management access to servers. For example, instead of opening port 22 (SSH) to the entire internet, you allow only access from the office, or from home when connected to the office's VPN.
 
-* Alternatively a cloud based VPN (installed on ec2 for example) has a few more advantages. First all of the communication between the office and the cloud is encrypted (especially important if you are accessing data stores such as elastic search without SSL). The network performance is much better for remote workers that are physically located far from the office. Also it relaxes the need for physical security somewhat since there is no network equipment there (the office is just another coffee shop). The downside is that each time you get disconnected from the office network you need to reconnect to the VPN.
+* Alternatively a cloud based VPN (installed on ec2 for example) has a few more advantages. First, all of the communication between the office and the cloud is encrypted (especially important if you are accessing data stores such as elastic search without SSL). The network performance is much better for remote workers that are physically located far from the office. Also, it relaxes the need for physical security somewhat since there is no network equipment there (the office is just another coffee shop). The downside is that each time you get disconnected from the office network you need to reconnect to the VPN.
 
 * VPN connection should have 2nd factor enabled too.
 
@@ -138,13 +143,17 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * It's very easy to install an Endpoint Security Product. Make sure the product supports the operating system of all of your laptops. Configure automatic updates, send an email alerts (could be noisy), and block all incoming connections. The last one is important for developers running servers locally.
 
-* It is better to install the antivirus before the employee arrives, as there are many developers that installing an anti-virus turns them down.
+* It is better to install the antivirus before the employee arrives, as there are many developers that installing an antivirus turns them down.
 
-* Most products have an export/import functionality, which makes it easier to setup.
+* Most products have an export/import functionality, which makes it easier to set up.
 
 * There are extra protection products on top of an antivirus called EDR (Cyberreason, BlackCobalt) but these are usually costly.  
 
-### Physical security
+### Physical Security
+
+* Configure laptops to sleep after (at most) 5 minutes you are away from your desk, and require a password to re-open it. Ask employees to lock their laptops manually when they leave their desks, for example using [hot corners on macOS](https://support.apple.com/kb/PH18796), or by pressing logo key + L on Windows.
+
+* Never let a stranger within arms reach of a computer (especially if it has a USB port). Physical access is the fastest way to getting your system and product and customers compromised.
 
 * Remind employees to lock all the doors and windows before they go home, and to enable the alarm.
 
@@ -161,7 +170,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 * [https://nvd.nist.gov/download/nvd-rss.xml](https://nvd.nist.gov/download/nvd-rss.xml)
 ![security rss filter](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_1.png)
 
-* It is very difficult at a later stage to separate the production network from the development network. In AWS security is most easily managed on an account level, so a development VPC should be on a separate account in the same organisation. Usually there are three accounts. One for Consolidated Billing, one for production and another one for everything else (development and back office that are configured via network ACLs to communicate only with your office).
+* It is very difficult at a later stage to separate the production network from the development network. In AWS, security is most easily managed on an account level, so a development VPC should be on a separate account in the same organisation. Usually there are three accounts. One for Consolidated Billing, one for production, and another one for everything else (development and back office that are configured via network ACLs to communicate only with your office).
 
 * Recently Amazon announced [AWS Organisations](https://aws.amazon.com/organizations/) that takes it one step further, by making it easier to apply policies on all of the different accounts and takes care of billing too.
 
@@ -199,19 +208,21 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Take into account the time required for automation. Automation must be used for common tasks that until recently required elevated privileges. For example, adding a new customer, or upgrading to a new version. Without automation everyone needs admin privileges, with proper automation (for example a Jenkins task), all employees can perform that operation by themselves. Changes to the procedure would obviously require peer review (pull request).
 
-* Remind the team leaders and administrators not to use their admin privileges, and use automation for day-to-day tasks like anybody else. Admin privileges should not be used to make others jealous, but rather for surgical actions for long tail tasks that automation doesn't cover. It's a matter of leading by example and curtesy.
+* Remind the team leaders and administrators not to use their admin privileges, and use automation for day-to-day tasks like anybody else. Admin privileges should not be used to make others jealous, but rather for surgical actions for long tail tasks that automation doesn't cover. It's a matter of leading by example and courtesy.
 
 * Define a process for providing admin privileges for a specific component for a specific employee for a limited time. In some cases a developer needs admin privileges for two days to speed up development of a new component or automate a repetitive task. Define a process that has a logging trail, which you can present to your auditor. This is needed so developers would not need to go to the admin ten times a day, since it would create a lot of frustration for all parties involved.
 
-* Some (small) companies define that all developers are admins. Your auditor might accept that and add a comment about that in his report.
+* Some (small) companies define that all developers are admins. Your auditor might accept that and add a comment about that in their report.
 
 ### Use change management for every production-affecting change
 
-* At this point you should already have automated testing, and (at least semi-) automatic of upgrading and downgrading production versions. The next step is to make sure the production system is immutable. Meaning, [a server that is once deployed, is never modified](https://martinfowler.com/bliki/ImmutableServer.html), merely replaced with a new updated instance. Any change of code, database, toggles must go through change management (like a pull request, or similar system).
+At this point you should already have automated testing, and (at least semi-) automatic of upgrading and downgrading production versions. The next step is to make sure the production system is immutable. Meaning, [a server that is once deployed, is never modified](https://martinfowler.com/bliki/ImmutableServer.html), merely replaced with a new updated instance.
 
-* The downside is that if the automation server is down, or even a few tests fail sporadically, the organisation grinds to a halt. With a little help from murphy that would happen exactly when you need to deploy an urgent quick-fix to production.
+* The downside is that if the automation server is down, or even a few tests fail sporadically, the organisation grinds to a halt. With a little help from Murphy that would happen exactly when you need to deploy an urgent quick-fix to production.
 
 * What follows is that you need a way to override this automation. It doesn't have to be admin privileges. It could also be a tag that means pushing to production an untested artifact. You can send a notification to the managers/admins when a developer uses this tag as a compensating control.
+
+* Any change of database values or toggles that affects production behavior must go through change management (like a pull request, or similar system).
 
 ### Identity Management and SSO
 
@@ -302,6 +313,8 @@ Make sure the organisation's critical data is backed-up (even if it means it wou
 
 * Not all data is equally important for the business survival. If the amount of data and backup costs is too high, start with only the critical data.
 
+* Ensure that the restore procedure is both well documented and tested. You don't want to discover that what you thought were useful backups aren't usable when trying to recover from data loss.
+
 * Almost any certification or big customer would ask for a copy of your annual backup/restore practice.
 
 
@@ -314,7 +327,7 @@ Make sure the organisation's critical data is backed-up (even if it means it wou
 
 ## Phase 5: "Look ma!, I'm in the newspaper"
 
-When you have a clear business need (great business success) and a respectable security budget, start looking for a Director of Security (or VP Security or CISO) that can fit into your organization. This is a process that can take many months. The reason is the requirement for high technical skills needed in the first stages, and taking responsibility off the CEO/CTO that require other traits, such as participating in the sales cycle, and signing official company papers. And of course the security officer, must fit into your organisation's culture. A live example of such person can be found in this video:[https://www.infoq.com/presentations/security-etsy](https://www.infoq.com/presentations/security-etsy).
+When you have a clear business need (great business success) and a respectable security budget, start looking for a Director of Security (or VP Security or CISO) that can fit into your organization. This is a process that can take many months. The reason is the requirement for high technical skills needed in the first stages, and taking responsibility off the CEO/CTO that require other traits, such as participating in the sales cycle, and signing official company papers. And of course the security officer must fit into your organisation's culture. A live example of such person can be found in this video:[https://www.infoq.com/presentations/security-etsy](https://www.infoq.com/presentations/security-etsy).
 
 ### Deciding on a budget - Build a Threat Model
 
