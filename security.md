@@ -27,7 +27,7 @@
 
 * Use your password manager to share passwords, credentials and secret notes.
 
-* Stop using USB thumb drives: make it a black-and-white company culture to keep those nasty devices completely away from any computer. They are the [fastest way for a hacker to take control of your system](https://www.youtube.com/watch?v=CvI_mrQYaF8). Teach your staff to recognose and identify them as a major threat!
+* Stop using USB thumb drives: make it a black-and-white company culture to keep those nasty devices completely away from any computer. They are the [fastest way for a hacker to take control of your system](https://www.youtube.com/watch?v=CvI_mrQYaF8). Teach your staff to recognise and identify them as a major threat!
 
 * For more background information read the [DBIR Report](https://www.google.com/search?q=DBIR%2520Report).
 
