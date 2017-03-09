@@ -57,7 +57,7 @@ You would need at least one domain for your website, one for your API, and one f
 
 * A third domain is needed for internal use and back office. This domain would probably be registered anonymously, so it would be a little more difficult to find.
 
-### Use SSL where possible
+### Use SSL/TLS/HTTPS everywhere!
 
 Use SSL anywhere possible. In your website, your API, your back office servers, and if it's not too difficult even between internal services.
 
