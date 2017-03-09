@@ -146,7 +146,11 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * There are extra protection products on top of an antivirus called EDR (Cyberreason, BlackCobalt) but these are usually costly.  
 
-### Physical security
+### Physical Security
+
+* Configure laptops to sleep after (at most) 5 minutes you are away from your desk, and require a password to re-open it. Ask employees to lock their laptops manually when they leave their desks, for example using [hot corners on macOS](https://support.apple.com/kb/PH18796), or by pressing logo key + L on Windows.
+
+* Never let a stranger within arms reach of a computer (especially if it has a USB port). Physical access is the fastest way to getting your system and product and customers compromised.
 
 * Remind employees to lock all the doors and windows before they go home, and to enable the alarm.
 
