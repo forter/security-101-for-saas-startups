@@ -78,9 +78,11 @@ Remember that SSL encrypts network traffic, but does not supply authentication. 
 
 * There is also regulatory implications in which country the data center resides (Data Residency). For European customers, this could be a deal breaker, and later moving to another region might be cost prohibitive.
 
-### API key
+### API management
 
-If your company exposes APIs (as a service), make sure each one of your customers have their own API key, Otherwise your service could go down, when one of the customer's QA's has a bug in their testing script.
+If your company exposes APIs (as a service), make sure each one of your customers have their own access credentials, Otherwise your service could go down, when one of the customer's QA's has a bug in their testing script. 
+
+* Consider using an API management solution, rather than rolling your own. These provide browser2server mobile2server and server2server auth token support, including revokation of tokens and integration with standard protocols.  
 
 ### Working with Git
 
