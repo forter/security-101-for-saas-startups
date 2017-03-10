@@ -160,6 +160,8 @@ However, if you decide to develop your own authentication implementation, follow
 
 * Add a code to the front door during office hours, to deter office thefts. Ask employees to approach strangers in the office if they are not with another employee.
 
+* Lock your server room (or the room with your network equipement)
+
 ### Preventing your cloud servers from being compromised
 
 * Review the cloud firewall configuration to make sure there are no embarrassing mistakes.
