@@ -57,6 +57,8 @@ You would need at least one domain for your website, one for your API, and one f
 
 * A third domain is needed for internal use and back office. This domain should be instantly and recognisably distinct, easy and quick to type. Some companies use a subdomain of the company domain. However, this means it could not be managed by backoffice service developers that need to update it frequently for small internal services. A subdmoain might also cause confusion which sites are internal, and which sites are public. There is also a side benefit if you register this domain anonymously. In most cases the domain name resolution server is internal too (private Route53 domains).
 
+* [High volume email](http://resources.mailgun.com/email-reputation.html) senders should maintain separate domains or subdomains for their marketing, transactional and corporate mail. This isolates the reputation of each type of email and assures that time-sensitive transactional and company mail won't be delayed or marked as spam. When using a seperate email marketing domain, make sure you are not [snowshoe spamming](https://www.spamhaus.org/faq/section/Glossary#233) and make sure to use web forwarding to your company or service website so your customers can find you. 
+
 ### Use SSL/TLS/HTTPS everywhere!
 
 Use SSL anywhere possible. In your website, your API, your back office servers, and if it's not too difficult even between internal services.
