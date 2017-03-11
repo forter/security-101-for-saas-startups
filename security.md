@@ -168,7 +168,7 @@ However, if you decide to develop your own authentication implementation, follow
 
 * Review the cloud firewall configuration to make sure there are no embarrassing mistakes.
 
-* Open an email group and name it [security@mycompany.com](mailto:security@mycompany.com) and add a page on your website to report security incidents to this email.
+* Open an email group and name it [security@mycompany.com](mailto:security@mycompany.com) and add a page on your website to report security incidents to this email. Security researches may prefer sending an encrypted email, so you should [generate an OpenPGP key pair](https://gpgtools.org/), publish your public key on the website and save the private key in your password manager.
 
 * In order to get alerts when there are serious known vulnerabilities, that everyone knows about (except you) open a Zapier account and with a few click connect vulnerability RSS feed to Pagerduty. Here is the RSS feed and a sample Zapier filter configuration
 
