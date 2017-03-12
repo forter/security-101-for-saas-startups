@@ -13,7 +13,7 @@
 * Explain to your employees not to use their "home" or “personal” password. They have most likely been exposed, or would be exposed. See [https://haveibeenpwned.com](https://haveibeenpwned.com)
 
 * Explain how to choose the password manager's password. There's a[ short video by Sophos](https://nakedsecurity.sophos.com/2014/10/01/how-to-pick-a-proper-password) that explains it.
-![how to pick a proper password](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_0.png)
+![how to pick a proper password](/images/image_0.png)
 
 ### Phishing emails, porn and torrents are the devil in disguise
 
@@ -262,7 +262,7 @@ The financial impact of a data leak (business loss, and compensation) could brin
 
 * As part of your security training explain to employees what consists of private information, and how do you handle it in your organization.
 The [Future of Privacy Forum published a visual guide](https://fpf.org/wp-content/uploads/2016/04/FPF_Visual-Guide-to-Practical-Data-DeID.pdf) that can help you get started.
-![privacy visual guide](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_2.png)
+![privacy visual guide](/images/image_2.png)
 
 * Explain to your employees you are not going to fire anyone for making a mistake. Beg them to notify you ASAP when a mishap happened so you could fix the problem and limit the damage. Stand behind this promise. Explain the difference between an intentional insider leaking data and an unfortunate human error. This needs to be talked about since different employees come from different cultural and work backgrounds and may react in the wrong way.
 
@@ -356,7 +356,7 @@ One of the first steps the new security manager will do, is to assess the differ
 
 For a high level starting point you can look at the relative statistics provided by the DBIR Report:
 
-![DBIR report industry stats](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_3.png)
+![DBIR report industry stats](/images/image_3.png)
 
 For a more detailed list that is based on the DBIR report, look at Appendix B and C of the [CIS CONTROLS FOR EFFECTIVE CYBER DEFENSE](https://www.cisecurity.org/critical-controls/) document.
 
