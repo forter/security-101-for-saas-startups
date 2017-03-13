@@ -1,16 +1,16 @@
 # Security 101 for SaaS startups
 
-## Things I wish my first boss had told me
+## 真希望我的第一个老板告诉我这些
 
-So you are working at a startup, and you have been wondering at what point should you start looking into security considerations and compliance? Which technical debt should be postponed for a later stage, and which systems should be hardened this instant? What are the main considerations?
+如果你在一家初创企业工作，并一直在思考应该在何时开始研究安全注意事项和合规性？哪些技术债务应该推迟到以后，哪些系统应该马上强化？主要考虑因素是什么？
 
-Technical debt gets piled up, and in many cases it is easier to pay later rather than now. For example, if you are using ElasticSearch without username/passwords, you should double check your firewall settings. After round-B your startup would probably have the manpower and budget to properly secure the ElasticSearch cluster.
+技术债务越堆越高，并且多数情况下比起现在偿还拖到以后会更容易。比如，如果你不是用用户名密码的方式使用ElasticSearch，你应该再三检查你的防火墙设置。等到B轮融资之后，你的初创企业很可能有了足够的人力物力来正确的保障ElasticSearch集群。
 
-Startup culture is a bit more difficult to change "later". Let's take a trivial example. Developers that are used to pushing code without code review, would complain that peer review would bog down the development, and it might even smell "too corporate" for them.
+初创企业文化使得它更难“以后”再改。让我看一个简单的例子。习惯于不做代码审查而直接提交的开发者，会抱怨说同行评审会拖慢整个开发，并让他们觉得这“太企业”。
 
-So which security considerations are relevant at an early stage?
+那么早期应该做哪些安全方面的考虑？
 
-* What security concerns were raised by customers willing to pay for your product?
+* 产品中的哪些安全特性是客户愿意买单的？
 
 * What are the security expectations  in your industry (Medical, Finance, Enterprise)?
 
