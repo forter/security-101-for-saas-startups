@@ -12,20 +12,20 @@
 
 * 产品中的哪些安全特性是客户愿意买单的？
 
-* What are the security expectations  in your industry (Medical, Finance, Enterprise)?
+* 你们产业（医疗，金融，企业）对安全的期待是什么？
 
-* What are the target market (country) regulations (Data Privacy, Data Residency)? Europeans are known to have tougher regulations. Different US States have different regulations.
+* 目标市场（国家）法规（数据隐私，数据驻留）是什么？众所周知欧洲国家有更严格的法规。美国各州有不一样的法规。
 
-* Which tools and policies would not hurt your team's morale.
+* 哪些工具和政策不会伤害你的团队的士气。
 
-* How long would it take you to prepare a security risk plan (see example at the bottom of this document)?
+* 您需要多长时间准备安全风险计划（参见本文档底部的示例）？
 
-    * What is the impact of Intellectual Property theft, business plans theft, bitcoin/ec2 theft, losing all your data ? How would it affect your sales, customers, investors?
+    * 知识产权盗窃，商业计划盗窃，比特币/ec2盗窃，丢失所有数据的影响是什么？它将如何影响您的销售，客户，投资者？
 
-    * How can you protect against a data breach?
+    * 如何防止数据泄露？
 
-    * How can you reduce the exposure after a data breach?
+    * 如何在数据泄露后减少损失？
 
-We grouped together the expected security recommendations by the different phases a start-up goes through. The more money and data the startup handles, the bigger the investment in security:
+我们归纳总结了一个初创企业在各个阶段所期待的安全建议，初创企业所掌握的资金和数据越多，那么对于安全的投资也要越多：
 
-[continue reading](https://github.com/forter/security-101-for-saas-startups/blob/master/security.md)
+[继续阅读](https://github.com/forter/security-101-for-saas-startups/blob/chinese/security.md)
