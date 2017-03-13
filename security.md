@@ -173,7 +173,7 @@ However, if you decide to develop your own authentication implementation, follow
 * In order to get alerts when there are serious known vulnerabilities, that everyone knows about (except you) open a Zapier account and with a few click connect vulnerability RSS feed to Pagerduty. Here is the RSS feed and a sample Zapier filter configuration
 
 * [https://nvd.nist.gov/download/nvd-rss.xml](https://nvd.nist.gov/download/nvd-rss.xml)
-![security rss filter](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_1.png)
+![security rss filter](/images/image_1.png)
 
 * It is very difficult at a later stage to separate the production network from the development network. In AWS, security is most easily managed on an account level, so a development VPC should be on a separate account in the same organisation. Usually there are three accounts. One for Consolidated Billing, one for production, and another one for everything else (development and back office that are configured via network ACLs to communicate only with your office).
 
