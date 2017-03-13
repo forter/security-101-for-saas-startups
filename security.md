@@ -221,6 +221,8 @@ However, if you decide to develop your own authentication implementation, follow
 
 * Some (small) companies define that all developers are admins. Your auditor might accept that and add a comment about that in their report.
 
+* Reduce friction by balancing security with user expirience. The last thing you want are developers that stop caring and start believing the rules don't apply to them. Look for signs of [Security Fatigue](https://www.nist.gov/news-events/news/2016/10/security-fatigue-can-cause-computer-users-feel-hopeless-and-act-recklessly) and address the problems quickly.
+
 ### Use change management for every production-affecting change
 
 At this point you should already have automated testing, and (at least semi-) automatic of upgrading and downgrading production versions. The next step is to make sure the production system is immutable. Meaning, [a server that is once deployed, is never modified](https://martinfowler.com/bliki/ImmutableServer.html), merely replaced with a new updated instance.
