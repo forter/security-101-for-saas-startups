@@ -57,7 +57,7 @@ You would need at least one domain for your website, one for your API, and one f
 
 * A third domain is needed for internal use and back office. This domain should be instantly and recognisably distinct, easy and quick to type. Some companies use a subdomain of the company domain. However, this means it could not be managed by backoffice service developers that need to update it frequently for small internal services. A subdmoain might also cause confusion which sites are internal, and which sites are public. There is also a side benefit if you register this domain anonymously. In most cases the domain name resolution server is internal too (private Route53 domains).
 
-* [High volume email](http://resources.mailgun.com/email-reputation.html) senders should maintain separate domains or subdomains for their marketing, transactional and company mail. This isolates the reputation of each type of email and assures that time-sensitive transactional and company mail won't be delayed or marked as spam. When using a seperate email marketing domain, make sure you are not [snowshoe spamming](https://www.spamhaus.org/faq/section/Glossary#233) and make sure to use web forwarding to your company or service website so your customers can find you. 
+* [High volume email](http://resources.mailgun.com/email-reputation.html) senders should maintain separate domains or subdomains for their marketing, transactional and company mail. This isolates the reputation of each type of email and assures that time-sensitive transactional and company mail won't be delayed or marked as spam. When using a separate email marketing domain, make sure you are not [snowshoe spamming](https://www.spamhaus.org/faq/section/Glossary#233) and make sure to use web forwarding to your company or service website so your customers can find you. 
 
 ### Use SSL/TLS/HTTPS everywhere!
 
@@ -84,7 +84,7 @@ Remember that SSL encrypts network traffic, but does not supply authentication. 
 
 If your company exposes APIs (as a service), make sure each one of your customers have their own access credentials, Otherwise your service could go down, when one of the customer's QA's has a bug in their testing script. 
 
-* Consider using an API management solution, rather than rolling your own. These provide browser2server mobile2server and server2server auth token support, including revokation of tokens and integration with standard protocols.  
+* Consider using an API management solution, rather than rolling your own. These provide browser2server mobile2server and server2server auth token support, including revocation of tokens and integration with standard protocols.  
 
 ### Working with Git
 
@@ -100,7 +100,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Startups that target enterprise customers or that work in a regulated environment usually enable 2FA from day one.
 
-* A well established and easy to use 2FA implementation is [TOTP 2FA implimentation](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm). Employees can install [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) on their mobile phone and it would produce a one-time 6 digit code that needs to be typed in addition to the password 
+* A well established and easy to use 2FA implementation is [TOTP 2FA implementation](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm). Employees can install [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) on their mobile phone and it would produce a one-time 6 digit code that needs to be typed in addition to the password 
 
 * A slightly more usable approach are push notifications. Many SaaS vendors support an app that instead of generating codes, sends you a push notification. That is more convenient than copying 6 digits each time you need to log-in. The downside is that you would probably need different apps for each service, and that it won't work without an internet connection, or when the push notification vendor has downtime.
 
@@ -164,7 +164,7 @@ However, if you decide to develop your own authentication implementation, follow
 
 * Add a code to the front door during office hours, to deter office thefts. Ask employees to approach strangers in the office if they are not with another employee.
 
-* Lock your server room (or the room with your network equipement)
+* Lock your server room (or the room with your network equipment)
 
 ### Preventing your cloud servers from being compromised
 
