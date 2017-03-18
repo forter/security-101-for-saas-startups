@@ -132,25 +132,23 @@
 
 * VPN连接也应当启用两步验证。
 
-### Antivirus/Firewall
+### 防病毒软件/防火墙
 
-* It's very easy to install an Endpoint Security Product. Make sure the product supports the operating system of all of your laptops. Configure automatic updates, send an email alerts (could be noisy), and block all incoming connections. The last one is important for developers running servers locally.
+* 安装端点安全产品是很简单的。请确保产品支持所有笔记本电脑的操作系统。配置自动更新，发送邮件提醒（可能有点吵），阻止所有传入连接。最后一点对于在本地运行服务器的开发这很重要。
 
-* It is better to install the antivirus before the employee arrives, as there are many developers that installing an antivirus turns them down.
+* 在员工就位之前安装防病毒软件更好，因为安装防病毒软件这件事会让很多开发者不高兴。
 
-* Most products have an export/import functionality, which makes it easier to set up.
+* 大多数产品都有导入／导出功能，这使得他们较容易安装。
 
-* There are extra protection products on top of an antivirus called EDR (Cyberreason, BlackCobalt) but these are usually costly.  
+* 还有一些在防病毒软件之上的额外保护的产品叫做EDR（Cyberreason，BlackCobalt）但他们通常很贵。
 
-### Hash your customer's passwords with a proper password hashing function
+### 用合适的散列（哈希）函数转化你用户的密码
 
+如果你支付得起，使用一个[第三方登陆验证服务](#customer-users-management)来保存密码，管理密码，恢复密码，两步验证甚至更多。一些供应商提供按月活跃用户收费的策略可以满足你的预算。
 
-If you can afford it, use a [third party authentication service](#customer-users-management) to handle password storage, password management, password recovery, two factor auth and more. Some vendors offer Monthly Active Users pricing which can fit your budget.
+然而，如果你决定开发你自己的登陆验证服务，遵从[OWASP登陆验证指南](https://www.owasp.org/index.php/Authentication_Cheat_Sheet)。
 
-However, if you decide to develop your own authentication implementation, follow the [OWASP authentication guidelines](https://www.owasp.org/index.php/Authentication_Cheat_Sheet) . 
-
-* If your database was breached and published it's much worse when your customers' passwords are included and easily cracked - folks reuse passwords. [It's true](http://mashable.com/2017/02/28/passwords-reuse-study-keeper-security). Therefore, always use hashing function *specifically designed for password storage* to store customers passwords in your database: bcrypt, PBKDF2 or scrypt with a work factor that takes [about 1 second for the password hash](http://security.stackexchange.com/a/3993/69959). Do not use MD5, SHA1 or other hashes that are *not specifically designed for passwords*. Passwords stored like this are cracked in seconds usually.
-
+* 如果你的数据库遭到入侵并被公开，更差的事是你的用户密码也包含在内并且可以轻易破解 - 人们喜欢用同样的密码。[这是真的](http://mashable.com/2017/02/28/passwords-reuse-study-keeper-security)。因此，永远都使用*专为密码存储而设计*的散列函数来保存用户密码： bcrypt，PBKDF2或带一个参数的scrypt，[其需要花1秒钟运算](http://security.stackexchange.com/a/3993/69959)。不要使用MD5，SHA1或其他*不是专为密码而设计*的哈希方法。这种方式存储的密码通常只需要几秒就能破解。
 
 ### Physical Security
 
