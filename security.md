@@ -45,17 +45,16 @@
 
 ### 修复已知的漏洞
 
-Most operating systems (on your laptop or the cloud) have an option for automatic security upgrades. It's a one liner configuration in most cases. This could reduce the attack surface about 10 times.
+绝大多数操作系统（在你笔记本上或着云端）都有一个自动安全升级的选项。通常他只需一行配置，但可以10倍减少可被攻击的范围。
 
-### Buy at least 2 or 3 domain names
+### 买至少2到3个域名
 
-You would need at least one domain for your website, one for your API, and one for internal use.
+你至少需要一个域名给你的网站，一个给你的API，一个内部使用。
 
-* The first domain is usually the company's official name or brand. It used for outbound marketing (the website) and for employee emails. Both would probably be managed by an external service provider. Protect this email domain with SPF and DKIM. It's not that complicated and reduces phishing attempts in which hackers imposter your managers or admins. Many security incidents start with an employee opening a phishing email so this is important.
+* 第一个域名通常是公司的正式名字或者品牌。他作为对外营销（网站）和员工电子邮件。两者通常由第三方服务提供商管理。用SPF和DKIM保护这个邮件域名。这其实没有那么困难并可以减少黑客攻击你的经理或管理员的钓鱼尝试。许多安全事故食欲员工打开钓鱼邮件，因此这很重要。
+* 第二个域名是SaaS服务本身需要的，例如rest api。参见www.google.com之于www.gmail.com之于maps.googleapis.com。这个域名需要额外关照，和公司域名不同，他很可能需要架设在AWS Route53上，并由他们的服务工程师团队管理。
 
-* The second domain is required for the saas service itself - for example the rest api endpoint. Think www.google.com vs www.gmail.com vs maps.googleapis.com . This domain requires extra care, and unlike the company domain it would probably be hosted in AWS route 53 and managed by the service engineering team itself.
-
-* A third domain is needed for internal use and back office. This domain should be instantly and recognisably distinct, easy and quick to type. Some companies use a subdomain of the company domain. However, this means it could not be managed by backoffice service developers that need to update it frequently for small internal services. A subdmoain might also cause confusion which sites are internal, and which sites are public. There is also a side benefit if you register this domain anonymously. In most cases the domain name resolution server is internal too (private Route53 domains).
+* 第三个域名用来作为内部使用和后台。这个域名需要明显于其他两个不同，并且容易写。有些公司使用公司域名的二级域名。但是，这也意味着它不能由需要为小型内部服务频繁更新的后台服务开发人员管理。二级域名还会让人混淆 - 到底哪个是内部使用，哪个是外部可见。还有一个附带的好处是如果你匿名注册这个域名。大多数情况余名解析服务也是内部的（私有Route53域名）。
 
 * [High volume email](http://resources.mailgun.com/email-reputation.html) senders should maintain separate domains or subdomains for their marketing, transactional and company mail. This isolates the reputation of each type of email and assures that time-sensitive transactional and company mail won't be delayed or marked as spam. When using a seperate email marketing domain, make sure you are not [snowshoe spamming](https://www.spamhaus.org/faq/section/Glossary#233) and make sure to use web forwarding to your company or service website so your customers can find you. 
 
