@@ -162,9 +162,9 @@
 
 * 锁好你的服务器房间（或者你的网络设备的房间）
 
-### Preventing your cloud servers from being compromised
+### 防止云服务器受到威胁
 
-* Review the cloud firewall configuration to make sure there are no embarrassing mistakes.
+* 查看云防火墙配置，以确保没有尴尬的错误。
 
 * Open an email group and name it [security@mycompany.com](mailto:security@mycompany.com) and add a page on your website to report security incidents to this email. Security researches may prefer sending an encrypted email, so you should [generate an OpenPGP key pair](https://gpgtools.org/), publish your public key on the website and save the private key in your password manager.
 
