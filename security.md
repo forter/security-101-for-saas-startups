@@ -158,9 +158,9 @@
 
 * 提醒员工在离开时锁好门窗，并启动警报器。
 
-* Add a code to the front door during office hours, to deter office thefts. Ask employees to approach strangers in the office if they are not with another employee.
+* 在工作时间，给前门添加一个密码，以防止办公室盗窃。要求员工走向没有其他员工陪同的陌生人。
 
-* Lock your server room (or the room with your network equipement)
+* 锁好你的服务器房间（或者你的网络设备的房间）
 
 ### Preventing your cloud servers from being compromised
 
