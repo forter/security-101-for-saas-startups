@@ -4,24 +4,24 @@
 
 * 任何产品至少都会有一个用户：管理员。当你的小型初创企业有大约4人时，你至少可以把缺省的管理员密码换成一个复杂的然后分享给密码管理器并负责共享给别人。
 
-* 共享的目的，是避免出现当只有一个雇员有对系统的权限，而其他雇员需要的情况。
+* 共享的目的，是避免出现当只有一个员工有对系统的权限，而其他员工需要的情况。
 
 * 理想的情况是每个人在每个服务上有自己的账号。一个折中的方法是创建一个'admin'(特殊情况下使用)，一个'developer'(作为日常工作用)，一个'service'(给程序使用)。这样做的意义是当你的一位开发者(developer)离开的时候你不需要替换你的服务(service)密码。
 
-* 解释给你的雇员听，他们需要最后记住两个密码：笔记本的密码和密码管理器的密码。
+* 解释给你的员工听，他们需要最后记住两个密码：笔记本的密码和密码管理器的密码。
 
-* 解释给你的雇员听，不要使用他们的家庭或个人密码。否则密码很容易被公开或者已经公开。参见 [https://haveibeenpwned.com](https://haveibeenpwned.com)
+* 解释给你的员工听，不要使用他们的家庭或个人密码。否则密码很容易被公开或者已经公开。参见 [https://haveibeenpwned.com](https://haveibeenpwned.com)
 
 * 解释如何选择密码管理器的密码。这里有一个[简短的视频(作者Sophos)](https://nakedsecurity.sophos.com/2014/10/01/how-to-pick-a-proper-password)可以帮你解释。
 ![如果选择合适的密码](/images/image_0.png)
 
 ### 钓鱼邮件，色情和bt是伪装的魔鬼
 
-* 雇员很可能同时用他们的工作笔记本在家作为个人电脑使用。这很正常。但是，从第一天起，解释给你的雇员，不要用于bt下载，或者色情或其他有问题的网站。请他们买一个二手笔记本用于那些目的。
+* 员工很可能同时用他们的工作笔记本在家作为个人电脑使用。这很正常。但是，从第一天起，解释给你的员工，不要用于bt下载，或者色情或其他有问题的网站。请他们买一个二手笔记本用于那些目的。
 
-* 如果你被黑了，很可能是从一位雇员点击一封钓鱼邮件开始的。作为你的初创企业有趣活动之一： [钓鱼测试](https://www.google.com/search?q=Phishing+Quiz).
+* 如果你被黑了，很可能是从一位员工点击一封钓鱼邮件开始的。作为你的初创企业有趣活动之一： [钓鱼测试](https://www.google.com/search?q=Phishing+Quiz).
 
-* 停止使用邮件附件。习惯于打开邮件附件的雇员总会不小心安装恶意软件。可以用Google Drive来分享文档，或者你在一个受监管的环境可以[付费使用Box](https://www.box.com/security/it-admin-controls)。
+* 停止使用邮件附件。习惯于打开邮件附件的员工总会不小心安装恶意软件。可以用Google Drive来分享文档，或者你在一个受监管的环境可以[付费使用Box](https://www.box.com/security/it-admin-controls)。
 
 * 其他内部交流使用Slack。电子邮件是用来联系客户和供应商。
 
@@ -99,29 +99,29 @@
 
 * 目标定位企业用户或在监管环境中工作的初创企业，通常在第一天就启用两步验证。
 
-* 这里有一个完整并容易使用的两步验证实现：[TOTP 2FA implementation](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm)。雇员可以安装[Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) 在他们的手机上，他将生成一次性6位数字随密码输入。
+* 这里有一个完整并容易使用的两步验证实现：[TOTP 2FA implementation](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm)。员工可以安装[Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) 在他们的手机上，他将生成一次性6位数字随密码输入。
 
 * 一个更容易使用的方式是通过推送。很多SaaS供应商提供一个app，它会收到一个推送而不是生成密码。这比每次登陆复制一个6位数字要方便很多。缺点是，你可能需要不同的app对应不同的服务，而且没有网络不行，或者推送提供商下线时也不工作。
 
-* 手机端两步验证的问题始于一个雇员丢失／遗忘／替换他们的手机，或电池没电，然后他们就登入不了系统。有些雇员不喜欢强化他们的手机（加密，锁屏以保护两步验证app），并感觉公司需要为两步验证的app买一台手机给他们。这也是为什么一些组织用yubikey（一个小型的usb设备可以识别用户指压）。类似于手机推送，yubikey防止恶意软件和黑客窃取你的键入信息。缺点是，与他们的手机不同，yubikey更可能与笔记本一起丢失。所以如果一个偷来的笔记本落入专家手中，专家可以从笔记本中得到密码然后还可以用yubikey登陆任意服务。另一个问题是，yubikey是一个USB设备，那你需要能将U盘（不允许）和yubikey（允许）区别开。 
+* 手机端两步验证的问题始于一个员工丢失／遗忘／替换他们的手机，或电池没电，然后他们就登入不了系统。有些员工不喜欢强化他们的手机（加密，锁屏以保护两步验证app），并感觉公司需要为两步验证的app买一台手机给他们。这也是为什么一些组织用yubikey（一个小型的usb设备可以识别用户指压）。类似于手机推送，yubikey防止恶意软件和黑客窃取你的键入信息。缺点是，与他们的手机不同，yubikey更可能与笔记本一起丢失。所以如果一个偷来的笔记本落入专家手中，专家可以从笔记本中得到密码然后还可以用yubikey登陆任意服务。另一个问题是，yubikey是一个USB设备，那你需要能将U盘（不允许）和yubikey（允许）区别开。 
 
 * 用短信作为两步验证是不建议的，应该被禁用。一个有经验的黑客可以说服你的手机网络客户[从你的线挪到他的](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/)。并且最近有爆料说有8亿android设备上有[恶意软件读取短信](http://thehackernews.com/2016/11/hacking-android-smartphone.html)。
 
-* Using voice phone calls as a 2nd factor should also be disabled. Hackers will simply try to log in when your phone is offline and hack into your voice mailbox by guessing your 4 digit code, that you probably never changed.
+* 用语音电话作为第二步验证也应该被禁用。黑客会轻易在你手机不在线时，通过猜测你可能从来不改的4位数字密码尝试登入并进入你的语音信箱。
 
-* If an employee asks for a password reset remotely, ask them to come into the office in person if possible. If this is not feasible (or time-sensitive), verify their identify: do not trust that you can recognize your employee's voice. Never email passwords.
+* 如果一个员工要求远程重置他的密码，如果可以请他亲自到公司来。如果条件不允许（或者时间紧张），验证他们的个人信息：不要相信你自己可以识别员工的声音。永远不要给邮件密码。
 
-### Insider stealing information from the organisation
+### 内部人员从组织窃取信息
 
-* Prepare a checkout form for leaving/terminated employees. Make a list with all of the services that requires de-provisioning/suspending (remember the Whatsapp group too, and while we're at it don't send the door password over Whatsapp).
+* 准备一个勾选表单，给离职／解雇的员工用。列出所有需要取消授权/挂起的服务（还有Whatsapp组。我们在的时候，不通过WhatsApp发送门密码）。
 
-* Check Google Docs logs (or similar) if a terminated employee has downloaded sensitive information.
+* 检查Google Docs日志看是否有解雇员工下载敏感信息。
 
-* Most Endpoint Security Products can also be configured to prevent the usage of devices (such as USB, Bluetooth, Mobiles) for copying data out of the laptops.
+* 多数终端安全产品可以被配置成阻止用配备（如USB，蓝牙，手机）拷贝数据出笔记本。
 
-* In case the terminated employee had access to admin passwords, it is recommended to replace passwords to sensitive systems.
+* 如果结果的员工曾有管理员密码，推荐更换敏感系统的密码。
 
-* When hiring a new employee ask their former colleagues about their personality type, and the way they left their previous company. Please note that at least in Israel it's illegal to ask an employee to present a criminal record sheet.
+* 当雇佣一个新员工时，向他们的前同事打听他们的人品问题，并询问他们离职的原因。请注意至少在以色列要求员工提供犯罪记录是违法的。
 
 ### VPN
 * 寻找可以安装办公VPN的集成应商相对容易一些（不要自己安装）。
