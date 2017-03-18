@@ -69,13 +69,13 @@
 牢记SSL加密网络流量，但不做认证。也不是两步认证(2FA)的替代品。
 
 
-### 选择SaaS提供商
+### 选择SaaS供应商
 
-* Once committed to an infrastructure vendor, it is difficult to switch them. In the future you would need to screen vendors that have access to your organisation's data. Therefore, for cloud infrastructure try choosing one of the big vendors (Amazon, Google, Microsoft), or at least a vendor with a SOC2 Type2 certification (for infrastructure vendors), PCI for payment vendors, or any other relevant certification or compliance for that industry.
+* 一旦选择基础架构供应商，就很难再切换了。未来，你可能需要减少供应商对你的组织的数据的访问。因此，在选择云端基础架构供应商时，尽量选择大的供应商（Amazon, Google, Microsoft），或至少拥有SOC2 Type2证书的供应商（针对基础架构供应商而言），拥有PCI的支付供应商，或其他有相关领域资质的供应商。
 
-* This doesn't mean their service is good. It means down the road you won't need to replace them even if their service is good.
+* 这并不意味他们的服务就是好的。而是接下来你不需要替换他们尽管他们的服务是好的。
 
-* By default AWS users choose Oregon (us-west-2). If you know where your target market is, you should start with a datacenter closer to the target market.
+* 缺省AWS用户选择俄勒冈（us-west-2）。如果你知道你的目标市场在哪里，你应该让你的数据中心靠近你的目标市场。
 
 * There is also regulatory implications in which country the data center resides (Data Residency). For European customers, this could be a deal breaker, and later moving to another region might be cost prohibitive.
 
@@ -122,14 +122,13 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 * When hiring a new employee ask their former colleagues about their personality type, and the way they left their previous company. Please note that at least in Israel it's illegal to ask an employee to present a criminal record sheet.
 
 ### VPN
+* 寻找可以安装办公VPN的集成应商相对容易一些（不要自己安装）。
 
-* It is relatively easy to find integration vendors that can install an office VPN (don't do it yourself).
+* 将VPN部署在办公室，以及给办公室的网络使用静态IP地址，可以让你对服务器的管理访问进行限制。例如，你可以将它设置成只允许从办公室访问，或从家中连接办公室的VPN，而不用对整个互联网公开22端口（SSH）。
 
-* A combination of a VPN deployed in the office and a static IP address for the office internet allows you to restrict management access to servers. For example, instead of opening port 22 (SSH) to the entire internet, you allow only access from the office, or from home when connected to the office's VPN.
+* 基于云的VPN（例如安装在ec2上）还具有几个优点。首先，办公室和云之间的所有通信都是加密的（尤其是当你访问数据存储，如不带SSL的elastic search时）。对于远程工作人员来说，网络性能也要好得多。此外，它在一定程度上能够减少对物理安全性的需要，因为那里并没有网络设备（办公室仅仅是某个咖啡店而已）。而它的缺点是，每当你断开办公室网络连接，你需要重新连接到VPN。
 
-* Alternatively a cloud based VPN (installed on ec2 for example) has a few more advantages. First, all of the communication between the office and the cloud is encrypted (especially important if you are accessing data stores such as elastic search without SSL). The network performance is much better for remote workers that are physically located far from the office. Also, it relaxes the need for physical security somewhat since there is no network equipment there (the office is just another coffee shop). The downside is that each time you get disconnected from the office network you need to reconnect to the VPN.
-
-* VPN connection should have 2nd factor enabled too.
+* VPN连接也应当启用两步验证。
 
 ### Antivirus/Firewall
 
