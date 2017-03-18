@@ -1,49 +1,49 @@
-## Phase 1: Working in the living room (or living at work)
+## 第一阶段：在客厅工作（或工作和休息在一起）
 
-### Sharing Admin Passwords
+### 共享管理员密码
 
-* Any product has at least one user - the admin. The minimum you could do when your small startup is about 4 people, is to replace the default admin password with a complex password and share it with a password manager that supports sharing.
+* 任何产品至少都会有一个用户：管理员。当你的小型初创企业有大约4人时，你至少可以把缺省的管理员密码换成一个复杂的然后分享给密码管理器并负责共享给别人。
 
-* The reason for sharing is to avoid a situation where only a single employee has permissions to the system, while another employee needs it.
+* 共享的目的，是避免出现当只有一个雇员有对系统的权限，而其他雇员需要的情况。
 
-* It is preferable to have a different user for each person for each service. A middle-ground is to create an ‘admin' (for special circumstances), developer (for day to day work) and ‘service' users (for your code). The idea is that when a developer leaves, you don't need to replace your service passwords.
+* 理想的情况是每个人在每个服务上有自己的账号。一个折中的方法是创建一个'admin'(特殊情况下使用)，一个'developer'(作为日常工作用)，一个'service'(给程序使用)。这样做的意义是当你的一位开发者(developer)离开的时候你不需要替换你的服务(service)密码。
 
-* Explain to your employees that eventually they need to memorize two passwords, your laptop's and the password manager's.
+* 解释给你的雇员听，他们需要最后记住两个密码：笔记本的密码和密码管理器的密码。
 
-* Explain to your employees not to use their "home" or “personal” password. They have most likely been exposed, or would be exposed. See [https://haveibeenpwned.com](https://haveibeenpwned.com)
+* 解释给你的雇员听，不要使用他们的家庭或个人密码。否则密码很容易被公开或者已经公开。参见 [https://haveibeenpwned.com](https://haveibeenpwned.com)
 
-* Explain how to choose the password manager's password. There's a[ short video by Sophos](https://nakedsecurity.sophos.com/2014/10/01/how-to-pick-a-proper-password) that explains it.
-![how to pick a proper password](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_0.png)
+* 解释如何选择密码管理器的密码。这里有一个[简短的视频(作者Sophos)](https://nakedsecurity.sophos.com/2014/10/01/how-to-pick-a-proper-password)可以帮你解释。
+![如果选择合适的密码](/images/image_0.png)
 
-### Phishing emails, porn and torrents are the devil in disguise
+### 钓鱼邮件，色情和bt是伪装的魔鬼
 
-* Employees would probably use their work laptop at home for their personal needs. That's fine. Nevertheless, from day one, explain your employees not to use it for torrents downloads or porn or any other shady website. Ask them to buy a 2nd hand laptop for that kind of stuff.
+* 雇员很可能同时用他们的工作笔记本在家作为个人电脑使用。这很正常。但是，从第一天起，解释给你的雇员，不要用于bt下载，或者色情或其他有问题的网站。请他们买一个二手笔记本用于那些目的。
 
-* If you got hacked it would most likely start with an employee clicking a link in a phishing email. As one of your fun startup activities play [phishing quiz](https://www.google.com/search?q=Phishing+Quiz).
+* 如果你被黑了，很可能是从一位雇员点击一封钓鱼邮件开始的。作为你的初创企业有趣活动之一： [钓鱼测试](https://www.google.com/search?q=Phishing+Quiz).
 
-* Stop using email attachments. Employees that are used to opening email attachments are the first ones to accidentally install a malware. Document sharing is Google Drive, or if you are in a regulatory environment then [Box that are more expensive](https://www.box.com/security/it-admin-controls).
+* 停止使用邮件附件。习惯于打开邮件附件的雇员总会不小心安装恶意软件。可以用Google Drive来分享文档，或者你在一个受监管的环境可以[付费使用Box](https://www.box.com/security/it-admin-controls)。
 
-* For other internal communication use Slack. Email is for contacting customers and vendors.
+* 其他内部交流使用Slack。电子邮件是用来联系客户和供应商。
 
-* Use your password manager to share passwords, credentials and secret notes.
+* 用密码管理器来分享密码，证书和秘密的笔记。
 
-* Stop using USB thumb drives: make it a black-and-white company culture to keep those nasty devices completely away from any computer. They are the [fastest way for a hacker to take control of your system](https://www.youtube.com/watch?v=CvI_mrQYaF8). Teach your staff to recognise and identify them as a major threat!
+* 停止使用U盘：明确禁止使用这些恶心的设备。他们是[黑客控制你系统最快的方法](https://www.youtube.com/watch?v=CvI_mrQYaF8)。教会你们员工把他们识别为最主要的威胁！
 
-* For more background information read the [DBIR Report](https://www.google.com/search?q=DBIR%2520Report).
+* 更多的背景信息请参考[DBIR报告](https://www.google.com/search?q=DBIR%2520Report).
 
-### Encryption today is only one click away
+### 今天开始加密，只需一个单击
 
-If your laptop gets lost or stolen, you would not want the data to be compromised.
+如果你的笔记本丢掉或者被偷，你不会想要你的数据一同泄漏。
 
-* Mac users can encrypt their drive with 1 click.
-* Windows users would need the Pro version and prefer laptop hardware that supports TPM.
-* Linux users would require disk reformatting.
+* Mac用户可以单击加密磁盘。
+* Windows用户需要Pro版本并硬件支持TPM。
+* Linux用户可能需要重新格式化。
 
-A note about choosing laptops. If in the future, you would need to control all laptops centrally due to compliance requirements (such as MDM), it is important to know that most vendors don't have linux support. Mac, Windows Pro, Android, iPhone - yes. Linux usually partial support or non-existent.
+关于选择笔记本的注意事项。如果将来，您需要根据合规性要求（例如MDM）集中控制所有笔记本电脑，需要知道大多数供应商并不支持Linux。他们支持Mac, Windows Pro, Android, iPhone。Linux通常部分支持或者不支持。
 
-Non-jailbroken iPhones are much more difficult to hack compared to Android. They also have screen lock and encryption enabled by default. Make sure that your managers and admins have screen lock on their phones, and encryption enabled.
+没有越狱的iPhone比起Android来要难破解许多。他们缺省还有屏幕锁和启用加密。确保你的经理和系统管理员有开启屏幕锁和启用加密。
 
-### Fixing known vulnerabilities
+### 修复已知的漏洞
 
 Most operating systems (on your laptop or the cloud) have an option for automatic security upgrades. It's a one liner configuration in most cases. This could reduce the attack surface about 10 times.
 
