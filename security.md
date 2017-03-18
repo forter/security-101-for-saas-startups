@@ -97,9 +97,9 @@
 
 * 对你使用的所有服务启用两步验证。这对你的开发团队尤其重要，因为如果这些服务被入侵，你的产品也将会下线。如Google accounts，Dropbox，Github，Microsoft等。所有都要！
 
-* Startups that target enterprise customers or that work in a regulated environment usually enable 2FA from day one.
+* 目标定位企业用户或在监管环境中工作的初创企业，通常在第一天就启用两步验证。
 
-* A well established and easy to use 2FA implementation is [TOTP 2FA implimentation](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm). Employees can install [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) on their mobile phone and it would produce a one-time 6 digit code that needs to be typed in addition to the password 
+* 这里有一个完整并容易使用的两步验证实现：[TOTP 2FA implementation](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm)。雇员可以安装[Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) 在他们的手机上，他将生成一次性6位数字随密码输入。
 
 * A slightly more usable approach are push notifications. Many SaaS vendors support an app that instead of generating codes, sends you a push notification. That is more convenient than copying 6 digits each time you need to log-in. The downside is that you would probably need different apps for each service, and that it won't work without an internet connection, or when the push notification vendor has downtime.
 
