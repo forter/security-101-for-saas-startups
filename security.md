@@ -77,23 +77,25 @@
 
 * 缺省AWS用户选择俄勒冈（us-west-2）。如果你知道你的目标市场在哪里，你应该让你的数据中心靠近你的目标市场。
 
-* There is also regulatory implications in which country the data center resides (Data Residency). For European customers, this could be a deal breaker, and later moving to another region might be cost prohibitive.
+* 数据中心所在国家（数据驻留）也存在监管影响。对于欧洲客户来说，这可能是一个决定性的因素，并且迁移到其他地区可能成本过高。
 
-### API key
+### API管理
 
-If your company exposes APIs (as a service), make sure each one of your customers have their own API key, Otherwise your service could go down, when one of the customer's QA's has a bug in their testing script.
+如果你们公司公开API（软件即服务），确保每一个客户都有他们自己的访问证书，否则你的服务可能会因为其中一个客户的测试脚本中有bug而下线。
 
-### Working with Git
+* 考虑使用一个API管理解决方案，而不是把自己搞进去。他们提供browser2server， mobile2server和server2server登陆令牌支持，包括吊销令牌和与标准协议整合。
 
-Working with git and pull-requests is the de-facto standard way of performing change management. Part of compliance requirements you would need to show that your startup has proper change management controls and tests. Better start now.
+### 使用Git
 
-Using git would allow you to add outsource/freelance developers for a limited time, by giving and then revoking commit permissions.
+在变更管理方面，使用git和pull-request是事实上的标准做法。部分合规性要求，你需要显示你的初创企业有适当的变更管理控制和测试。最好现在就开始。
 
-## Phase 2: Signing your first customer / Round A
+使用git可以让你通过给予和取消提交权限，来在一段时间内增加外包/自由开发者。
 
-### Be a little paranoid
+## 第二阶段：签下你的第一个用户 / A轮
 
-* Turn on 2FA for every service that you use. This is especially critical for your development team as those are the services that will take your product offline if they're compromised. Google accounts, Dropbox, Github, Microsoft, etc - all of them!
+### 稍微带一点偏执
+
+* 对你使用的所有服务启用两步验证。这对你的开发团队尤其重要，因为如果这些服务被入侵，你的产品也将会下线。如Google accounts，Dropbox，Github，Microsoft等。所有都要！
 
 * Startups that target enterprise customers or that work in a regulated environment usually enable 2FA from day one.
 
