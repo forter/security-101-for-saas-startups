@@ -101,11 +101,11 @@
 
 * 这里有一个完整并容易使用的两步验证实现：[TOTP 2FA implementation](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm)。雇员可以安装[Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) 在他们的手机上，他将生成一次性6位数字随密码输入。
 
-* A slightly more usable approach are push notifications. Many SaaS vendors support an app that instead of generating codes, sends you a push notification. That is more convenient than copying 6 digits each time you need to log-in. The downside is that you would probably need different apps for each service, and that it won't work without an internet connection, or when the push notification vendor has downtime.
+* 一个更容易使用的方式是通过推送。很多SaaS供应商提供一个app，它会收到一个推送而不是生成密码。这比每次登陆复制一个6位数字要方便很多。缺点是，你可能需要不同的app对应不同的服务，而且没有网络不行，或者推送提供商下线时也不工作。
 
-* Mobile phone 2FA problems start when an employee lost/forgot/replaces their mobile phone, or is stuck without battery, and then they are locked out of the system. Some employees don't like hardening their phone (encryption and screenlock to protect the 2FA app), and feel that the company needs to buy the phone for the 2FA app to run on. That's why some organizations use yubikey instead (a small usb plug that can sense human finger touch). Like a Mobile App Push notification, yubikey protects against malware and hackers that keylog your password. The downside is that unlike their mobile phones, employees are more likely to lose the yubikey together with their laptop. So if the stolen laptop falls into the hands of a professional that can extract the passwords from the laptop then they could also login to any service with the yubikey. Another problem is that the yubikey is a USB device, and you would need to make the distinction between USB storage devices (not allowed) and the yubikey (allowed). 
-* Using SMS as a 2nd factor is discouraged and should be disabled. An experienced hacker can convince your mobile network customer support to [move your line to his](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/) possession. Also recently it was discovered that 800M android devices
- had [a malware that reads SMSs](http://thehackernews.com/2016/11/hacking-android-smartphone.html).
+* 手机端两步验证的问题始于一个雇员丢失／遗忘／替换他们的手机，或电池没电，然后他们就登入不了系统。有些雇员不喜欢强化他们的手机（加密，锁屏以保护两步验证app），并感觉公司需要为两步验证的app买一台手机给他们。这也是为什么一些组织用yubikey（一个小型的usb设备可以识别用户指压）。类似于手机推送，yubikey防止恶意软件和黑客窃取你的键入信息。缺点是，与他们的手机不同，yubikey更可能与笔记本一起丢失。所以如果一个偷来的笔记本落入专家手中，专家可以从笔记本中得到密码然后还可以用yubikey登陆任意服务。另一个问题是，yubikey是一个USB设备，那你需要能将U盘（不允许）和yubikey（允许）区别开。 
+
+* 用短信作为两步验证是不建议的，应该被禁用。一个有经验的黑客可以说服你的手机网络客户[从你的线挪到他的](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/)。并且最近有爆料说有8亿android设备上有[恶意软件读取短信](http://thehackernews.com/2016/11/hacking-android-smartphone.html)。
 
 * Using voice phone calls as a 2nd factor should also be disabled. Hackers will simply try to log in when your phone is offline and hack into your voice mailbox by guessing your 4 digit code, that you probably never changed.
 
