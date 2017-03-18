@@ -56,20 +56,20 @@
 
 * 第三个域名用来作为内部使用和后台。这个域名需要明显于其他两个不同，并且容易写。有些公司使用公司域名的二级域名。但是，这也意味着它不能由需要为小型内部服务频繁更新的后台服务开发人员管理。二级域名还会让人混淆 - 到底哪个是内部使用，哪个是外部可见。还有一个附带的好处是如果你匿名注册这个域名。大多数情况余名解析服务也是内部的（私有Route53域名）。
 
-* [High volume email](http://resources.mailgun.com/email-reputation.html) senders should maintain separate domains or subdomains for their marketing, transactional and company mail. This isolates the reputation of each type of email and assures that time-sensitive transactional and company mail won't be delayed or marked as spam. When using a seperate email marketing domain, make sure you are not [snowshoe spamming](https://www.spamhaus.org/faq/section/Glossary#233) and make sure to use web forwarding to your company or service website so your customers can find you. 
+* [大批量邮件发送](http://resources.mailgun.com/email-reputation.html)服务应该针对目标市场，交际性质邮件，公司邮件分别维护域名或者二级域名。这可以隔绝每种邮件类型的名声并保证时间敏感的交易性质和公司邮件不会延迟或标记为垃圾邮件。当你使用独立的营销用邮件域名时，确保他不是[雪靴垃圾邮件](https://www.spamhaus.org/faq/section/Glossary#233)并保证使用web转发到你的公司或服务网站，好让你的客户找到你。
 
-### Use SSL/TLS/HTTPS everywhere!
+### 在所有地方使用SSL/TLS/HTTPS！
 
-Use SSL anywhere possible. In your website, your API, your back office servers, and if it's not too difficult even between internal services.
+在任何可以的地方使用SSL。在你的网站，API，后台服务，如果不是太麻烦，甚至内部服务之间也应该使用。
 
-For easier automation look at AWS ACM, or Let's Encrypt ACME.
+可以通过AWS ACM, 或Let's Encrypt ACME更简单的完成这件事情。
 
-Monitor your endpoint's public certificate expiration date, to detect prevent certificate expiration.
+监控你的访问节点的公开证书的过期日期，避免其过期。
 
-Remember that SSL encrypts network traffic, but does not supply authentication. SSL is also not a replacement for 2FA.
+牢记SSL加密网络流量，但不做认证。也不是两步认证(2FA)的替代品。
 
 
-### Picking a SaaS vendor
+### 选择SaaS提供商
 
 * Once committed to an infrastructure vendor, it is difficult to switch them. In the future you would need to screen vendors that have access to your organisation's data. Therefore, for cloud infrastructure try choosing one of the big vendors (Amazon, Google, Microsoft), or at least a vendor with a SOC2 Type2 certification (for infrastructure vendors), PCI for payment vendors, or any other relevant certification or compliance for that industry.
 
