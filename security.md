@@ -150,13 +150,13 @@
 
 * 如果你的数据库遭到入侵并被公开，更差的事是你的用户密码也包含在内并且可以轻易破解 - 人们喜欢用同样的密码。[这是真的](http://mashable.com/2017/02/28/passwords-reuse-study-keeper-security)。因此，永远都使用*专为密码存储而设计*的散列函数来保存用户密码： bcrypt，PBKDF2或带一个参数的scrypt，[其需要花1秒钟运算](http://security.stackexchange.com/a/3993/69959)。不要使用MD5，SHA1或其他*不是专为密码而设计*的哈希方法。这种方式存储的密码通常只需要几秒就能破解。
 
-### Physical Security
+### 物理安全
 
-* Configure laptops to sleep after (at most) 5 minutes you are away from your desk, and require a password to re-open it. Ask employees to lock their laptops manually when they leave their desks, for example using [hot corners on macOS](https://support.apple.com/kb/PH18796), or by pressing logo key + L on Windows.
+* 将笔记本配置成你离开座位后（最多）5分钟就休眠，并需要一个密码才能再次打开。要求你的员工在离开座位时手动锁住他们的笔记本，比如用[hot corners在Mac上](https://support.apple.com/kb/PH18796)，或者在Windows上用win + L。
 
-* Never let a stranger within arms reach of a computer (especially if it has a USB port). Physical access is the fastest way to getting your system and product and customers compromised.
+* 不要让陌生人够得到电脑（尤其如果电脑有USB口）。物理访问是获取系统，产品和客户的最快方式。
 
-* Remind employees to lock all the doors and windows before they go home, and to enable the alarm.
+* 提醒员工在离开时锁好门窗，并启动警报器。
 
 * Add a code to the front door during office hours, to deter office thefts. Ask employees to approach strangers in the office if they are not with another employee.
 
