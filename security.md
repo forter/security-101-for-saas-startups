@@ -179,23 +179,23 @@
 
 * 分离产品环境和生产环境的缺点，是某些情况下你想要复制数据从产品环境到生产环境（或者反过来），这样需要建立VPC通道和一些自定义的ACL规则。这不是火箭科学，但还是需要留心。
 
-## Phase 3: Mass Market or Enterprise Customers
+## 第三阶段：大众市场或企业客户
 
-### Certifications and Compliance
+### 认证和合规
 
-* Once your sales starts selling to large customers, they would report back on compliance requirements and certifications related to security. First thing - don't panic. Next thing, find an employee that can handle meetings and documentations and is technical enough.
+* 一旦你的销售开始向大客户销售，他们将报告与安全相关的合规性要求和认证。第一件事 - 不要惊慌。接下来，找到一个能够处理会议，文档并且懂技术的员工。
 
-* Try to understand what sections you can get waivers, and limit the certification scope. Here are a few examples:
+* 试着去了解哪些部分可以得到豁免，并限制认证范围。这里有几个例子：
 
-    * Even if you need to open another Amazon account and move a few services that only two employees have access to, that could be worth your effort. It can limit the certification only to that account and two employees.
+    * 即使只有两个员工，而你为他们单独开设另一个Amazon帐户并移动几个服务，这是值得的。这样可以限定证书只被这个账户和这两个员工使用。
 
-    * Consider separating production services (that serve customers) from back office services (that serve employees) into different accounts. Usually the production account would be more heavily regulated.
+    * 着手考虑将生产服务（为客户提供服务）从后台办公室服务（为员工服务）独立出来到不同的账户下。通常生产用的账户将受到更严格的监管。
 
-    * Among other things, you would need to perform Penetration Testing. During this test you are allowing an external PT vendor to try and circumvent your security and take advantage of vulnerabilities and misconfiguration.
+    * 除此之外，你还需要执行渗透测试。在此测试期间，你邀请外部PT供应商尝试并规避你的安全体系，利用漏洞和错误配置。
 
-    * In some cases you would provide the Pen-Tester API keys to simulate a situation that one of your customers got hacked, and the hacker propagates into your organisation using their secret api keys. This is called grey PT.
+    * 在某些情况下，你将提供Pen-Tester API密钥来模拟你的某个客户被黑客入侵的情况，并且黑客使用其API密钥传播到你的组织。这被称为灰色PT（grey PT）。
 
-    * In other cases you would also allow the PT to review your codebase. The price depends on the complexity of the service, the hacker experience and the lines-of-codes.
+    * 在其他情况下，你还将允许PT检查您的代码库。价格取决于服务的复杂性，黑客经验和代码量。
 
 * There is an important concept called compensating controls. This is an ace card that you could use (sparingly) when you cannot enforce a certain bullet point. For example, a slack-bot that sends a message to a manager when there is a violation of a policy, is a compensating control for this policy not being enforced. In small organisations it usually makes a lot of sense to alert on rare cases, rather than enforce them.
 
