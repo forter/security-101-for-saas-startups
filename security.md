@@ -197,17 +197,18 @@
 
     * 在其他情况下，你还将允许PT检查您的代码库。价格取决于服务的复杂性，黑客经验和代码量。
 
-* There is an important concept called compensating controls. This is an ace card that you could use (sparingly) when you cannot enforce a certain bullet point. For example, a slack-bot that sends a message to a manager when there is a violation of a policy, is a compensating control for this policy not being enforced. In small organisations it usually makes a lot of sense to alert on rare cases, rather than enforce them.
 
-* A big part of certifications is about processes and process documentation of various parts of the company. For small startups, open a google doc that explains when you use git, and when google docs, and which doors you lock when you are the last one to leave the office. Write it as a new employee first-day reading material and keep it up to date. This way it is both useful and would be qualified for many certifications. You might need to annotate some sentences with references to req 1.2.3, so it is easier to look it up.
+* 有一个称为补偿控制的重要概念。它是你在无法贯彻执行某个关键点时可以（谨慎）使用的王牌。例如，slack机器人在发现违反策略的情况时向管理者发送消息，是没有执行该策略的补偿控制。在小型组织中，通常对罕见情况发出警报，而不是执行它们。
 
-* Keep an eye on the compliance/certification costs itself, and total costs (of penetration tests, man-hours, and you might need some freelance help to get it done on time for your sales cycle to complete).
+* 认证的很大一部分是关于公司各部分的流程和过程文档。对于小型创业公司，创建一个google文档，说明何时使用git，何时使用google文档，最后一个离开办公室时锁哪些门。当作新员工第一天阅读材料来写，并保持更新。这样，它是有用的，将有资格的获得许多认证。你可能需要注释一些句子引用req 1.2.3，以便更容易查找。
 
-### Bring your developers onboard - they are a big part of it
+* 关注合规/认证成本本身，总成本（渗透测试，工时，以及你可能需要一些自由职业者的帮助，以按时完成你的销售周期）。
 
-* Developers take it very personally (and might even get angry) when you take permissions away from them. They would feel that they are no longer being trusted, compared to other developers that get to keep the admin permissions. They could feel that whoever is the driving force behind the certification is having an ego-trip at their expense. Others might feel that they are being handcuffed, bogged-down, and that they started working for "a corporate".
+### 带上你的开发人员 - 他们是它的一个很大部分
 
-* You cannot get everyone involved in the decision making, but you can make an effort to include representatives for different opinions that are not shy to speak up. Developers usually do not "whine", they just don't get who needs all that stuff. Therefore it is crucial to keep pointing out which parts are crucial for the certification, and which are just backlog items that are being added into the certification effort along the way. Specify concrete customer names mapped to security requirements.
+* 开发者会感觉是针对个人（甚至可能会生气），当你拿走他们的权限。他们会觉得，相比其他保持管理员权限的开发者，他们不再被信任。有些人可能会觉得，幕后黑手太自大，将有报应。其他人可能会觉得他们束手束脚，越陷越深，他们开始为“公司”工作。
+
+* 你不能让每个人都参与决策，但你可以努力倾听不羞于表达的声音。开发者通常不会“呜咽”，他们只是不明白是做给谁看。因此，必须继续指出哪些部分对于认证至关重要，哪些部分只是一路走来的遗留问题。把安全要求明确到具体客户名字上。
 
 * Take into account the time required for automation. Automation must be used for common tasks that until recently required elevated privileges. For example, adding a new customer, or upgrading to a new version. Without automation everyone needs admin privileges, with proper automation (for example a Jenkins task), all employees can perform that operation by themselves. Changes to the procedure would obviously require peer review (pull request).
 
