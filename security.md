@@ -52,15 +52,15 @@
 你至少需要一个域名给你的网站，一个给你的API，一个内部使用。
 
 * 第一个域名通常是公司的正式名字或者品牌。他作为对外营销（网站）和员工电子邮件。两者通常由第三方服务提供商管理。用SPF和DKIM保护这个邮件域名。这其实没有那么困难并可以减少黑客攻击你的经理或管理员的钓鱼尝试。许多安全事故食欲员工打开钓鱼邮件，因此这很重要。
-* 第二个域名是SaaS服务本身需要的，例如rest api。参见www.google.com之于www.gmail.com之于maps.googleapis.com。这个域名需要额外关照，和公司域名不同，他很可能需要架设在AWS Route53上，并由他们的服务工程师团队管理。
+* 第二个域名是SaaS服务本身需要的，例如rest api。参见www.google.com之于www.gmail.com之于maps.googleapis.com。这个域名需要额外关照，和公司域名不同，他很可能需要架设在AWS Route 53上，并由他们的服务工程师团队管理。
 
-* 第三个域名用来作为内部使用和后台。这个域名需要明显于其他两个不同，并且容易写。有些公司使用公司域名的二级域名。但是，这也意味着它不能由需要为小型内部服务频繁更新的后台服务开发人员管理。二级域名还会让人混淆 - 到底哪个是内部使用，哪个是外部可见。还有一个附带的好处是如果你匿名注册这个域名。大多数情况余名解析服务也是内部的（私有Route53域名）。
+* 第三个域名用来作为内部和后台办公室系统使用。这个域名需要明显于其他两个不同，并且容易写。有些公司使用公司域名的二级域名。但是，这也意味着它不能由后台办公室系统开发者管理，而他们需要为小型内部服务频繁更新。二级域名还会让人混淆 - 到底哪个是内部使用，哪个是外部可见。还有一个附带的好处是如果你匿名注册这个域名。大多数情况余名解析服务也是内部的（私有Route 53域名）。
 
 * [大批量邮件发送](http://resources.mailgun.com/email-reputation.html)服务应该针对目标市场，交际性质邮件，公司邮件分别维护域名或者二级域名。这可以隔绝每种邮件类型的名声并保证时间敏感的交易性质和公司邮件不会延迟或标记为垃圾邮件。当你使用独立的营销用邮件域名时，确保他不是[雪靴垃圾邮件](https://www.spamhaus.org/faq/section/Glossary#233)并保证使用web转发到你的公司或服务网站，好让你的客户找到你。
 
 ### 在所有地方使用SSL/TLS/HTTPS！
 
-在任何可以的地方使用SSL。在你的网站，API，后台服务，如果不是太麻烦，甚至内部服务之间也应该使用。
+在任何可以的地方使用SSL。在你的网站，API，后台办公室系统，如果不是太麻烦，甚至内部服务之间也应该使用。
 
 可以通过AWS ACM, 或Let's Encrypt ACME更简单的完成这件事情。
 
@@ -105,7 +105,7 @@
 
 * 手机端两步验证的问题始于一个员工丢失／遗忘／替换他们的手机，或电池没电，然后他们就登入不了系统。有些员工不喜欢强化他们的手机（加密，锁屏以保护两步验证app），并感觉公司需要为两步验证的app买一台手机给他们。这也是为什么一些组织用yubikey（一个小型的usb设备可以识别用户指压）。类似于手机推送，yubikey防止恶意软件和黑客窃取你的键入信息。缺点是，与他们的手机不同，yubikey更可能与笔记本一起丢失。所以如果一个偷来的笔记本落入专家手中，专家可以从笔记本中得到密码然后还可以用yubikey登陆任意服务。另一个问题是，yubikey是一个USB设备，那你需要能将U盘（不允许）和yubikey（允许）区别开。 
 
-* 用短信作为两步验证是不建议的，应该被禁用。一个有经验的黑客可以说服你的手机网络客户[从你的线挪到他的](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/)。并且最近有爆料说有8亿android设备上有[恶意软件读取短信](http://thehackernews.com/2016/11/hacking-android-smartphone.html)。
+* 用短信作为第二步验证是不建议的，应该被禁用。一个有经验的黑客可以说服你的手机网络客户[从你的线挪到他的](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/)。并且最近有爆料说有8亿android设备上有[恶意软件读取短信](http://thehackernews.com/2016/11/hacking-android-smartphone.html)。
 
 * 用语音电话作为第二步验证也应该被禁用。黑客会轻易在你手机不在线时，通过猜测你可能从来不改的4位数字密码尝试登入并进入你的语音信箱。
 
@@ -150,6 +150,7 @@
 
 * 如果你的数据库遭到入侵并被公开，更差的事是你的用户密码也包含在内并且可以轻易破解 - 人们喜欢用同样的密码。[这是真的](http://mashable.com/2017/02/28/passwords-reuse-study-keeper-security)。因此，永远都使用*专为密码存储而设计*的散列函数来保存用户密码： bcrypt，PBKDF2或带一个参数的scrypt，[其需要花1秒钟运算](http://security.stackexchange.com/a/3993/69959)。不要使用MD5，SHA1或其他*不是专为密码而设计*的哈希方法。这种方式存储的密码通常只需要几秒就能破解。
 
+
 ### 物理安全
 
 * 将笔记本配置成你离开座位后（最多）5分钟就休眠，并需要一个密码才能再次打开。要求你的员工在离开座位时手动锁住他们的笔记本，比如用[hot corners在Mac上](https://support.apple.com/kb/PH18796)，或者在Windows上用win + L。
@@ -166,18 +167,17 @@
 
 * 查看云防火墙配置，以确保没有尴尬的错误。
 
-* Open an email group and name it [security@mycompany.com](mailto:security@mycompany.com) and add a page on your website to report security incidents to this email. Security researches may prefer sending an encrypted email, so you should [generate an OpenPGP key pair](https://gpgtools.org/), publish your public key on the website and save the private key in your password manager.
-
-* In order to get alerts when there are serious known vulnerabilities, that everyone knows about (except you) open a Zapier account and with a few click connect vulnerability RSS feed to Pagerduty. Here is the RSS feed and a sample Zapier filter configuration
+* 建立一个名为[security@mycompany.com](mailto:security@mycompany.com)的邮件组并在你的网站加一页用来报告安全问题到这个邮箱。安全专家可能倾向发送加密邮件，那么你可以[生成一个OpenPGP键值对](https://gpgtools.org/)，在网站上公开你的公钥然后保存私钥到你的密码管理器里。 
+* 为了收到严重的已知隐患的通知，所有人都知道（除了你）建立一个Zapier账户，并通过几下点击订阅关于隐患的RSS feed到Pagerduty。这是一个RSS feed样例和一个Zapier过滤器配置样例
 
 * [https://nvd.nist.gov/download/nvd-rss.xml](https://nvd.nist.gov/download/nvd-rss.xml)
-![security rss filter](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_1.png)
+![security rss filter](/images/image_1.png)
 
-* It is very difficult at a later stage to separate the production network from the development network. In AWS, security is most easily managed on an account level, so a development VPC should be on a separate account in the same organisation. Usually there are three accounts. One for Consolidated Billing, one for production, and another one for everything else (development and back office that are configured via network ACLs to communicate only with your office).
+* 在晚期分离产品环境和生产环境是很困难的。在AWS里，安全属性是在一个账户范围内管理的，所以开发用VPC应该在同一个组织的另一个账户里建立。通常有三个账户。一个用于合并计费，一个用于生产，另一个用于其他（开发和后台办公室系统，其中后台办公室系统通过网络ACL配置为仅与您的办公室通信）。
 
-* Recently Amazon announced [AWS Organisations](https://aws.amazon.com/organizations/) that takes it one step further, by making it easier to apply policies on all of the different accounts and takes care of billing too.
+* 最近Amazon宣布了[AWS Organisations](https://aws.amazon.com/organizations/)它可以让这件事更进一步 - 让应用策略到所有账号更容易，并且同时帮你记账。
 
-* The downside of separating production from development is that in some cases you would want to copy data from production to development (or vice versa) which would require VPC peering and custom ACL rules. It's not rocket science but requires attention.
+* 分离产品环境和生产环境的缺点，是某些情况下你想要复制数据从产品环境到生产环境（或者反过来），这样需要建立VPC通道和一些自定义的ACL规则。这不是火箭科学，但还是需要留心。
 
 ## Phase 3: Mass Market or Enterprise Customers
 
