@@ -210,13 +210,15 @@
 
 * 你不能让每个人都参与决策，但你可以努力倾听不羞于表达的声音。开发者通常不会“呜咽”，他们只是不明白是做给谁看。因此，必须继续指出哪些部分对于认证至关重要，哪些部分只是一路走来的遗留问题。把安全要求明确到具体客户名字上。
 
-* Take into account the time required for automation. Automation must be used for common tasks that until recently required elevated privileges. For example, adding a new customer, or upgrading to a new version. Without automation everyone needs admin privileges, with proper automation (for example a Jenkins task), all employees can perform that operation by themselves. Changes to the procedure would obviously require peer review (pull request).
+* 把自动化所需的时间也考虑上。自动化必须用于常见任务，运行时给予更高权限。例如，添加新客户或升级到新版本。没有自动化，每个人都需要管理员权限，通过适当的自动化（例如Jenkins任务），所有员工都可以自己执行该操作。对程序的更改显然需要同行审查（pull request）。
 
-* Remind the team leaders and administrators not to use their admin privileges, and use automation for day-to-day tasks like anybody else. Admin privileges should not be used to make others jealous, but rather for surgical actions for long tail tasks that automation doesn't cover. It's a matter of leading by example and courtesy.
+* 提醒团队领导和管理员不要使用他们的管理员权限，并像日常任务一样使用自动化。管理员权限不应该用于使别人嫉妒，而是像外科手术一样用于自动化不包括的长尾任务。这是一个领导的例子和礼貌的问题。
 
-* Define a process for providing admin privileges for a specific component for a specific employee for a limited time. In some cases a developer needs admin privileges for two days to speed up development of a new component or automate a repetitive task. Define a process that has a logging trail, which you can present to your auditor. This is needed so developers would not need to go to the admin ten times a day, since it would create a lot of frustration for all parties involved.
+* 定义一个流程，为特定组件特定员工在特定时间内提供管理员权限。在某些情况下，开发人员需要两天的管理员权限以便加快开发新组件或自动执行重复性任务。定义一个具有日志记录跟踪的流程，你可以向审计员提供。这样的话开发人员不用每天跑10趟管理员那里，那样会给整个团队很多挫折感。
 
-* Some (small) companies define that all developers are admins. Your auditor might accept that and add a comment about that in their report.
+* 一些（小）公司定义所有开发人员都是管理员。你的审核员可能会接受，并在其报告中添加对此的评论。
+
+* 通过平衡安全性和用户体验来减少摩擦。你最不希望看到的是是开发者停止关心，开始相信规则不适用于他们。寻找[安全疲劳](https://www.nist.gov/news-events/news/2016/10/security-fatigue-can-cause-computer-users-feel-hopeless-and-act-recklessly)的迹象,并迅速解决它们。
 
 ### Use change management for every production-affecting change
 
