@@ -1,4 +1,4 @@
-[English](https://github.com/forter/security-101-for-saas-startups/tree/english)
+[English](https://github.com/forter/security-101-for-saas-startups/blob/english/readme.md)
 
 # Security 101 for SaaS startups
 

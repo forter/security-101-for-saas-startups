@@ -1,4 +1,4 @@
-[English](https://github.com/forter/security-101-for-saas-startups/tree/english)
+[English](https://github.com/forter/security-101-for-saas-startups/blob/english/security.md)
 
 ## 第一阶段：在客厅工作（或工作和休息在一起）
 
