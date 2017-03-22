@@ -1,270 +1,270 @@
-## Phase 1: Working in the living room (or living at work)
+## 第一阶段：在客厅工作（或工作和休息在一起）
 
-### Sharing Admin Passwords
+### 共享管理员密码
 
-* Any product has at least one user - the admin. The minimum you could do when your small startup is about 4 people, is to replace the default admin password with a complex password and share it with a password manager that supports sharing.
+* 任何产品至少都会有一个用户：管理员。当你的小型初创企业有大约4人时，你至少可以把缺省的管理员密码换成一个复杂的然后分享给密码管理器并负责共享给别人。
 
-* The reason for sharing is to avoid a situation where only a single employee has permissions to the system, while another employee needs it.
+* 共享的目的，是避免出现当只有一个员工有对系统的权限，而其他员工需要的情况。
 
-* It is preferable to have a different user for each person for each service. A middle-ground is to create an ‘admin' (for special circumstances), developer (for day to day work) and ‘service' users (for your code). The idea is that when a developer leaves, you don't need to replace your service passwords.
+* 理想的情况是每个人在每个服务上有自己的账号。一个折中的方法是创建一个'admin'(特殊情况下使用)，一个'developer'(作为日常工作用)，一个'service'(给程序使用)。这样做的意义是当你的一位开发者(developer)离开的时候你不需要替换你的服务(service)密码。
 
-* Explain to your employees that eventually they need to memorize two passwords, your laptop's and the password manager's.
+* 解释给你的员工听，他们需要最后记住两个密码：笔记本的密码和密码管理器的密码。
 
-* Explain to your employees not to use their "home" or “personal” password. They have most likely been exposed, or would be exposed. See [https://haveibeenpwned.com](https://haveibeenpwned.com)
+* 解释给你的员工听，不要使用他们的家庭或个人密码。否则密码很容易被公开或者已经公开。参见 [https://haveibeenpwned.com](https://haveibeenpwned.com)
 
-* Explain how to choose the password manager's password. There's a[ short video by Sophos](https://nakedsecurity.sophos.com/2014/10/01/how-to-pick-a-proper-password) that explains it.
-![how to pick a proper password](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_0.png)
+* 解释如何选择密码管理器的密码。这里有一个[简短的视频(作者Sophos)](https://nakedsecurity.sophos.com/2014/10/01/how-to-pick-a-proper-password)可以帮你解释。
+![如果选择合适的密码](/images/image_0.png)
 
-### Phishing emails, porn and torrents are the devil in disguise
+### 钓鱼邮件，色情和bt是伪装的魔鬼
 
-* Employees would probably use their work laptop at home for their personal needs. That's fine. Nevertheless, from day one, explain your employees not to use it for torrents downloads or porn or any other shady website. Ask them to buy a 2nd hand laptop for that kind of stuff.
+* 员工很可能同时用他们的工作笔记本在家作为个人电脑使用。这很正常。但是，从第一天起，解释给你的员工，不要用于bt下载，或者色情或其他有问题的网站。请他们买一个二手笔记本用于那些目的。
 
-* If you got hacked it would most likely start with an employee clicking a link in a phishing email. As one of your fun startup activities play [phishing quiz](https://www.google.com/search?q=Phishing+Quiz).
+* 如果你被黑了，很可能是从一位员工点击一封钓鱼邮件开始的。作为你的初创企业有趣活动之一： [钓鱼测试](https://www.google.com/search?q=Phishing+Quiz).
 
-* Stop using email attachments. Employees that are used to opening email attachments are the first ones to accidentally install a malware. Document sharing is Google Drive, or if you are in a regulatory environment then [Box that are more expensive](https://www.box.com/security/it-admin-controls).
+* 停止使用邮件附件。习惯于打开邮件附件的员工总会不小心安装恶意软件。可以用Google Drive来分享文档，或者你在一个受监管的环境可以[付费使用Box](https://www.box.com/security/it-admin-controls)。
 
-* For other internal communication use Slack. Email is for contacting customers and vendors.
+* 其他内部交流使用Slack。电子邮件是用来联系客户和供应商。
 
-* Use your password manager to share passwords, credentials and secret notes.
+* 用密码管理器来分享密码，证书和秘密的笔记。
 
-* Stop using USB thumb drives: make it a black-and-white company culture to keep those nasty devices completely away from any computer. They are the [fastest way for a hacker to take control of your system](https://www.youtube.com/watch?v=CvI_mrQYaF8). Teach your staff to recognise and identify them as a major threat!
+* 停止使用U盘：明确禁止使用这些恶心的设备。他们是[黑客控制你系统最快的方法](https://www.youtube.com/watch?v=CvI_mrQYaF8)。教会你们员工把他们识别为最主要的威胁！
 
-* For more background information read the [DBIR Report](https://www.google.com/search?q=DBIR%2520Report).
+* 更多的背景信息请参考[DBIR报告](https://www.google.com/search?q=DBIR%2520Report).
 
-### Encryption today is only one click away
+### 今天开始加密，只需一个单击
 
-If your laptop gets lost or stolen, you would not want the data to be compromised.
+如果你的笔记本丢掉或者被偷，你不会想要你的数据一同泄漏。
 
-* Mac users can encrypt their drive with 1 click.
-* Windows users would need the Pro version and prefer laptop hardware that supports TPM.
-* Linux users would require disk reformatting.
+* Mac用户可以单击加密磁盘。
+* Windows用户需要Pro版本并硬件支持TPM。
+* Linux用户可能需要重新格式化。
 
-A note about choosing laptops. If in the future, you would need to control all laptops centrally due to compliance requirements (such as MDM), it is important to know that most vendors don't have linux support. Mac, Windows Pro, Android, iPhone - yes. Linux usually partial support or non-existent.
+关于选择笔记本的注意事项。如果将来，您需要根据合规性要求（例如MDM）集中控制所有笔记本电脑，需要知道大多数供应商并不支持Linux。他们支持Mac, Windows Pro, Android, iPhone。Linux通常部分支持或者不支持。
 
-Non-jailbroken iPhones are much more difficult to hack compared to Android. They also have screen lock and encryption enabled by default. Make sure that your managers and admins have screen lock on their phones, and encryption enabled.
+没有越狱的iPhone比起Android来要难破解许多。他们缺省还有屏幕锁和启用加密。确保你的经理和系统管理员有开启屏幕锁和启用加密。
 
-### Fixing known vulnerabilities
+### 修复已知的漏洞
 
-Most operating systems (on your laptop or the cloud) have an option for automatic security upgrades. It's a one liner configuration in most cases. This could reduce the attack surface about 10 times.
+绝大多数操作系统（在你笔记本上或着云端）都有一个自动安全升级的选项。通常他只需一行配置，但可以10倍减少可被攻击的范围。
 
-### Buy at least 2 or 3 domain names
+### 买至少2到3个域名
 
-You would need at least one domain for your website, one for your API, and one for internal use.
+你至少需要一个域名给你的网站，一个给你的API，一个内部使用。
 
-* The first domain is usually the company's official name or brand. It used for outbound marketing (the website) and for employee emails. Both would probably be managed by an external service provider. Protect this email domain with SPF and DKIM. It's not that complicated and reduces phishing attempts in which hackers imposter your managers or admins. Many security incidents start with an employee opening a phishing email so this is important.
+* 第一个域名通常是公司的正式名字或者品牌。他作为对外营销（网站）和员工电子邮件。两者通常由第三方服务提供商管理。用SPF和DKIM保护这个邮件域名。这其实没有那么困难并可以减少黑客攻击你的经理或管理员的钓鱼尝试。许多安全事故食欲员工打开钓鱼邮件，因此这很重要。
+* 第二个域名是SaaS服务本身需要的，例如rest api。参见www.google.com之于www.gmail.com之于maps.googleapis.com。这个域名需要额外关照，和公司域名不同，他很可能需要架设在AWS Route 53上，并由他们的服务工程师团队管理。
 
-* The second domain is required for the saas service itself - for example the rest api endpoint. Think www.google.com vs www.gmail.com vs maps.googleapis.com . This domain requires extra care, and unlike the company domain it would probably be hosted in AWS route 53 and managed by the service engineering team itself.
+* 第三个域名用来作为内部和后台办公室系统使用。这个域名需要明显于其他两个不同，并且容易写。有些公司使用公司域名的二级域名。但是，这也意味着它不能由后台办公室系统开发者管理，而他们需要为小型内部服务频繁更新。二级域名还会让人混淆 - 到底哪个是内部使用，哪个是外部可见。还有一个附带的好处是如果你匿名注册这个域名。大多数情况余名解析服务也是内部的（私有Route 53域名）。
 
-* A third domain is needed for internal use and back office. This domain should be instantly and recognisably distinct, easy and quick to type. Some companies use a subdomain of the company domain. However, this means it could not be managed by backoffice service developers that need to update it frequently for small internal services. A subdmoain might also cause confusion which sites are internal, and which sites are public. There is also a side benefit if you register this domain anonymously. In most cases the domain name resolution server is internal too (private Route53 domains).
+* [大批量邮件发送](http://resources.mailgun.com/email-reputation.html)服务应该针对目标市场，交际性质邮件，公司邮件分别维护域名或者二级域名。这可以隔绝每种邮件类型的名声并保证时间敏感的交易性质和公司邮件不会延迟或标记为垃圾邮件。当你使用独立的营销用邮件域名时，确保他不是[雪靴垃圾邮件](https://www.spamhaus.org/faq/section/Glossary#233)并保证使用web转发到你的公司或服务网站，好让你的客户找到你。
 
-* [High volume email](http://resources.mailgun.com/email-reputation.html) senders should maintain separate domains or subdomains for their marketing, transactional and company mail. This isolates the reputation of each type of email and assures that time-sensitive transactional and company mail won't be delayed or marked as spam. When using a seperate email marketing domain, make sure you are not [snowshoe spamming](https://www.spamhaus.org/faq/section/Glossary#233) and make sure to use web forwarding to your company or service website so your customers can find you. 
+### 在所有地方使用SSL/TLS/HTTPS！
 
-### Use SSL/TLS/HTTPS everywhere!
+在任何可以的地方使用SSL。在你的网站，API，后台办公室系统，如果不是太麻烦，甚至内部服务之间也应该使用。
 
-Use SSL anywhere possible. In your website, your API, your back office servers, and if it's not too difficult even between internal services.
+可以通过AWS ACM, 或Let's Encrypt ACME更简单的完成这件事情。
 
-For easier automation look at AWS ACM, or Let's Encrypt ACME.
+监控你的访问节点的公开证书的过期日期，避免其过期。
 
-Monitor your endpoint's public certificate expiration date, to detect prevent certificate expiration.
-
-Remember that SSL encrypts network traffic, but does not supply authentication. SSL is also not a replacement for 2FA.
+牢记SSL加密网络流量，但不做认证。也不是两步认证(2FA)的替代品。
 
 
-### Picking a SaaS vendor
+### 选择SaaS供应商
 
-* Once committed to an infrastructure vendor, it is difficult to switch them. In the future you would need to screen vendors that have access to your organisation's data. Therefore, for cloud infrastructure try choosing one of the big vendors (Amazon, Google, Microsoft), or at least a vendor with a SOC2 Type2 certification (for infrastructure vendors), PCI for payment vendors, or any other relevant certification or compliance for that industry.
+* 一旦选择基础架构供应商，就很难再切换了。未来，你可能需要减少供应商对你的组织的数据的访问。因此，在选择云端基础架构供应商时，尽量选择大的供应商（Amazon, Google, Microsoft），或至少拥有SOC2 Type2证书的供应商（针对基础架构供应商而言），拥有PCI的支付供应商，或其他有相关领域资质的供应商。
 
-* This doesn't mean their service is good. It means down the road you won't need to replace them even if their service is good.
+* 这并不意味他们的服务就是好的。而是接下来你不需要替换他们尽管他们的服务是好的。
 
-* By default AWS users choose Oregon (us-west-2). If you know where your target market is, you should start with a datacenter closer to the target market.
+* 缺省AWS用户选择俄勒冈（us-west-2）。如果你知道你的目标市场在哪里，你应该让你的数据中心靠近你的目标市场。
 
-* There is also regulatory implications in which country the data center resides (Data Residency). For European customers, this could be a deal breaker, and later moving to another region might be cost prohibitive.
+* 数据中心所在国家（数据驻留）也存在监管影响。对于欧洲客户来说，这可能是一个决定性的因素，并且迁移到其他地区可能成本过高。
 
-### API key
+### API管理
 
-If your company exposes APIs (as a service), make sure each one of your customers have their own API key, Otherwise your service could go down, when one of the customer's QA's has a bug in their testing script.
+如果你们公司公开API（软件即服务），确保每一个客户都有他们自己的访问证书，否则你的服务可能会因为其中一个客户的测试脚本中有bug而下线。
 
-### Working with Git
+* 考虑使用一个API管理解决方案，而不是把自己搞进去。他们提供browser2server， mobile2server和server2server登陆令牌支持，包括吊销令牌和与标准协议整合。
 
-Working with git and pull-requests is the de-facto standard way of performing change management. Part of compliance requirements you would need to show that your startup has proper change management controls and tests. Better start now.
+### 使用Git
 
-Using git would allow you to add outsource/freelance developers for a limited time, by giving and then revoking commit permissions.
+在变更管理方面，使用git和pull-request是事实上的标准做法。部分合规性要求，你需要显示你的初创企业有适当的变更管理控制和测试。最好现在就开始。
 
-## Phase 2: Signing your first customer / Round A
+使用git可以让你通过给予和取消提交权限，来在一段时间内增加外包/自由开发者。
 
-### Be a little paranoid
+## 第二阶段：签下你的第一个用户 / A轮
 
-* Turn on 2FA for every service that you use. This is especially critical for your development team as those are the services that will take your product offline if they're compromised. Google accounts, Dropbox, Github, Microsoft, etc - all of them!
+### 稍微带一点偏执
 
-* Startups that target enterprise customers or that work in a regulated environment usually enable 2FA from day one.
+* 对你使用的所有服务启用两步验证。这对你的开发团队尤其重要，因为如果这些服务被入侵，你的产品也将会下线。如Google accounts，Dropbox，Github，Microsoft等。所有都要！
 
-* A well established and easy to use 2FA implementation is [TOTP 2FA implimentation](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm). Employees can install [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) on their mobile phone and it would produce a one-time 6 digit code that needs to be typed in addition to the password 
+* 目标定位企业用户或在监管环境中工作的初创企业，通常在第一天就启用两步验证。
 
-* A slightly more usable approach are push notifications. Many SaaS vendors support an app that instead of generating codes, sends you a push notification. That is more convenient than copying 6 digits each time you need to log-in. The downside is that you would probably need different apps for each service, and that it won't work without an internet connection, or when the push notification vendor has downtime.
+* 这里有一个完整并容易使用的两步验证实现：[TOTP 2FA implementation](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm)。员工可以安装[Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) 在他们的手机上，他将生成一次性6位数字随密码输入。
 
-* Mobile phone 2FA problems start when an employee lost/forgot/replaces their mobile phone, or is stuck without battery, and then they are locked out of the system. Some employees don't like hardening their phone (encryption and screenlock to protect the 2FA app), and feel that the company needs to buy the phone for the 2FA app to run on. That's why some organizations use yubikey instead (a small usb plug that can sense human finger touch). Like a Mobile App Push notification, yubikey protects against malware and hackers that keylog your password. The downside is that unlike their mobile phones, employees are more likely to lose the yubikey together with their laptop. So if the stolen laptop falls into the hands of a professional that can extract the passwords from the laptop then they could also login to any service with the yubikey. Another problem is that the yubikey is a USB device, and you would need to make the distinction between USB storage devices (not allowed) and the yubikey (allowed). 
-* Using SMS as a 2nd factor is discouraged and should be disabled. An experienced hacker can convince your mobile network customer support to [move your line to his](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/) possession. Also recently it was discovered that 800M android devices
- had [a malware that reads SMSs](http://thehackernews.com/2016/11/hacking-android-smartphone.html).
+* 一个更容易使用的方式是通过推送。很多SaaS供应商提供一个app，它会收到一个推送而不是生成密码。这比每次登陆复制一个6位数字要方便很多。缺点是，你可能需要不同的app对应不同的服务，而且没有网络不行，或者推送提供商下线时也不工作。
 
-* Using voice phone calls as a 2nd factor should also be disabled. Hackers will simply try to log in when your phone is offline and hack into your voice mailbox by guessing your 4 digit code, that you probably never changed.
+* 手机端两步验证的问题始于一个员工丢失／遗忘／替换他们的手机，或电池没电，然后他们就登入不了系统。有些员工不喜欢强化他们的手机（加密，锁屏以保护两步验证app），并感觉公司需要为两步验证的app买一台手机给他们。这也是为什么一些组织用yubikey（一个小型的usb设备可以识别用户指压）。类似于手机推送，yubikey防止恶意软件和黑客窃取你的键入信息。缺点是，与他们的手机不同，yubikey更可能与笔记本一起丢失。所以如果一个偷来的笔记本落入专家手中，专家可以从笔记本中得到密码然后还可以用yubikey登陆任意服务。另一个问题是，yubikey是一个USB设备，那你需要能将U盘（不允许）和yubikey（允许）区别开。 
 
-* If an employee asks for a password reset remotely, ask them to come into the office in person if possible. If this is not feasible (or time-sensitive), verify their identify: do not trust that you can recognize your employee's voice. Never email passwords.
+* 用短信作为第二步验证是不建议的，应该被禁用。一个有经验的黑客可以说服你的手机网络客户[从你的线挪到他的](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/)。并且最近有爆料说有8亿android设备上有[恶意软件读取短信](http://thehackernews.com/2016/11/hacking-android-smartphone.html)。
 
-### Insider stealing information from the organisation
+* 用语音电话作为第二步验证也应该被禁用。黑客会轻易在你手机不在线时，通过猜测你可能从来不改的4位数字密码尝试登入并进入你的语音信箱。
 
-* Prepare a checkout form for leaving/terminated employees. Make a list with all of the services that requires de-provisioning/suspending (remember the Whatsapp group too, and while we're at it don't send the door password over Whatsapp).
+* 如果一个员工要求远程重置他的密码，如果可以请他亲自到公司来。如果条件不允许（或者时间紧张），验证他们的个人信息：不要相信你自己可以识别员工的声音。永远不要给邮件密码。
 
-* Check Google Docs logs (or similar) if a terminated employee has downloaded sensitive information.
+### 内部人员从组织窃取信息
 
-* Most Endpoint Security Products can also be configured to prevent the usage of devices (such as USB, Bluetooth, Mobiles) for copying data out of the laptops.
+* 准备一个勾选表单，给离职／解雇的员工用。列出所有需要取消授权/挂起的服务（还有Whatsapp组。我们在的时候，不通过WhatsApp发送门密码）。
 
-* In case the terminated employee had access to admin passwords, it is recommended to replace passwords to sensitive systems.
+* 检查Google Docs日志看是否有解雇员工下载敏感信息。
 
-* When hiring a new employee ask their former colleagues about their personality type, and the way they left their previous company. Please note that at least in Israel it's illegal to ask an employee to present a criminal record sheet.
+* 多数终端安全产品可以被配置成阻止用配备（如USB，蓝牙，手机）拷贝数据出笔记本。
+
+* 如果结果的员工曾有管理员密码，推荐更换敏感系统的密码。
+
+* 当雇佣一个新员工时，向他们的前同事打听他们的人品问题，并询问他们离职的原因。请注意至少在以色列要求员工提供犯罪记录是违法的。
 
 ### VPN
+* 寻找可以安装办公VPN的集成应商相对容易一些（不要自己安装）。
 
-* It is relatively easy to find integration vendors that can install an office VPN (don't do it yourself).
+* 将VPN部署在办公室，以及给办公室的网络使用静态IP地址，可以让你对服务器的管理访问进行限制。例如，你可以将它设置成只允许从办公室访问，或从家中连接办公室的VPN，而不用对整个互联网公开22端口（SSH）。
 
-* A combination of a VPN deployed in the office and a static IP address for the office internet allows you to restrict management access to servers. For example, instead of opening port 22 (SSH) to the entire internet, you allow only access from the office, or from home when connected to the office's VPN.
+* 基于云的VPN（例如安装在ec2上）还具有几个优点。首先，办公室和云之间的所有通信都是加密的（尤其是当你访问数据存储，如不带SSL的elastic search时）。对于远程工作人员来说，网络性能也要好得多。此外，它在一定程度上能够减少对物理安全性的需要，因为那里并没有网络设备（办公室仅仅是某个咖啡店而已）。而它的缺点是，每当你断开办公室网络连接，你需要重新连接到VPN。
 
-* Alternatively a cloud based VPN (installed on ec2 for example) has a few more advantages. First, all of the communication between the office and the cloud is encrypted (especially important if you are accessing data stores such as elastic search without SSL). The network performance is much better for remote workers that are physically located far from the office. Also, it relaxes the need for physical security somewhat since there is no network equipment there (the office is just another coffee shop). The downside is that each time you get disconnected from the office network you need to reconnect to the VPN.
+* VPN连接也应当启用两步验证。
 
-* VPN connection should have 2nd factor enabled too.
+### 防病毒软件/防火墙
 
-### Antivirus/Firewall
+* 安装端点安全产品是很简单的。请确保产品支持所有笔记本电脑的操作系统。配置自动更新，发送邮件提醒（可能有点吵），阻止所有传入连接。最后一点对于在本地运行服务器的开发这很重要。
 
-* It's very easy to install an Endpoint Security Product. Make sure the product supports the operating system of all of your laptops. Configure automatic updates, send an email alerts (could be noisy), and block all incoming connections. The last one is important for developers running servers locally.
+* 在员工就位之前安装防病毒软件更好，因为安装防病毒软件这件事会让很多开发者不高兴。
 
-* It is better to install the antivirus before the employee arrives, as there are many developers that installing an antivirus turns them down.
+* 大多数产品都有导入／导出功能，这使得他们较容易安装。
 
-* Most products have an export/import functionality, which makes it easier to set up.
+* 还有一些在防病毒软件之上的额外保护的产品叫做EDR（Cyberreason，BlackCobalt）但他们通常很贵。
 
-* There are extra protection products on top of an antivirus called EDR (Cyberreason, BlackCobalt) but these are usually costly.  
+### 用合适的散列（哈希）函数转化你用户的密码
 
-### Hash your customer's passwords with a proper password hashing function
+如果你支付得起，使用一个[第三方登陆验证服务](#customer-users-management)来保存密码，管理密码，恢复密码，两步验证甚至更多。一些供应商提供按月活跃用户收费的策略可以满足你的预算。
 
+然而，如果你决定开发你自己的登陆验证服务，遵从[OWASP登陆验证指南](https://www.owasp.org/index.php/Authentication_Cheat_Sheet)。
 
-If you can afford it, use a [third party authentication service](#customer-users-management) to handle password storage, password management, password recovery, two factor auth and more. Some vendors offer Monthly Active Users pricing which can fit your budget.
-
-However, if you decide to develop your own authentication implementation, follow the [OWASP authentication guidelines](https://www.owasp.org/index.php/Authentication_Cheat_Sheet) . 
-
-* If your database was breached and published it's much worse when your customers' passwords are included and easily cracked - folks reuse passwords. [It's true](http://mashable.com/2017/02/28/passwords-reuse-study-keeper-security). Therefore, always use hashing function *specifically designed for password storage* to store customers passwords in your database: bcrypt, PBKDF2 or scrypt with a work factor that takes [about 1 second for the password hash](http://security.stackexchange.com/a/3993/69959). Do not use MD5, SHA1 or other hashes that are *not specifically designed for passwords*. Passwords stored like this are cracked in seconds usually.
+* 如果你的数据库遭到入侵并被公开，更差的事是你的用户密码也包含在内并且可以轻易破解 - 人们喜欢用同样的密码。[这是真的](http://mashable.com/2017/02/28/passwords-reuse-study-keeper-security)。因此，永远都使用*专为密码存储而设计*的散列函数来保存用户密码： bcrypt，PBKDF2或带一个参数的scrypt，[其需要花1秒钟运算](http://security.stackexchange.com/a/3993/69959)。不要使用MD5，SHA1或其他*不是专为密码而设计*的哈希方法。这种方式存储的密码通常只需要几秒就能破解。
 
 
-### Physical Security
+### 物理安全
 
-* Configure laptops to sleep after (at most) 5 minutes you are away from your desk, and require a password to re-open it. Ask employees to lock their laptops manually when they leave their desks, for example using [hot corners on macOS](https://support.apple.com/kb/PH18796), or by pressing logo key + L on Windows.
+* 将笔记本配置成你离开座位后（最多）5分钟就休眠，并需要一个密码才能再次打开。要求你的员工在离开座位时手动锁住他们的笔记本，比如用[hot corners在Mac上](https://support.apple.com/kb/PH18796)，或者在Windows上用win + L。
 
-* Never let a stranger within arms reach of a computer (especially if it has a USB port). Physical access is the fastest way to getting your system and product and customers compromised.
+* 不要让陌生人够得到电脑（尤其如果电脑有USB口）。物理访问是获取系统，产品和客户的最快方式。
 
-* Remind employees to lock all the doors and windows before they go home, and to enable the alarm.
+* 提醒员工在离开时锁好门窗，并启动警报器。
 
-* Add a code to the front door during office hours, to deter office thefts. Ask employees to approach strangers in the office if they are not with another employee.
+* 在工作时间，给前门添加一个密码，以防止办公室盗窃。要求员工走向没有其他员工陪同的陌生人。
 
-* Lock your server room (or the room with your network equipement)
+* 锁好你的服务器房间（或者你的网络设备的房间）
 
-### Preventing your cloud servers from being compromised
+### 防止云服务器受到威胁
 
-* Review the cloud firewall configuration to make sure there are no embarrassing mistakes.
+* 查看云防火墙配置，以确保没有尴尬的错误。
 
-* Open an email group and name it [security@mycompany.com](mailto:security@mycompany.com) and add a page on your website to report security incidents to this email. Security researches may prefer sending an encrypted email, so you should [generate an OpenPGP key pair](https://gpgtools.org/), publish your public key on the website and save the private key in your password manager.
-
-* In order to get alerts when there are serious known vulnerabilities, that everyone knows about (except you) open a Zapier account and with a few click connect vulnerability RSS feed to Pagerduty. Here is the RSS feed and a sample Zapier filter configuration
+* 建立一个名为[security@mycompany.com](mailto:security@mycompany.com)的邮件组并在你的网站加一页用来报告安全问题到这个邮箱。安全专家可能倾向发送加密邮件，那么你可以[生成一个OpenPGP键值对](https://gpgtools.org/)，在网站上公开你的公钥然后保存私钥到你的密码管理器里。 
+* 为了收到严重的已知隐患的通知，所有人都知道（除了你）建立一个Zapier账户，并通过几下点击订阅关于隐患的RSS feed到Pagerduty。这是一个RSS feed样例和一个Zapier过滤器配置样例
 
 * [https://nvd.nist.gov/download/nvd-rss.xml](https://nvd.nist.gov/download/nvd-rss.xml)
-![security rss filter](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_1.png)
+![security rss filter](/images/image_1.png)
 
-* It is very difficult at a later stage to separate the production network from the development network. In AWS, security is most easily managed on an account level, so a development VPC should be on a separate account in the same organisation. Usually there are three accounts. One for Consolidated Billing, one for production, and another one for everything else (development and back office that are configured via network ACLs to communicate only with your office).
+* 在晚期分离产品环境和生产环境是很困难的。在AWS里，安全属性是在一个账户范围内管理的，所以开发用VPC应该在同一个组织的另一个账户里建立。通常有三个账户。一个用于合并计费，一个用于生产，另一个用于其他（开发和后台办公室系统，其中后台办公室系统通过网络ACL配置为仅与您的办公室通信）。
 
-* Recently Amazon announced [AWS Organisations](https://aws.amazon.com/organizations/) that takes it one step further, by making it easier to apply policies on all of the different accounts and takes care of billing too.
+* 最近Amazon宣布了[AWS Organisations](https://aws.amazon.com/organizations/)它可以让这件事更进一步 - 让应用策略到所有账号更容易，并且同时帮你记账。
 
-* The downside of separating production from development is that in some cases you would want to copy data from production to development (or vice versa) which would require VPC peering and custom ACL rules. It's not rocket science but requires attention.
+* 分离产品环境和生产环境的缺点，是某些情况下你想要复制数据从产品环境到生产环境（或者反过来），这样需要建立VPC通道和一些自定义的ACL规则。这不是火箭科学，但还是需要留心。
 
-## Phase 3: Mass Market or Enterprise Customers
+## 第三阶段：大众市场或企业客户
 
-### Certifications and Compliance
+### 认证和合规
 
-* Once your sales starts selling to large customers, they would report back on compliance requirements and certifications related to security. First thing - don't panic. Next thing, find an employee that can handle meetings and documentations and is technical enough.
+* 一旦你的销售开始向大客户销售，他们将报告与安全相关的合规性要求和认证。第一件事 - 不要惊慌。接下来，找到一个能够处理会议，文档并且懂技术的员工。
 
-* Try to understand what sections you can get waivers, and limit the certification scope. Here are a few examples:
+* 试着去了解哪些部分可以得到豁免，并限制认证范围。这里有几个例子：
 
-    * Even if you need to open another Amazon account and move a few services that only two employees have access to, that could be worth your effort. It can limit the certification only to that account and two employees.
+    * 即使只有两个员工，而你为他们单独开设另一个Amazon帐户并移动几个服务，这是值得的。这样可以限定证书只被这个账户和这两个员工使用。
 
-    * Consider separating production services (that serve customers) from back office services (that serve employees) into different accounts. Usually the production account would be more heavily regulated.
+    * 着手考虑将生产服务（为客户提供服务）从后台办公室服务（为员工服务）独立出来到不同的账户下。通常生产用的账户将受到更严格的监管。
 
-    * Among other things, you would need to perform Penetration Testing. During this test you are allowing an external PT vendor to try and circumvent your security and take advantage of vulnerabilities and misconfiguration.
+    * 除此之外，你还需要执行渗透测试。在此测试期间，你邀请外部PT供应商尝试并规避你的安全体系，利用漏洞和错误配置。
 
-    * In some cases you would provide the Pen-Tester API keys to simulate a situation that one of your customers got hacked, and the hacker propagates into your organisation using their secret api keys. This is called grey PT.
+    * 在某些情况下，你将提供Pen-Tester API密钥来模拟你的某个客户被黑客入侵的情况，并且黑客使用其API密钥传播到你的组织。这被称为灰色PT（grey PT）。
 
-    * In other cases you would also allow the PT to review your codebase. The price depends on the complexity of the service, the hacker experience and the lines-of-codes.
-
-* There is an important concept called compensating controls. This is an ace card that you could use (sparingly) when you cannot enforce a certain bullet point. For example, a slack-bot that sends a message to a manager when there is a violation of a policy, is a compensating control for this policy not being enforced. In small organisations it usually makes a lot of sense to alert on rare cases, rather than enforce them.
-
-* A big part of certifications is about processes and process documentation of various parts of the company. For small startups, open a google doc that explains when you use git, and when google docs, and which doors you lock when you are the last one to leave the office. Write it as a new employee first-day reading material and keep it up to date. This way it is both useful and would be qualified for many certifications. You might need to annotate some sentences with references to req 1.2.3, so it is easier to look it up.
-
-* Keep an eye on the compliance/certification costs itself, and total costs (of penetration tests, man-hours, and you might need some freelance help to get it done on time for your sales cycle to complete).
-
-### Bring your developers onboard - they are a big part of it
-
-* Developers take it very personally (and might even get angry) when you take permissions away from them. They would feel that they are no longer being trusted, compared to other developers that get to keep the admin permissions. They could feel that whoever is the driving force behind the certification is having an ego-trip at their expense. Others might feel that they are being handcuffed, bogged-down, and that they started working for "a corporate".
-
-* You cannot get everyone involved in the decision making, but you can make an effort to include representatives for different opinions that are not shy to speak up. Developers usually do not "whine", they just don't get who needs all that stuff. Therefore it is crucial to keep pointing out which parts are crucial for the certification, and which are just backlog items that are being added into the certification effort along the way. Specify concrete customer names mapped to security requirements.
-
-* Take into account the time required for automation. Automation must be used for common tasks that until recently required elevated privileges. For example, adding a new customer, or upgrading to a new version. Without automation everyone needs admin privileges, with proper automation (for example a Jenkins task), all employees can perform that operation by themselves. Changes to the procedure would obviously require peer review (pull request).
-
-* Remind the team leaders and administrators not to use their admin privileges, and use automation for day-to-day tasks like anybody else. Admin privileges should not be used to make others jealous, but rather for surgical actions for long tail tasks that automation doesn't cover. It's a matter of leading by example and courtesy.
-
-* Define a process for providing admin privileges for a specific component for a specific employee for a limited time. In some cases a developer needs admin privileges for two days to speed up development of a new component or automate a repetitive task. Define a process that has a logging trail, which you can present to your auditor. This is needed so developers would not need to go to the admin ten times a day, since it would create a lot of frustration for all parties involved.
-
-* Some (small) companies define that all developers are admins. Your auditor might accept that and add a comment about that in their report.
-
-### Use change management for every production-affecting change
-
-At this point you should already have automated testing, and (at least semi-) automatic of upgrading and downgrading production versions. The next step is to make sure the production system is immutable. Meaning, [a server that is once deployed, is never modified](https://martinfowler.com/bliki/ImmutableServer.html), merely replaced with a new updated instance.
-
-* The downside is that if the automation server is down, or even a few tests fail sporadically, the organisation grinds to a halt. With a little help from Murphy that would happen exactly when you need to deploy an urgent quick-fix to production.
-
-* What follows is that you need a way to override this automation. It doesn't have to be admin privileges. It could also be a tag that means pushing to production an untested artifact. You can send a notification to the managers/admins when a developer uses this tag as a compensating control.
-
-* Any change of database values or toggles that affects production behavior must go through change management (like a pull request, or similar system).
-
-### Identity Management and SSO
-
-* At a certain point the number of SaaS vendors times the number of employees makes password managers difficult to manage, especially when employees join or leave the organisation. Password is only for admins, all of the other SaaS applications should use the same identity management service (that supports Single Sign On).
-
-* Integrating such a platform takes some time. For starters, Google G-Suite can perform SSO to all sites that support OAuth or SAML. Identity as a Service providers, supports also browser based authentications, smart 2FA rules to reduce friction with employees, and integration with VPN/SSH via ldap or radius.
-
-* Some vendors do not have an Admin privilege management service. So admins would still need to use the password manager.
+    * 在其他情况下，你还将允许PT检查您的代码库。价格取决于服务的复杂性，黑客经验和代码量。
 
 
-### Physical Security
+* 有一个称为补偿控制的重要概念。它是你在无法贯彻执行某个关键点时可以（谨慎）使用的王牌。例如，slack机器人在发现违反策略的情况时向管理者发送消息，是没有执行该策略的补偿控制。在小型组织中，通常对罕见情况发出警报，而不是执行它们。
 
-* The Office Building Security and the insurance company probably require for the alarm to be active during office off-hours. It is recommended to activate it automatically at 23:00, so you won't need to enable it manually if one of the employees forgot.
+* 认证的很大一部分是关于公司各部分的流程和过程文档。对于小型创业公司，创建一个google文档，说明何时使用git，何时使用google文档，最后一个离开办公室时锁哪些门。当作新员工第一天阅读材料来写，并保持更新。这样，它是有用的，将有资格的获得许多认证。你可能需要注释一些句子引用req 1.2.3，以便更容易查找。
 
-* If the entrances to the office aren't monitored by security cameras, you can buy a simple internet camera, that connects to a mobile app. So you can monitor who was the last to leave the office and forgot to lock the door/activate the alarm. And if it's a real burglar you can see their face.
+* 关注合规/认证成本本身，总成本（渗透测试，工时，以及你可能需要一些自由职业者的帮助，以按时完成你的销售周期）。
 
-* At this point, you would replace your front door pin-code with a chip based door system.
+### 带上你的开发人员 - 他们是它的一个很大部分
 
-* The rationale is that you don't need to replace the code each time an employee leaves the company. Take into account that cleaning service would probably won't get a chip since they may switch employees in some days. So you should have someone to lock the door after they leave. Magnetic door cards (with a magnetic stripe and a mug-shot) are usually more expensive and smell more "corporate-like" for new employees and candidates. However it is more difficult to duplicate or hack it compare to the door chip systems.
+* 开发者会感觉是针对个人（甚至可能会生气），当你拿走他们的权限。他们会觉得，相比其他保持管理员权限的开发者，他们不再被信任。有些人可能会觉得，幕后黑手太自大，将有报应。其他人可能会觉得他们束手束脚，越陷越深，他们开始为“公司”工作。
 
-## Phase 4: Signing a large customer, or rapid market growth
+* 你不能让每个人都参与决策，但你可以努力倾听不羞于表达的声音。开发者通常不会“呜咽”，他们只是不明白是做给谁看。因此，必须继续指出哪些部分对于认证至关重要，哪些部分只是一路走来的遗留问题。把安全要求明确到具体客户名字上。
 
-### Customer user's management
+* 把自动化所需的时间也考虑上。自动化必须用于常见任务，运行时给予更高权限。例如，添加新客户或升级到新版本。没有自动化，每个人都需要管理员权限，通过适当的自动化（例如Jenkins任务），所有员工都可以自己执行该操作。对程序的更改显然需要同行审查（pull request）。
 
-There are a number of Identity as a Service vendors that supply login and customer's password management services. If such a vendor is SOC2 Compliant they probably do a better job than you saving the customer's password in your database.
+* 提醒团队领导和管理员不要使用他们的管理员权限，并像日常任务一样使用自动化。管理员权限不应该用于使别人嫉妒，而是像外科手术一样用于自动化不包括的长尾任务。这是一个领导的例子和礼貌的问题。
 
-They also provide self service and apis to provision and de-provision users, enforce password policies, and recover lost passwords. Although, large customers might want integration with their own Identity management solution.
+* 定义一个流程，为特定组件特定员工在特定时间内提供管理员权限。在某些情况下，开发人员需要两天的管理员权限以便加快开发新组件或自动执行重复性任务。定义一个具有日志记录跟踪的流程，你可以向审计员提供。这样的话开发人员不用每天跑10趟管理员那里，那样会给整个团队很多挫折感。
 
-### Sensitive Data Leaks
+* 一些（小）公司定义所有开发人员都是管理员。你的审核员可能会接受，并在其报告中添加对此的评论。
 
-The financial impact of a data leak (business loss, and compensation) could bring a startup to bankruptcy.
+* 通过平衡安全性和用户体验来减少摩擦。你最不希望看到的是是开发者停止关心，开始相信规则不适用于他们。寻找[安全疲劳](https://www.nist.gov/news-events/news/2016/10/security-fatigue-can-cause-computer-users-feel-hopeless-and-act-recklessly)的迹象,并迅速解决它们。
 
-* As part of your security training explain to employees what consists of private information, and how do you handle it in your organization.
-The [Future of Privacy Forum published a visual guide](https://fpf.org/wp-content/uploads/2016/04/FPF_Visual-Guide-to-Practical-Data-DeID.pdf) that can help you get started.
-![privacy visual guide](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_2.png)
+### 对每个影响生产的变化使用变更管理
 
-* Explain to your employees you are not going to fire anyone for making a mistake. Beg them to notify you ASAP when a mishap happened so you could fix the problem and limit the damage. Stand behind this promise. Explain the difference between an intentional insider leaking data and an unfortunate human error. This needs to be talked about since different employees come from different cultural and work backgrounds and may react in the wrong way.
+在这一点上，您应该已经具有自动测试，以及（至少半）自动升级和降级生产版本。下一步是确保生产系统是不可变的。意思是，[一个一旦部署就不改变的服务器实例](https://martinfowler.com/bliki/ImmutableServer.html)，只是替换为一个新的实例。
+
+* 缺点是，如果自动化服务器关闭，或者甚至一些测试偶尔失败，整套组织就会终断。有了Murphy的帮助，你可以在紧急情况下部署一个的快速修复到生产环境。
+
+* 接下来是你需要一种方法来覆盖这种自动化。它不必是管理员权限。它也可以是一个标签，标记着推动生产一个未经测试的工件。当开发人员使用此标记作为补偿控制时，可以向管理员/管理者发送通知。
+
+* 对影响生产行为的数据库值或切换的任何更改都必须通过更改管理（如pull request或类似系统）。
+
+### 身份管理和单点登录（SSO）
+
+* 到某些时候，SaaS供应商的数量乘以员工的数量使得密码管理器难以管理，特别是当员工加入或离开组织时。密码应该只有管理员有密码，其他所有SaaS应用程序都应使用相同的身份管理服务（支持单点登录）。
+
+* 整合这样一个平台需要一些时间。对于初学者，Google G-Suite可以对支持OAuth或SAML的所有站点做单点登录。身份即服务提供商，还支持基于浏览器的身份验证，智能两步验证规则，以减少与员工的摩擦，并通过ldap或radius与VPN / SSH集成。
+
+* 一些供应商没有管理员权限管理服务。所以管理员仍然需要使用密码管理器。
+
+### 物理安全
+
+* 办公楼的安保和保险公司很可能规定警报器在下班时间内必须为启用状态。建议设置为在23:00自动启用，因此即便某员工忘记了，你也不用担心。
+
+* 如果办公室的入口未被安全摄像机监控，你可以购买一个互联网摄像头，连接手机app，可以通过手机监控谁最后离开了办公室并忘记锁门/启用警报器。 所以你可以监控谁是最后一个离开办公室，忘记锁定门/激活闹钟。如果真的被盗，你可以看到他们的脸。
+
+* 此时，您将使用基于芯片的门系统来替换您的密码锁大门。
+
+* 这样做，你就不需要每次员工离开公司就更换密码。清洁工可能不会得到一个芯片，因为他们人可能会更换的比较频繁，所以你应该有人在清洁工离开之后锁门。磁性门卡（带磁条和摄像头）通常比较贵，并且对于新员工和候选人来说，更像是“类似企业”。然而，与门芯片系统相比，复制或破解它更加困难。
+
+## 第四阶段：签到大客户，或快速增长
+
+### 客户用户管理
+
+有许多身份即服务供应商提供登录和客户的密码管理服务。如果这样的供应商符合SOC2标准，那么他们可能比你在存客户密码方面做得更好。
+
+他们还提供自助服务和api来授权和取消授权用户，执行密码策略和恢复丢失的密码。虽然大客户可能希望与自己的身份管理解决方案进行集成。
+
+### 敏感数据泄漏
+
+数据泄露（业务损失和赔偿）的财务影响可能导致创业公司破产。
+
+* 作为您的安全培训的一部分，向员工解释什么是私人信息，以及在组织里是如何处理它们的。
+这个可以帮到你[未来的隐私论坛发布了视觉指南](https://fpf.org/wp-content/uploads/2016/04/FPF_Visual-Guide-to-Practical-Data-DeID.pdf)。
+![privacy visual guide](/images/image_2.png)
+
+* 向你的员工解释，犯错是不会被炒鱿鱼的。请他们在发生事故时，尽快通知你，以便您可以解决问题并减小伤害。遵守这个承诺。阐明有意的内幕泄露数据与不幸的人为错误之间的区别。需要说明的是，不同的员工来自不同的文化背景和工作背景，可能会对此有误解。
 
 * Reduce the potential damage of a data leak by redacting or de-identifying the data. This usually requires management to make a business decision that your organization can survive without data that is considered a "must have" today. The idea is to postpone the need for security software that smells “corporate”, by removing sensitive data or at least denying access to most employees for that data.
 
