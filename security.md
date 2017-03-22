@@ -220,28 +220,27 @@
 
 * 通过平衡安全性和用户体验来减少摩擦。你最不希望看到的是是开发者停止关心，开始相信规则不适用于他们。寻找[安全疲劳](https://www.nist.gov/news-events/news/2016/10/security-fatigue-can-cause-computer-users-feel-hopeless-and-act-recklessly)的迹象,并迅速解决它们。
 
-### Use change management for every production-affecting change
+### 对每个影响生产的变化使用变更管理
 
-At this point you should already have automated testing, and (at least semi-) automatic of upgrading and downgrading production versions. The next step is to make sure the production system is immutable. Meaning, [a server that is once deployed, is never modified](https://martinfowler.com/bliki/ImmutableServer.html), merely replaced with a new updated instance.
+在这一点上，您应该已经具有自动测试，以及（至少半）自动升级和降级生产版本。下一步是确保生产系统是不可变的。意思是，[一个一旦部署就不改变的服务器实例](https://martinfowler.com/bliki/ImmutableServer.html)，只是替换为一个新的实例。
 
-* The downside is that if the automation server is down, or even a few tests fail sporadically, the organisation grinds to a halt. With a little help from Murphy that would happen exactly when you need to deploy an urgent quick-fix to production.
+* 缺点是，如果自动化服务器关闭，或者甚至一些测试偶尔失败，整套组织就会终断。有了Murphy的帮助，你可以在紧急情况下部署一个的快速修复到生产环境。
 
-* What follows is that you need a way to override this automation. It doesn't have to be admin privileges. It could also be a tag that means pushing to production an untested artifact. You can send a notification to the managers/admins when a developer uses this tag as a compensating control.
+* 接下来是你需要一种方法来覆盖这种自动化。它不必是管理员权限。它也可以是一个标签，标记着推动生产一个未经测试的工件。当开发人员使用此标记作为补偿控制时，可以向管理员/管理者发送通知。
 
-* Any change of database values or toggles that affects production behavior must go through change management (like a pull request, or similar system).
+* 对影响生产行为的数据库值或切换的任何更改都必须通过更改管理（如pull request或类似系统）。
 
-### Identity Management and SSO
+### 身份管理和单点登录（SSO）
 
-* At a certain point the number of SaaS vendors times the number of employees makes password managers difficult to manage, especially when employees join or leave the organisation. Password is only for admins, all of the other SaaS applications should use the same identity management service (that supports Single Sign On).
+* 到某些时候，SaaS供应商的数量乘以员工的数量使得密码管理器难以管理，特别是当员工加入或离开组织时。密码应该只有管理员有密码，其他所有SaaS应用程序都应使用相同的身份管理服务（支持单点登录）。
 
-* Integrating such a platform takes some time. For starters, Google G-Suite can perform SSO to all sites that support OAuth or SAML. Identity as a Service providers, supports also browser based authentications, smart 2FA rules to reduce friction with employees, and integration with VPN/SSH via ldap or radius.
+* 整合这样一个平台需要一些时间。对于初学者，Google G-Suite可以对支持OAuth或SAML的所有站点做单点登录。身份即服务提供商，还支持基于浏览器的身份验证，智能两步验证规则，以减少与员工的摩擦，并通过ldap或radius与VPN / SSH集成。
 
-* Some vendors do not have an Admin privilege management service. So admins would still need to use the password manager.
+* 一些供应商没有管理员权限管理服务。所以管理员仍然需要使用密码管理器。
 
+### 物理安全
 
-### Physical Security
-
-* The Office Building Security and the insurance company probably require for the alarm to be active during office off-hours. It is recommended to activate it automatically at 23:00, so you won't need to enable it manually if one of the employees forgot.
+* 办公楼的安保和保险公司很可能规定警报器在下班时间内必须为启用状态。建议设置为在23:00自动启用，因此即便某员工忘记了，你也不用担心。
 
 * If the entrances to the office aren't monitored by security cameras, you can buy a simple internet camera, that connects to a mobile app. So you can monitor who was the last to leave the office and forgot to lock the door/activate the alarm. And if it's a real burglar you can see their face.
 
