@@ -1,3 +1,5 @@
+[中文翻译](https://github.com/forter/security-101-for-saas-startups/blob/chinese/security.md)
+
 ## Phase 1: Working in the living room (or living at work)
 
 ### Sharing Admin Passwords
