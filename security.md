@@ -242,29 +242,29 @@
 
 * 办公楼的安保和保险公司很可能规定警报器在下班时间内必须为启用状态。建议设置为在23:00自动启用，因此即便某员工忘记了，你也不用担心。
 
-* If the entrances to the office aren't monitored by security cameras, you can buy a simple internet camera, that connects to a mobile app. So you can monitor who was the last to leave the office and forgot to lock the door/activate the alarm. And if it's a real burglar you can see their face.
+* 如果办公室的入口未被安全摄像机监控，你可以购买一个互联网摄像头，连接手机app，可以通过手机监控谁最后离开了办公室并忘记锁门/启用警报器。 所以你可以监控谁是最后一个离开办公室，忘记锁定门/激活闹钟。如果真的被盗，你可以看到他们的脸。
 
-* At this point, you would replace your front door pin-code with a chip based door system.
+* 此时，您将使用基于芯片的门系统来替换您的密码锁大门。
 
-* The rationale is that you don't need to replace the code each time an employee leaves the company. Take into account that cleaning service would probably won't get a chip since they may switch employees in some days. So you should have someone to lock the door after they leave. Magnetic door cards (with a magnetic stripe and a mug-shot) are usually more expensive and smell more "corporate-like" for new employees and candidates. However it is more difficult to duplicate or hack it compare to the door chip systems.
+* 这样做，你就不需要每次员工离开公司就更换密码。清洁工可能不会得到一个芯片，因为他们人可能会更换的比较频繁，所以你应该有人在清洁工离开之后锁门。磁性门卡（带磁条和摄像头）通常比较贵，并且对于新员工和候选人来说，更像是“类似企业”。然而，与门芯片系统相比，复制或破解它更加困难。
 
-## Phase 4: Signing a large customer, or rapid market growth
+## 第四阶段：签到大客户，或快速增长
 
-### Customer user's management
+### 客户用户管理
 
-There are a number of Identity as a Service vendors that supply login and customer's password management services. If such a vendor is SOC2 Compliant they probably do a better job than you saving the customer's password in your database.
+有许多身份即服务供应商提供登录和客户的密码管理服务。如果这样的供应商符合SOC2标准，那么他们可能比你在存客户密码方面做得更好。
 
-They also provide self service and apis to provision and de-provision users, enforce password policies, and recover lost passwords. Although, large customers might want integration with their own Identity management solution.
+他们还提供自助服务和api来授权和取消授权用户，执行密码策略和恢复丢失的密码。虽然大客户可能希望与自己的身份管理解决方案进行集成。
 
-### Sensitive Data Leaks
+### 敏感数据泄漏
 
-The financial impact of a data leak (business loss, and compensation) could bring a startup to bankruptcy.
+数据泄露（业务损失和赔偿）的财务影响可能导致创业公司破产。
 
-* As part of your security training explain to employees what consists of private information, and how do you handle it in your organization.
-The [Future of Privacy Forum published a visual guide](https://fpf.org/wp-content/uploads/2016/04/FPF_Visual-Guide-to-Practical-Data-DeID.pdf) that can help you get started.
-![privacy visual guide](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_2.png)
+* 作为您的安全培训的一部分，向员工解释什么是私人信息，以及在组织里是如何处理它们的。
+这个可以帮到你[未来的隐私论坛发布了视觉指南](https://fpf.org/wp-content/uploads/2016/04/FPF_Visual-Guide-to-Practical-Data-DeID.pdf)。
+![privacy visual guide](/images/image_2.png)
 
-* Explain to your employees you are not going to fire anyone for making a mistake. Beg them to notify you ASAP when a mishap happened so you could fix the problem and limit the damage. Stand behind this promise. Explain the difference between an intentional insider leaking data and an unfortunate human error. This needs to be talked about since different employees come from different cultural and work backgrounds and may react in the wrong way.
+* 向你的员工解释，犯错是不会被炒鱿鱼的。请他们在发生事故时，尽快通知你，以便您可以解决问题并减小伤害。遵守这个承诺。阐明有意的内幕泄露数据与不幸的人为错误之间的区别。需要说明的是，不同的员工来自不同的文化背景和工作背景，可能会对此有误解。
 
 * Reduce the potential damage of a data leak by redacting or de-identifying the data. This usually requires management to make a business decision that your organization can survive without data that is considered a "must have" today. The idea is to postpone the need for security software that smells “corporate”, by removing sensitive data or at least denying access to most employees for that data.
 
