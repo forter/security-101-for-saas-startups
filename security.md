@@ -362,28 +362,95 @@
 
 <table>
   <tr>
-    <td>Attack</td>
-    <td>Attack Vectors/Actors</td>
-    <td>Expected number of attacks this year</td>
-    <td>Attack damage (w, existing mitigations)</td>
-    <td>Total damage this year</td>
+    <td>攻击</td>
+    <td>攻击方向/攻击者</td>
+    <td>预计今年的攻击次数</td>
+    <td>攻击伤害（包括已经缓解的部分）</td>
+    <td>今年的总伤害</td>
   </tr>
   <tr>
-    <td>Fraud</td>
-    <td>CC Fraud
-Friendly Fraud
-Marketplace Fraud</td>
-    <td>High</td>
-    <td>Low</td>
-    <td>High</td>
+    <td>欺诈</td>
+    <td>CC欺诈
+友善的欺诈
+市场欺诈</td>
+    <td>高</td>
+    <td>低</td>
+    <td>高</td>
   </tr>
   <tr>
-    <td>Downtime</td>
-    <td>Weather
+    <td>停机</td>
+    <td>天气
 DDoS</td>
-    <td>Medium</td>
-    <td>Medium</td>
-    <td>Medium</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>物理性盗窃</td>
+    <td>办公室被盗
+车被盗
+家被盗
+内部人犯错</td>
+    <td>中</td>
+    <td>低</td>
+    <td>低</td>
+  </tr>
+  <tr>
+    <td>IP盗窃/泄漏</td>
+    <td>笔记本电脑恶意软件
+手机恶意软件
+服务器漏洞
+供应商遭到黑客入侵</td>
+    <td>低</td>
+    <td>高</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>（客户）数据盗窃/泄漏</td>
+    <td>笔记本电脑恶意软件
+手机恶意软件
+服务器漏洞
+供应商遭到黑客入侵
+数据中心泄漏</td>
+    <td>中</td>
+    <td>高</td>
+    <td>高</td>
+  </tr>
+  <tr>
+    <td>业务/人力资源/内部文件盗窃/泄漏</td>
+    <td>笔记本电脑恶意软件
+手机恶意软件
+供应商遭到黑客入侵</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>数据损坏或绑票</td>
+    <td>服务器漏洞
+身份盗窃
+笔记本电脑恶意软件</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>资金流失（Bitcoin，ec2实例）</td>
+    <td>身份盗窃
+服务器漏洞</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>客户闯入你的服务</td>
+    <td>服务器漏洞
+身份盗窃</td>
+    <td>中</td>
+    <td>高</td>
+    <td>高</td>
+  </tr>
+</table>
   </tr>
   <tr>
     <td>Physical Theft</td>
