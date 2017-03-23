@@ -266,21 +266,21 @@
 
 * 向你的员工解释，犯错是不会被炒鱿鱼的。请他们在发生事故时，尽快通知你，以便您可以解决问题并减小伤害。遵守这个承诺。阐明有意的内幕泄露数据与不幸的人为错误之间的区别。需要说明的是，不同的员工来自不同的文化背景和工作背景，可能会对此有误解。
 
-* Reduce the potential damage of a data leak by redacting or de-identifying the data. This usually requires management to make a business decision that your organization can survive without data that is considered a "must have" today. The idea is to postpone the need for security software that smells “corporate”, by removing sensitive data or at least denying access to most employees for that data.
+* 通过修改可公开的数据，或者将个人信息从数据中去除，来减少数据泄露的潜在损害。这通常需要管理层做出商业决策，即你的组织可以不依赖于在当前普遍认为“必须”的数据，生存下去。这个想法是通过删除敏感数据或至少拒绝大多数员工访问该数据的方式，推迟对“企业”的安全软件的需求。
 
-* Prevent data breaches by using the right tool at the right places:
+* 在正确的地方使用正确的工具以防止数据泄露：
 
-    * Moving the data away from the laptop by working on a remote virtual desktop instead of a local desktop.
+    * 通过在远程虚拟桌面工作而不是本地桌面，将数据离开本地。
 
-    * Moving the malware away from the laptop by using browser isolation technologies. These give you the feeling of browsing locally on your regular browser, but in fact all you see are pixels sent from a remote machine doing the browsing.
+    * 使用浏览器隔离技术将恶意软件移离笔记本电脑。它可以让你感觉在本地正常浏览网站，但事实上你看到的是从远程机器传来的图片，你通过它在做浏览。
 
-    * Monitoring and preventing leakage of data using [Data Leak Prevention](https://www.google.com/search?q=Gartner+Magic+Quadrant+for+Enterprise+Data+Loss+Prevention) agents on mobile phones and laptops. These require deployment on all organization assets and configuration and monitoring for specific data types.
+    * 使用手机和笔记本电脑上的[数据防泄漏工具](https://www.google.com/search?q=Gartner+Magic+Quadrant+for+Enterprise+Data+Loss+Prevention)监控和防止数据泄露。这些需要部署在所有组织资产上，并对特定数据类型进行配置和监控。
 
-    * Monitor or Manage the laptop and mobile application provisioning and operating system settings (screenlock/encryption/VPN setting/etc…) using  [Mobile Device Management](https://www.google.com/search?q=gartner+enterprise+mobility+management) agents. Google G-Suite has a built-in basic MDM capabilities.
+    * 使用[移动设备管理](https://www.google.com/search?q=gartner+enterprise+mobility)监控或管理笔记本电脑和移动应用程序授权配置和操作系统设置（屏幕锁定/加密/VPN设置等）。Google G-Suite具有内置的基本MDM功能。
 
-    * Protect all data stores with Authentication and Authorization. Audit relevant transactions for forensic investigations and monitoring of data.
+    * 保护身份验证和授权过程留下的所有数据。审计相关交易，以备法庭调查和数据监控。
 
-    * Use app level encryption for data store read/write operations (where you don't need indexing), or disk and network level encryption for data stores.
+    * 对于数据存储读/写操作（当你不需要索引）使用应用级加密，对数据存储使用磁盘及网络级加密。
 
 ### Prevent hacking of your internet facing services
 
