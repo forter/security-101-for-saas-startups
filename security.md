@@ -308,29 +308,27 @@
 
 确保组织的关键数据有备份（即使这意味着需要时间从备份还原）：
 
-* Make sure your backup is automatic and continuous and covers the required data sets, to avoid gaps of missing data.
+* 确保您的备份是自动，持续，并覆盖所需的数据集，以避免丢失数据。
 
-* Make sure the backup is in a different cloud account, to avoid a human error or malicious deletion of data
+* 确保备份是在不同的云帐户，以避免人为错误或恶意删除数据。
 
-* Make sure the backup is in a [different data centre in a different region](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html), to avoid data-loss in case of a natural disaster.
+* 确保备份位于[不同地区的不同数据中心](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html)，以防天灾导致的数据丢失。
 
-* Some even copy their data into a different cloud provider. For example, Google Cloud has a service that can [continuously backup data stored on Amazon S3](https://cloud.google.com/storage/transfer/).
+* 有些甚至将数据复制到不同的云提供商。例如，Google Cloud可以[持续备份数据到Amazon S3上](https://cloud.google.com/storage/transfer/)。
 
-* Not all data is equally important for the business survival. If the amount of data and backup costs is too high, start with only the critical data.
+* 并不是所有的数据对于企业生存同等重要。如果数据量和备份成本过高，请仅从关键数据开始。
 
-* Ensure that the restore procedure is both well documented and tested. You don't want to discover that what you thought were useful backups aren't usable when trying to recover from data loss.
+* 确保恢复过程有详细的记录和测试。你不想发现您尝试从数据丢失中恢复时，发现以为有用的备份其实没法用。
 
-* Almost any certification or big customer would ask for a copy of your annual backup/restore practice.
+* 几乎任何认证或大客户都会要求您提供年度备份/恢复实践的副本。
 
+### 为在数据泄漏/黑客事件发生后的第二天上午做准备
 
+* 启用任何可能的云服务的日志，即使它花费更多。将所有应用程序和服务器基础结构的日志集中保存。日志保存至少1年。
 
-### Prepare for the morning after the data breach/hacking incident
+* 与您的总法律顾问（律师事务所）和会计师事务所合作，并制定事件应对计划。这些是需要做的调查，修复和控制所造成的损害的行动清单。这还包括与客户，最终用户和当局的沟通。大型法律和会计师事务所拥有人脉和经验，可以帮助制定这样一个计划。
 
-* Enable logs for any possible cloud service, even if it costs a little more. Centralise logs all applications and server infrastructure. Save the logs for at least 1 year period.
-
-* Work with your General Counsel (law office) and your Accounting firm, and prepare an incident response plan. These are the list of actions that needs to be done to investigate, fix and control the damage done. That also includes communicating with the customers, the end users, and the authorities. Big law and accounting firms have a network of connections and experience that can help with devising such a plan.
-
-## Phase 5: "Look ma!, I'm in the newspaper"
+## 第五阶段：“老妈，快看！我上报纸了！”
 
 When you have a clear business need (great business success) and a respectable security budget, start looking for a Director of Security (or VP Security or CISO) that can fit into your organization. This is a process that can take many months. The reason is the requirement for high technical skills needed in the first stages, and taking responsibility off the CEO/CTO that require other traits, such as participating in the sales cycle, and signing official company papers. And of course the security officer must fit into your organisation's culture. A live example of such person can be found in this video:[https://www.infoq.com/presentations/security-etsy](https://www.infoq.com/presentations/security-etsy).
 
