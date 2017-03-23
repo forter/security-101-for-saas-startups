@@ -330,35 +330,35 @@
 
 ## 第五阶段：“老妈，快看！我上报纸了！”
 
-When you have a clear business need (great business success) and a respectable security budget, start looking for a Director of Security (or VP Security or CISO) that can fit into your organization. This is a process that can take many months. The reason is the requirement for high technical skills needed in the first stages, and taking responsibility off the CEO/CTO that require other traits, such as participating in the sales cycle, and signing official company papers. And of course the security officer must fit into your organisation's culture. A live example of such person can be found in this video:[https://www.infoq.com/presentations/security-etsy](https://www.infoq.com/presentations/security-etsy).
+当您有明确的业务需求（巨大的业务成功）和可靠的安全预算时，开始寻找可以适应你的组织的安全主管（或安全VP或CISO）。这是可能需要几个月的过程。原因是要求在第一阶段需要高技术技能，并要求可以从CEO/CTO分担一些职责，这需要一些特征，比如参与销售周期和签署官方公司文件。当然，安全执行官必须符合贵组织的文化。在这个视频中可以找到这样的人的实例：[https://www.infoq.com/presentations/security-etsy](https://www.infoq.com/presentations/security-etsy)。
 
-### Deciding on a budget - Build a Threat Model
+### 决定预算 - 构建威胁模型
 
-A threat model is the rule of thumb you can use to decide if an investment in some security countermeasure is justified. [Mossad or Not Mossad](https://www.schneier.com/blog/archives/2015/08/mickens_on_secu.html) is a basic threat model in which we consider two types of attackers: State Actor and everyone else.
+威胁模型是你可以用来决定一个对安全措施的投资是否合理的经验法则。 [摩萨德还是不是](https://www.schneier.com/blog/archives/2015/08/mickens_on_secu.html)是一个基本的威胁模型，我们考虑两种攻击者：政府和其他人。
 
-If you are attacked by the Mossad, give up. No amount of money will protect you - The Mossad can replace your new laptop [with modified hardware en-route](https://www.schneier.com/blog/archives/2015/03/cisco_shipping_.html), break into your office unnoticed, [purchase remote jailbreak hacking tools](https://www.zerodium.com/program.html), or even extort one of your employees. Any investment into stopping this threat is a waste of money.
+如果你被摩萨德攻击，放弃。没有钱会保护你 - 摩萨德可以替换你的新笔记本电脑[修改硬件路由](https://www.schneier.com/blog/archives/2015/03/cisco_shipping_.html)，毫无防备地进入你的办公室系统，[购买远程越狱黑客工具](https://www.zerodium.com/program.html)，甚至敲诈您的一名员工。任何停止这种威胁的投资都是浪费钱。
 
-If however you are attacked by not-Mossad you can actually protect yourself effectively with a reasonable investment. A good benchmark for deciding when your investment has transitioned from Not-Mossad to Mossad is to consider a possible, hard to stop, highly illegal attack - e.g. bribing an employee with privileged access. In other words, if the cost of hacking your passwords (i.e. brute forcing your passwords) is higher than the cost of bribing an employee with access, than there is no sense in investing more resources to protect it.
+然而，如果你不是受到摩萨德的攻击，你实际上可以通过合理的投资保护自己。决定何时将投资从非摩萨德转为摩萨德的好的基准是考虑一个可能的，难以阻止的非法攻击。比如贿赂有特权的员工。换句话说，如果黑客攻击你的密码（即暴力强制你的密码）的成本高于贿赂一个有特权的员工的成本，那么投资更多的资源就是浪费。
 
-### Deciding on  budget - various considerations
+### 决定预算 - 各种考虑
 
-* Remember that as your company grows, your attack surface and also the motivation for attacking you grows too. Over time your security budget will have to grow accordingly. This budget shows your investors that you take security seriously.
+* 请记住，当您的公司发展壮大时，你的被攻击面以及被攻击动机也越来越大。随着时间的推移，你的安全预算将不得不相应增长。这笔预算向你的投资者显示你认真对待安全。
 
-* Look at the complete risk analysis and try to close the big holes first. These are the most probable, or most damaging (or a combination of both). Focusing all your efforts on a single attack vector, would merely require your attacker to move to the next hole.
+* 看一下完整的风险分析，并尝试先关闭大漏洞。这些是最可能的或最具破坏性的（或两者）。将所有的努力集中在应对单一的攻击方向上，攻击你的人通常会放弃攻击下一个漏洞。
 
-* Some requirements come from customers and compliance and are not necessarily at the top of your risk. For example, customers afraid of amazon copying their business data may require end-to-end encrypted traffic inside AWS. While it is possible that an AWS insider would steal your data, or a sophisticated malware breaks through the virtual machine isolation, this may not be at the top of your list - however it is at the top of your customer's list.
+* 一些要求来自客户和合规性，并不一定是你的风险。例如，客户担心Amazon会复制其业务数据，会要求AWS内端到端加密流量。虽然AWS内部人员可能会窃取您的数据，或者复杂的恶意软件会破坏虚拟机隔离，但这可能并不是你最担心的 - 但它是客户最担心的。
+* 
+### 风险管理
 
-### Risk Management
+新安全经理将采取的首要步骤之一就是评估不同的风险和表现的可能性。
 
-One of the first steps the new security manager will do, is to assess the different risks, and the possibility of manifestation.
+大体上，你可以查看DBIR报告提供的相关统计信息：
 
-For a high level starting point you can look at the relative statistics provided by the DBIR Report:
+![DBIR report industry stats](/images/image_3.png)
 
-![DBIR report industry stats](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_3.png)
+有关基于DBIR报告的更详细的列表，请参阅[CIS控制有效的网络防御](https://www.cisecurity.org/critical-controls/)文档的附录B和C。
 
-For a more detailed list that is based on the DBIR report, look at Appendix B and C of the [CIS CONTROLS FOR EFFECTIVE CYBER DEFENSE](https://www.cisecurity.org/critical-controls/) document.
-
-The next step is to make an educated guess of the potential business damage. Here is an example:
+下一步是对潜在的业务损害作出有根据的猜测。 这里是一个例子：
 
 <table>
   <tr>
