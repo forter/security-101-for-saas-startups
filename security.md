@@ -268,126 +268,356 @@
 
 * 向你的员工解释，犯错是不会被炒鱿鱼的。请他们在发生事故时，尽快通知你，以便您可以解决问题并减小伤害。遵守这个承诺。阐明有意的内幕泄露数据与不幸的人为错误之间的区别。需要说明的是，不同的员工来自不同的文化背景和工作背景，可能会对此有误解。
 
-* Reduce the potential damage of a data leak by redacting or de-identifying the data. This usually requires management to make a business decision that your organization can survive without data that is considered a "must have" today. The idea is to postpone the need for security software that smells “corporate”, by removing sensitive data or at least denying access to most employees for that data.
+* 通过修改可公开的数据，或者将个人信息从数据中去除，来减少数据泄露的潜在损害。这通常需要管理层做出商业决策，即你的组织可以不依赖于在当前普遍认为“必须”的数据，生存下去。这个想法是通过删除敏感数据或至少拒绝大多数员工访问该数据的方式，推迟对“企业”的安全软件的需求。
 
-* Prevent data breaches by using the right tool at the right places:
+* 在正确的地方使用正确的工具以防止数据泄露：
 
-    * Moving the data away from the laptop by working on a remote virtual desktop instead of a local desktop.
+    * 通过在远程虚拟桌面工作而不是本地桌面，将数据离开本地。
 
-    * Moving the malware away from the laptop by using browser isolation technologies. These give you the feeling of browsing locally on your regular browser, but in fact all you see are pixels sent from a remote machine doing the browsing.
+    * 使用浏览器隔离技术将恶意软件移离笔记本电脑。它可以让你感觉在本地正常浏览网站，但事实上你看到的是从远程机器传来的图片，你通过它在做浏览。
 
-    * Monitoring and preventing leakage of data using [Data Leak Prevention](https://www.google.com/search?q=Gartner+Magic+Quadrant+for+Enterprise+Data+Loss+Prevention) agents on mobile phones and laptops. These require deployment on all organization assets and configuration and monitoring for specific data types.
+    * 使用手机和笔记本电脑上的[数据防泄漏工具](https://www.google.com/search?q=Gartner+Magic+Quadrant+for+Enterprise+Data+Loss+Prevention)监控和防止数据泄露。这些需要部署在所有组织资产上，并对特定数据类型进行配置和监控。
 
-    * Monitor or Manage the laptop and mobile application provisioning and operating system settings (screenlock/encryption/VPN setting/etc…) using  [Mobile Device Management](https://www.google.com/search?q=gartner+enterprise+mobility+management) agents. Google G-Suite has a built-in basic MDM capabilities.
+    * 使用[移动设备管理](https://www.google.com/search?q=gartner+enterprise+mobility)监控或管理笔记本电脑和移动应用程序授权配置和操作系统设置（屏幕锁定/加密/VPN设置等）。Google G-Suite具有内置的基本MDM功能。
 
-    * Protect all data stores with Authentication and Authorization. Audit relevant transactions for forensic investigations and monitoring of data.
+    * 保护身份验证和授权过程留下的所有数据。审计相关交易，以备法庭调查和数据监控。
 
-    * Use app level encryption for data store read/write operations (where you don't need indexing), or disk and network level encryption for data stores.
+    * 对于数据存储读/写操作（当你不需要索引）使用应用级加密，对数据存储使用磁盘及网络级加密。
 
-### Prevent hacking of your internet facing services
+### 防止你的对外互联网服务的被黑
 
-* Perform Secure Code Training based on the [OWASP top 10](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project).
+* 根据[OWASP前十项目](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)执行安全代码训练。
 
-* Use a WAF and DDoS mitigation service.
+* 使用WAF和DDoS缓解服务。
 
-* Run external vulnerability scans (outside of your network). This should protect you against "Kiddy Scripts" looking for easy targets.
+* 运行外部漏洞扫描（在您的网络之外）。这应该能保护你躲过初级破解者对容易目标的搜寻。
 
-* Run internal vulnerabilities scan (within the firewalls). This should protect you against a hacker that gained foothold on one server, and is trying to make a lateral movement to the heart of the system. This requires usually an agent or ssh access, and ability to scan without any firewalls.
+* 运行内部漏洞扫描（在防火墙内）。这应该可以保护你：如果有黑客已经攻陷一台服务器的情况下，继续朝系统核心靠近。这通常需要代理或ssh访问，并且能够透过防火墙扫描。
 
-* Use Penetration Tests and Bug Bounty Programs. This is where you pay a real hacker to try and find specific vulnerabilities. During this test you are allowing an external PT vendor to try and circumvent your security and take advantage of vulnerabilities and misconfiguration.
+* 使用渗透测试和漏洞奖励计划。指你付钱给真正的黑客来尝试查找特定的漏洞。在此测试期间，您允许外部PT供应商尝试并规避您的安全，并利用漏洞和错误的配置。
 
-    * In some cases you would provide the Pen-Tester API keys to simulate a situation that one of your customers got hacked, and the hacker propagates into your organisation using their secret api keys. This is called grey PT.
+    * 在某些情况下，你将提供Pen-Tester API密钥来模拟你的某个客户被黑客入侵的情况，并且黑客使用其API密钥传播到你的组织。这被称为灰色PT（grey PT）。
 
-    * In other cases you would also allow the PT to review your codebase. The price depends on the complexity of the service, the hacker experience and the lines-of-codes.
+    * 在其他情况下，你还将允许PT检查您的代码库。价格取决于服务的复杂性，黑客经验和代码量。
 
-    * Bounty Programs allows you to reach hackers with specific skills.
+    * 赏金计划允许你接触有特殊才能的黑客。
 
-*  Upgrade your library dependencies regularly. Or even better, use a bot that automatically creates pull requests to upgrade library versions.
+* 定期升级你的第三方依赖库。或者甚至更好，使用自动创建pull request的机器人来升级第三方库版本。
 
-* Scan for source code vulnerabilities. Some vendors use static and dynamic code analysis of your code. Other vendors scan commonly used open source software (see SourceClear, BlackDuck, CheckMarx).
+* 扫描源代码漏洞。一些供应商使用静态和动态代码分析你的代码。其他供应商扫描常用的开源软件（请参阅SourceClear，BlackDuck，CheckMarx）。
 
-### Data backup
+### 数据备份
 
-Make sure the organisation's critical data is backed-up (even if it means it would take time to restore it from backup):
+确保组织的关键数据有备份（即使这意味着需要时间从备份还原）：
 
-* Make sure your backup is automatic and continuous and covers the required data sets, to avoid gaps of missing data.
+* 确保您的备份是自动，持续，并覆盖所需的数据集，以避免丢失数据。
 
-* Make sure the backup is in a different cloud account, to avoid a human error or malicious deletion of data
+* 确保备份是在不同的云帐户，以避免人为错误或恶意删除数据。
 
-* Make sure the backup is in a [different data centre in a different region](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html), to avoid data-loss in case of a natural disaster.
+* 确保备份位于[不同地区的不同数据中心](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html)，以防天灾导致的数据丢失。
 
-* Some even copy their data into a different cloud provider. For example, Google Cloud has a service that can [continuously backup data stored on Amazon S3](https://cloud.google.com/storage/transfer/).
+* 有些甚至将数据复制到不同的云提供商。例如，Google Cloud可以[持续备份数据到Amazon S3上](https://cloud.google.com/storage/transfer/)。
 
-* Not all data is equally important for the business survival. If the amount of data and backup costs is too high, start with only the critical data.
+* 并不是所有的数据对于企业生存同等重要。如果数据量和备份成本过高，请仅从关键数据开始。
 
-* Ensure that the restore procedure is both well documented and tested. You don't want to discover that what you thought were useful backups aren't usable when trying to recover from data loss.
+* 确保恢复过程有详细的记录和测试。你不想发现您尝试从数据丢失中恢复时，发现以为有用的备份其实没法用。
 
-* Almost any certification or big customer would ask for a copy of your annual backup/restore practice.
+* 几乎任何认证或大客户都会要求您提供年度备份/恢复实践的副本。
 
+### 为在数据泄漏/黑客事件发生后的第二天上午做准备
 
+* 启用任何可能的云服务的日志，即使它花费更多。将所有应用程序和服务器基础结构的日志集中保存。日志保存至少1年。
 
-### Prepare for the morning after the data breach/hacking incident
+* 与您的总法律顾问（律师事务所）和会计师事务所合作，并制定事件应对计划。这些是需要做的调查，修复和控制所造成的损害的行动清单。这还包括与客户，最终用户和当局的沟通。大型法律和会计师事务所拥有人脉和经验，可以帮助制定这样一个计划。
 
-* Enable logs for any possible cloud service, even if it costs a little more. Centralise logs all applications and server infrastructure. Save the logs for at least 1 year period.
+## 第五阶段：“老妈，快看！我上报纸了！”
 
-* Work with your General Counsel (law office) and your Accounting firm, and prepare an incident response plan. These are the list of actions that needs to be done to investigate, fix and control the damage done. That also includes communicating with the customers, the end users, and the authorities. Big law and accounting firms have a network of connections and experience that can help with devising such a plan.
+当您有明确的业务需求（巨大的业务成功）和可靠的安全预算时，开始寻找可以适应你的组织的安全主管（或安全VP或CISO）。这是可能需要几个月的过程。原因是要求在第一阶段需要高技术技能，并要求可以从CEO/CTO分担一些职责，这需要一些特征，比如参与销售周期和签署官方公司文件。当然，安全执行官必须符合贵组织的文化。在这个视频中可以找到这样的人的实例：[https://www.infoq.com/presentations/security-etsy](https://www.infoq.com/presentations/security-etsy)。
 
-## Phase 5: "Look ma!, I'm in the newspaper"
+### 决定预算 - 构建威胁模型
 
-When you have a clear business need (great business success) and a respectable security budget, start looking for a Director of Security (or VP Security or CISO) that can fit into your organization. This is a process that can take many months. The reason is the requirement for high technical skills needed in the first stages, and taking responsibility off the CEO/CTO that require other traits, such as participating in the sales cycle, and signing official company papers. And of course the security officer must fit into your organisation's culture. A live example of such person can be found in this video:[https://www.infoq.com/presentations/security-etsy](https://www.infoq.com/presentations/security-etsy).
+威胁模型是你可以用来决定一个对安全措施的投资是否合理的经验法则。 [摩萨德还是不是](https://www.schneier.com/blog/archives/2015/08/mickens_on_secu.html)是一个基本的威胁模型，我们考虑两种攻击者：政府和其他人。
 
-### Deciding on a budget - Build a Threat Model
+如果你被摩萨德攻击，放弃。没有钱会保护你 - 摩萨德可以替换你的新笔记本电脑[修改硬件路由](https://www.schneier.com/blog/archives/2015/03/cisco_shipping_.html)，毫无防备地进入你的办公室系统，[购买远程越狱黑客工具](https://www.zerodium.com/program.html)，甚至敲诈您的一名员工。任何停止这种威胁的投资都是浪费钱。
 
-A threat model is the rule of thumb you can use to decide if an investment in some security countermeasure is justified. [Mossad or Not Mossad](https://www.schneier.com/blog/archives/2015/08/mickens_on_secu.html) is a basic threat model in which we consider two types of attackers: State Actor and everyone else.
+然而，如果你不是受到摩萨德的攻击，你实际上可以通过合理的投资保护自己。决定何时将投资从非摩萨德转为摩萨德的好的基准是考虑一个可能的，难以阻止的非法攻击。比如贿赂有特权的员工。换句话说，如果黑客攻击你的密码（即暴力强制你的密码）的成本高于贿赂一个有特权的员工的成本，那么投资更多的资源就是浪费。
 
-If you are attacked by the Mossad, give up. No amount of money will protect you - The Mossad can replace your new laptop [with modified hardware en-route](https://www.schneier.com/blog/archives/2015/03/cisco_shipping_.html), break into your office unnoticed, [purchase remote jailbreak hacking tools](https://www.zerodium.com/program.html), or even extort one of your employees. Any investment into stopping this threat is a waste of money.
+### 决定预算 - 各种考虑
 
-If however you are attacked by not-Mossad you can actually protect yourself effectively with a reasonable investment. A good benchmark for deciding when your investment has transitioned from Not-Mossad to Mossad is to consider a possible, hard to stop, highly illegal attack - e.g. bribing an employee with privileged access. In other words, if the cost of hacking your passwords (i.e. brute forcing your passwords) is higher than the cost of bribing an employee with access, than there is no sense in investing more resources to protect it.
+* 请记住，当您的公司发展壮大时，你的被攻击面以及被攻击动机也越来越大。随着时间的推移，你的安全预算将不得不相应增长。这笔预算向你的投资者显示你认真对待安全。
 
-### Deciding on  budget - various considerations
+* 看一下完整的风险分析，并尝试先关闭大漏洞。这些是最可能的或最具破坏性的（或两者）。将所有的努力集中在应对单一的攻击方向上，攻击你的人通常会放弃攻击下一个漏洞。
 
-* Remember that as your company grows, your attack surface and also the motivation for attacking you grows too. Over time your security budget will have to grow accordingly. This budget shows your investors that you take security seriously.
+* 一些要求来自客户和合规性，并不一定是你的风险。例如，客户担心Amazon会复制其业务数据，会要求AWS内端到端加密流量。虽然AWS内部人员可能会窃取您的数据，或者复杂的恶意软件会破坏虚拟机隔离，但这可能并不是你最担心的 - 但它是客户最担心的。
+* 
+### 风险管理
 
-* Look at the complete risk analysis and try to close the big holes first. These are the most probable, or most damaging (or a combination of both). Focusing all your efforts on a single attack vector, would merely require your attacker to move to the next hole.
+新安全经理将采取的首要步骤之一就是评估不同的风险和表现的可能性。
 
-* Some requirements come from customers and compliance and are not necessarily at the top of your risk. For example, customers afraid of amazon copying their business data may require end-to-end encrypted traffic inside AWS. While it is possible that an AWS insider would steal your data, or a sophisticated malware breaks through the virtual machine isolation, this may not be at the top of your list - however it is at the top of your customer's list.
+大体上，你可以查看DBIR报告提供的相关统计信息：
 
-### Risk Management
+![DBIR report industry stats](/images/image_3.png)
 
-One of the first steps the new security manager will do, is to assess the different risks, and the possibility of manifestation.
+有关基于DBIR报告的更详细的列表，请参阅[CIS控制有效的网络防御](https://www.cisecurity.org/critical-controls/)文档的附录B和C。
 
-For a high level starting point you can look at the relative statistics provided by the DBIR Report:
-
-![DBIR report industry stats](https://github.com/forter/security-101-for-saas-startups/raw/abs-image-links-for-embedding/images/image_3.png)
-
-For a more detailed list that is based on the DBIR report, look at Appendix B and C of the [CIS CONTROLS FOR EFFECTIVE CYBER DEFENSE](https://www.cisecurity.org/critical-controls/) document.
-
-The next step is to make an educated guess of the potential business damage. Here is an example:
+下一步是对潜在的业务损害作出有根据的猜测。 这里是一个例子：
 
 <table>
   <tr>
-    <td>Attack</td>
-    <td>Attack Vectors/Actors</td>
-    <td>Expected number of attacks this year</td>
-    <td>Attack damage (w, existing mitigations)</td>
-    <td>Total damage this year</td>
+    <td>攻击</td>
+    <td>攻击方向/攻击者</td>
+    <td>预计今年的攻击次数</td>
+    <td>攻击伤害（包括已经缓解的部分）</td>
+    <td>今年的总伤害</td>
   </tr>
   <tr>
-    <td>Fraud</td>
-    <td>CC Fraud
-Friendly Fraud
-Marketplace Fraud</td>
-    <td>High</td>
-    <td>Low</td>
-    <td>High</td>
+    <td>诈骗</td>
+    <td>CC诈骗
+友善的诈骗
+市场诈骗</td>
+    <td>高</td>
+    <td>低</td>
+    <td>高</td>
   </tr>
   <tr>
-    <td>Downtime</td>
-    <td>Weather
+    <td>停机</td>
+    <td>天气
 DDoS</td>
-    <td>Medium</td>
-    <td>Medium</td>
-    <td>Medium</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>物理性盗窃</td>
+    <td>办公室被盗
+车被盗
+家被盗
+内部人犯错</td>
+    <td>中</td>
+    <td>低</td>
+    <td>低</td>
+  </tr>
+  <tr>
+    <td>IP盗窃/泄漏</td>
+    <td>笔记本电脑恶意软件
+手机恶意软件
+服务器漏洞
+供应商遭到黑客入侵</td>
+    <td>低</td>
+    <td>高</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>（客户）数据盗窃/泄漏</td>
+    <td>笔记本电脑恶意软件
+手机恶意软件
+服务器漏洞
+供应商遭到黑客入侵
+数据中心泄漏</td>
+    <td>中</td>
+    <td>高</td>
+    <td>高</td>
+  </tr>
+  <tr>
+    <td>业务/人力资源/内部文件盗窃/泄漏</td>
+    <td>笔记本电脑恶意软件
+手机恶意软件
+供应商遭到黑客入侵</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>数据损坏或绑票</td>
+    <td>服务器漏洞
+身份盗窃
+笔记本电脑恶意软件</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>资金流失（Bitcoin，ec2实例）</td>
+    <td>身份盗窃
+服务器漏洞</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>客户闯入你的服务</td>
+    <td>服务器漏洞
+身份盗窃</td>
+    <td>中</td>
+    <td>高</td>
+    <td>高</td>
+  </tr>
+</table>
+
+
+下一阶段详细介绍了每种威胁的预防和减少暴露的技术。 该表描述了工作计划的基础：
+
+<table>
+  <tr>
+    <td>预防</td>
+    <td>减少曝光</td>
+    <td>攻击方向/攻击者</td>
+  </tr>
+  <tr>
+    <td>自动防诈骗</td>
+    <td>DIY启发式+手动审查</td>
+    <td>市场诈骗
+友善的诈骗
+CC诈骗
+</td>
+  </tr>
+  <tr>
+    <td>多区域（主动）</td>
+    <td>故障时切换区域实践</td>
+    <td>天气</td>
+  </tr>
+  <tr>
+    <td>DDoS防护</td>
+    <td>和AWS客户经理交谈
+404/403错误提醒</td>
+    <td>DDoS</td>
+  </tr>
+  <tr>
+    <td>警报器
+门芯片
+从笔记本分离两步验证（手机）
+锁</td>
+    <td>将所有服务器和VPN移动到云端
+磁盘加密
+不要把笔记本电脑放在车里
+密码
+远程擦除（公司电话）</td>
+    <td>办公室被盗
+车被盗
+家被盗</td>
+  </tr>
+  <tr>
+    <td>特权访问管理
+DLP
+</td>
+    <td>善待员工
+访问日志
+MDM
+离职清单
+隐私培训
+新员工背景调查
+不公开协议（NDA）</td>
+    <td>员工滥用
+自由职业者滥用
+供应商滥用</td>
+  </tr>
+  <tr>
+    <td>将IP移动到企业数据保险库
+端点保护
+DLP</td>
+    <td>最低特权
+访问日志
+培训
+加密的数据</td>
+    <td>恶意软件
+</td>
+  </tr>
+  <tr>
+    <td>OS / Docker自动升级
+库升级
+外部漏洞扫描
+渗透测试
+安全漏洞赏金</td>
+    <td>漏洞新闻RSS
+失败的登录警报
+
+在另一个云端帐户/区域备份
+
+网络隔离（安全组/子网/VPN/云帐户）
+
+内部漏洞扫描</td>
+    <td>服务器漏洞</td>
+  </tr>
+  <tr>
+    <td>两步验证
+笔记本电脑上的安全凭证
+服务器上的安全凭证</td>
+    <td>每年替换管理密码
+</td>
+    <td>身份盗窃</td>
+  </tr>
+  <tr>
+    <td>用用户名/密码保护SQL / NoSQL
+
+要求VPN两步验证访问它们
+
+应用级加密</td>
+    <td>去身份化/修改/删除未使用的数据
+不要创建本地副本
+
+培训
+
+访问日志</td>
+    <td>数据中心泄漏</td>
+  </tr>
+</table>
+
+
+# 向此repo提交：
+
+我们欢迎来自初创企业的工程师的Pull Request，你们也是本文档的目标受众。请尝试保持精简。保持实用性与保持供应商中立之间也有一个微妙的平衡。我们欢迎各方面的建议。
+
+感谢Shahar Keidar，Avishai Ish-Shalom，Yogev Levi Shaked，Elad Shulman和Eliran Ben-Zikri复查，评论和帮助撰写本博客的第一个版本。
+
+<a rel="许可" href="http://creativecommons.org/licenses/by/4.0/"><img alt="知识共享署名许可" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />本作品根据<a rel="许可" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名4.0国际许可</a>使用许可.
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>（客户）数据盗窃/泄漏</td>
+    <td>笔记本电脑恶意软件
+手机恶意软件
+服务器漏洞
+供应商遭到黑客入侵
+数据中心泄漏</td>
+    <td>中</td>
+    <td>高</td>
+    <td>高</td>
+  </tr>
+  <tr>
+    <td>业务/人力资源/内部文件盗窃/泄漏</td>
+    <td>笔记本电脑恶意软件
+手机恶意软件
+供应商遭到黑客入侵</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>数据损坏或绑票</td>
+    <td>服务器漏洞
+身份盗窃
+笔记本电脑恶意软件</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>资金流失（Bitcoin，ec2实例）</td>
+    <td>身份盗窃
+服务器漏洞</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>客户闯入你的服务</td>
+    <td>服务器漏洞
+身份盗窃</td>
+    <td>中</td>
+    <td>高</td>
+    <td>高</td>
+  </tr>
+</table>
   </tr>
   <tr>
     <td>Physical Theft</td>
