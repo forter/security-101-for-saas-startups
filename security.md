@@ -369,10 +369,10 @@
     <td>今年的总伤害</td>
   </tr>
   <tr>
-    <td>欺诈</td>
-    <td>CC欺诈
-友善的欺诈
-市场欺诈</td>
+    <td>诈骗</td>
+    <td>CC诈骗
+友善的诈骗
+市场诈骗</td>
     <td>高</td>
     <td>低</td>
     <td>高</td>
@@ -403,6 +403,171 @@ DDoS</td>
 供应商遭到黑客入侵</td>
     <td>低</td>
     <td>高</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>（客户）数据盗窃/泄漏</td>
+    <td>笔记本电脑恶意软件
+手机恶意软件
+服务器漏洞
+供应商遭到黑客入侵
+数据中心泄漏</td>
+    <td>中</td>
+    <td>高</td>
+    <td>高</td>
+  </tr>
+  <tr>
+    <td>业务/人力资源/内部文件盗窃/泄漏</td>
+    <td>笔记本电脑恶意软件
+手机恶意软件
+供应商遭到黑客入侵</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>数据损坏或绑票</td>
+    <td>服务器漏洞
+身份盗窃
+笔记本电脑恶意软件</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>资金流失（Bitcoin，ec2实例）</td>
+    <td>身份盗窃
+服务器漏洞</td>
+    <td>中</td>
+    <td>中</td>
+    <td>中</td>
+  </tr>
+  <tr>
+    <td>客户闯入你的服务</td>
+    <td>服务器漏洞
+身份盗窃</td>
+    <td>中</td>
+    <td>高</td>
+    <td>高</td>
+  </tr>
+</table>
+
+
+下一阶段详细介绍了每种威胁的预防和减少暴露的技术。 该表描述了工作计划的基础：
+
+<table>
+  <tr>
+    <td>预防</td>
+    <td>减少曝光</td>
+    <td>攻击方向/攻击者</td>
+  </tr>
+  <tr>
+    <td>自动防诈骗</td>
+    <td>DIY启发式+手动审查</td>
+    <td>市场诈骗
+友善的诈骗
+CC诈骗
+</td>
+  </tr>
+  <tr>
+    <td>多区域（主动）</td>
+    <td>故障时切换区域实践</td>
+    <td>天气</td>
+  </tr>
+  <tr>
+    <td>DDoS防护</td>
+    <td>和AWS客户经理交谈
+404/403错误提醒</td>
+    <td>DDoS</td>
+  </tr>
+  <tr>
+    <td>警报器
+门芯片
+从笔记本分离两步验证（手机）
+锁</td>
+    <td>将所有服务器和VPN移动到云端
+磁盘加密
+不要把笔记本电脑放在车里
+密码
+远程擦除（公司电话）</td>
+    <td>办公室被盗
+车被盗
+家被盗</td>
+  </tr>
+  <tr>
+    <td>特权访问管理
+DLP
+</td>
+    <td>善待员工
+访问日志
+MDM
+离职清单
+隐私培训
+新员工背景调查
+不公开协议（NDA）</td>
+    <td>员工滥用
+自由职业者滥用
+供应商滥用</td>
+  </tr>
+  <tr>
+    <td>将IP移动到企业数据保险库
+端点保护
+DLP</td>
+    <td>最低特权
+访问日志
+培训
+加密的数据</td>
+    <td>恶意软件
+</td>
+  </tr>
+  <tr>
+    <td>OS / Docker自动升级
+库升级
+外部漏洞扫描
+渗透测试
+安全漏洞赏金</td>
+    <td>漏洞新闻RSS
+失败的登录警报
+
+在另一个云端帐户/区域备份
+
+网络隔离（安全组/子网/VPN/云帐户）
+
+内部漏洞扫描</td>
+    <td>服务器漏洞</td>
+  </tr>
+  <tr>
+    <td>两步验证
+笔记本电脑上的安全凭证
+服务器上的安全凭证</td>
+    <td>每年替换管理密码
+</td>
+    <td>身份盗窃</td>
+  </tr>
+  <tr>
+    <td>用用户名/密码保护SQL / NoSQL
+
+要求VPN两步验证访问它们
+
+应用级加密</td>
+    <td>去身份化/修改/删除未使用的数据
+不要创建本地副本
+
+培训
+
+访问日志</td>
+    <td>数据中心泄漏</td>
+  </tr>
+</table>
+
+
+# 向此repo提交：
+
+我们欢迎来自初创企业的工程师的Pull Request，你们也是本文档的目标受众。请尝试保持精简。保持实用性与保持供应商中立之间也有一个微妙的平衡。我们欢迎各方面的建议。
+
+感谢Shahar Keidar，Avishai Ish-Shalom，Yogev Levi Shaked，Elad Shulman和Eliran Ben-Zikri复查，评论和帮助撰写本博客的第一个版本。
+
+<a rel="许可" href="http://creativecommons.org/licenses/by/4.0/"><img alt="知识共享署名许可" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />本作品根据<a rel="许可" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名4.0国际许可</a>使用许可.
     <td>中</td>
   </tr>
   <tr>
