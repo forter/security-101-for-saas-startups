@@ -1,3 +1,5 @@
+[中文翻译](https://github.com/forter/security-101-for-saas-startups/blob/chinese/readme.md)
+
 # Security 101 for SaaS startups
 
 ## Things I wish my first boss had told me
