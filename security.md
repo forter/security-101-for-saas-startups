@@ -282,31 +282,31 @@
 
     * 对于数据存储读/写操作（当你不需要索引）使用应用级加密，对数据存储使用磁盘及网络级加密。
 
-### Prevent hacking of your internet facing services
+### 防止你的对外互联网服务的被黑
 
-* Perform Secure Code Training based on the [OWASP top 10](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project).
+* 根据[OWASP前十项目](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)执行安全代码训练。
 
-* Use a WAF and DDoS mitigation service.
+* 使用WAF和DDoS缓解服务。
 
-* Run external vulnerability scans (outside of your network). This should protect you against "Kiddy Scripts" looking for easy targets.
+* 运行外部漏洞扫描（在您的网络之外）。这应该能保护你躲过初级破解者对容易目标的搜寻。
 
-* Run internal vulnerabilities scan (within the firewalls). This should protect you against a hacker that gained foothold on one server, and is trying to make a lateral movement to the heart of the system. This requires usually an agent or ssh access, and ability to scan without any firewalls.
+* 运行内部漏洞扫描（在防火墙内）。这应该可以保护你：如果有黑客已经攻陷一台服务器的情况下，继续朝系统核心靠近。这通常需要代理或ssh访问，并且能够透过防火墙扫描。
 
-* Use Penetration Tests and Bug Bounty Programs. This is where you pay a real hacker to try and find specific vulnerabilities. During this test you are allowing an external PT vendor to try and circumvent your security and take advantage of vulnerabilities and misconfiguration.
+* 使用渗透测试和漏洞奖励计划。指你付钱给真正的黑客来尝试查找特定的漏洞。在此测试期间，您允许外部PT供应商尝试并规避您的安全，并利用漏洞和错误的配置。
 
-    * In some cases you would provide the Pen-Tester API keys to simulate a situation that one of your customers got hacked, and the hacker propagates into your organisation using their secret api keys. This is called grey PT.
+    * 在某些情况下，你将提供Pen-Tester API密钥来模拟你的某个客户被黑客入侵的情况，并且黑客使用其API密钥传播到你的组织。这被称为灰色PT（grey PT）。
 
-    * In other cases you would also allow the PT to review your codebase. The price depends on the complexity of the service, the hacker experience and the lines-of-codes.
+    * 在其他情况下，你还将允许PT检查您的代码库。价格取决于服务的复杂性，黑客经验和代码量。
 
-    * Bounty Programs allows you to reach hackers with specific skills.
+    * 赏金计划允许你接触有特殊才能的黑客。
 
-*  Upgrade your library dependencies regularly. Or even better, use a bot that automatically creates pull requests to upgrade library versions.
+* 定期升级你的第三方依赖库。或者甚至更好，使用自动创建pull request的机器人来升级第三方库版本。
 
-* Scan for source code vulnerabilities. Some vendors use static and dynamic code analysis of your code. Other vendors scan commonly used open source software (see SourceClear, BlackDuck, CheckMarx).
+* 扫描源代码漏洞。一些供应商使用静态和动态代码分析你的代码。其他供应商扫描常用的开源软件（请参阅SourceClear，BlackDuck，CheckMarx）。
 
-### Data backup
+### 数据备份
 
-Make sure the organisation's critical data is backed-up (even if it means it would take time to restore it from backup):
+确保组织的关键数据有备份（即使这意味着需要时间从备份还原）：
 
 * Make sure your backup is automatic and continuous and covers the required data sets, to avoid gaps of missing data.
 
