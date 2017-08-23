@@ -304,7 +304,9 @@ The [Future of Privacy Forum published a visual guide](https://fpf.org/wp-conten
 
 *  Upgrade your library dependencies regularly. Or even better, use a bot that automatically creates pull requests to upgrade library versions.
 
-* Scan for source code vulnerabilities. Some vendors use static and dynamic code analysis of your code. Other vendors scan commonly used open source software (see SourceClear, BlackDuck, CheckMarx).
+* Scan for source code vulnerabilities. This includes:
+   * Monitoring your dependencies for *known vulnerabilities* (and license issues) with services like Snyk, SourceClear, BlackDuck.
+   * Static and dynamic code analysis of your code (CheckMarx, Veracode)
 
 ### Data backup
 
