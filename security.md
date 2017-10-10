@@ -4,7 +4,7 @@
 
 ### Sharing Admin Passwords
 
-* Any product has at least one user - the admin. The minimum you could do when your small startup is about 4 people, is to replace the default admin password with a complex password and share it with a password manager that supports sharing.
+* Any product has at least one user - the admin. The minimum you could do when your small startup is about four people, is to replace the default admin password with a complex password and share it with a password manager that supports sharing.
 
 * The reason for sharing is to avoid a situation where only a single employee has permissions to the system, while another employee needs it.
 
@@ -19,7 +19,7 @@
 
 ### Phishing emails, porn and torrents are the devil in disguise
 
-* Employees would probably use their work laptop at home for their personal needs. That's fine. Nevertheless, from day one, explain your employees not to use it for torrents downloads or porn or any other shady website. Ask them to buy a 2nd hand laptop for that kind of stuff.
+* Employees would probably use their work laptop at home for their personal needs. That's fine. Nevertheless, from day one, explain your employees not to use it for torrents downloads or porn or any other shady website. Ask them to buy a second hand laptop for that kind of stuff.
 
 * If you got hacked it would most likely start with an employee clicking a link in a phishing email. As one of your fun startup activities play [phishing quiz](https://www.google.com/search?q=Phishing+Quiz).
 
@@ -37,7 +37,7 @@
 
 If your laptop gets lost or stolen, you would not want the data to be compromised.
 
-* Mac users can encrypt their drive with 1 click.
+* Mac users can encrypt their drive with one click.
 * Windows users would need the Pro version and prefer laptop hardware that supports TPM.
 * Linux users would require disk reformatting.
 
@@ -49,7 +49,7 @@ Non-jailbroken iPhones are much more difficult to hack compared to Android. They
 
 Most operating systems (on your laptop or the cloud) have an option for automatic security upgrades. It's a one liner configuration in most cases. This could reduce the attack surface about 10 times.
 
-### Buy at least 2 or 3 domain names
+### Buy at least two or three domain names
 
 You would need at least one domain for your website, one for your API, and one for internal use.
 
@@ -104,13 +104,13 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * A well established and easy to use 2FA implementation is [TOTP 2FA implementation](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm). Employees can install [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) on their mobile phone and it would produce a one-time 6 digit code that needs to be typed in addition to the password 
 
-* A slightly more usable approach are push notifications. Many SaaS vendors support an app that instead of generating codes, sends you a push notification. That is more convenient than copying 6 digits each time you need to log-in. The downside is that you would probably need different apps for each service, and that it won't work without an internet connection, or when the push notification vendor has downtime.
+* A slightly more usable approach are push notifications. Many SaaS vendors support an app that instead of generating codes, sends you a push notification. That is more convenient than copying six digits each time you need to log-in. The downside is that you would probably need different apps for each service, and that it won't work without an internet connection, or when the push notification vendor has downtime.
 
 * Mobile phone 2FA problems start when an employee lost/forgot/replaces their mobile phone, or is stuck without battery, and then they are locked out of the system. Some employees don't like hardening their phone (encryption and screenlock to protect the 2FA app), and feel that the company needs to buy the phone for the 2FA app to run on. That's why some organizations use yubikey instead (a small usb plug that can sense human finger touch). Like a Mobile App Push notification, yubikey protects against malware and hackers that keylog your password. The downside is that unlike their mobile phones, employees are more likely to lose the yubikey together with their laptop. So if the stolen laptop falls into the hands of a professional that can extract the passwords from the laptop then they could also login to any service with the yubikey. Another problem is that the yubikey is a USB device, and you would need to make the distinction between USB storage devices (not allowed) and the yubikey (allowed). 
-* Using SMS as a 2nd factor is discouraged and should be disabled. An experienced hacker can convince your mobile network customer support to [move your line to his](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/) possession. Also recently it was discovered that 800M android devices
+* Using SMS as for 2FA is discouraged and should be disabled. An experienced hacker can convince your mobile network customer support to [move your line to his](http://www.forbes.com/sites/laurashin/2016/12/20/hackers-have-stolen-millions-of-dollars-in-bitcoin-using-only-phone-numbers/) possession. Also recently it was discovered that 800M android devices
  had [a malware that reads SMSs](http://thehackernews.com/2016/11/hacking-android-smartphone.html).
 
-* Using voice phone calls as a 2nd factor should also be disabled. Hackers will simply try to log in when your phone is offline and hack into your voice mailbox by guessing your 4 digit code, that you probably never changed.
+* Using voice phone calls for 2FA should also be disabled. Hackers will simply try to log in when your phone is offline and hack into your voice mailbox by guessing your four digit code, that you probably never changed (change it!).
 
 * If an employee asks for a password reset remotely, ask them to come into the office in person if possible. If this is not feasible (or time-sensitive), verify their identify: do not trust that you can recognize your employee's voice. Never email passwords.
 
@@ -134,7 +134,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Alternatively a cloud based VPN (installed on ec2 for example) has a few more advantages. First, all of the communication between the office and the cloud is encrypted (especially important if you are accessing data stores such as elastic search without SSL). The network performance is much better for remote workers that are physically located far from the office. Also, it relaxes the need for physical security somewhat since there is no network equipment there (the office is just another coffee shop). The downside is that each time you get disconnected from the office network you need to reconnect to the VPN.
 
-* VPN connection should have 2nd factor enabled too.
+* VPN connection should have 2FA enabled too.
 
 ### Antivirus/Firewall
 
@@ -158,7 +158,7 @@ However, if you decide to develop your own authentication implementation, follow
 
 ### Physical Security
 
-* Configure laptops to sleep after (at most) 5 minutes you are away from your desk, and require a password to re-open it. Ask employees to lock their laptops manually when they leave their desks, for example using [hot corners on macOS](https://support.apple.com/kb/PH18796), or by pressing logo key + L on Windows.
+* Configure laptops to sleep after (at most) five minutes you are away from your desk, and require a password to re-open it. Ask employees to lock their laptops manually when they leave their desks, for example using [hot corners on macOS](https://support.apple.com/kb/PH18796), or by pressing logo key + L on Windows.
 
 * Never let a stranger within arms reach of a computer (especially if it has a USB port). Physical access is the fastest way to getting your system and product and customers compromised.
 
