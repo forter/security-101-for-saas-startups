@@ -565,6 +565,24 @@ Access Logs</td>
   </tr>
 </table>
 
+# Appendix A: Acronyms
+
+* DBIR - Data Breach Investigations Report
+* TPM - Trusted Platform Module
+* MDM - Mobile Device Management
+* DKIM - DomainKeys Identified Mail
+* SPF - Sender Policy Framework
+* 2FA - Two Factor Authentication
+* MFA - Multi Factor Authentication
+* AWS ACM - Amazon Certificate Manager
+* Let’s Encrypt ACME - Automated Certificate Management Environment
+* SOC (as in SOC2) - System and Organization Controls
+* QA - Quality Assuance
+* TOTP - TimeBased One-Time Password
+* SaaS - Software As a Service
+* VPN - Virtual Private Network
+* SSO - Single Sign On
+* SAML - Security Assertion Markup Language
 
 # Contributing to this repository
 
