@@ -583,6 +583,7 @@ Access Logs</td>
 * VPN - Virtual Private Network
 * SSO - Single Sign On
 * SAML - Security Assertion Markup Language
+* DLP - Data Loss Prevention
 
 # Contributing to this repository
 
