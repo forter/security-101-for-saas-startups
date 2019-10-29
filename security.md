@@ -144,7 +144,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Most products have an export/import functionality, which makes it easier to set up.
 
-* There are extra protection products on top of an antivirus called EDR (Cyberreason, BlackCobalt) but these are usually costly.  
+* There are extra protection products on top of an antivirus called EDR (Cyberreason, BlackCobalt) but these are usually costly.
 
 ### Hash your customer's passwords with a proper password hashing function
 
@@ -278,7 +278,7 @@ The [Future of Privacy Forum published a visual guide](https://fpf.org/wp-conten
 
     * Monitoring and preventing leakage of data using [Data Leak Prevention](https://www.google.com/search?q=Gartner+Magic+Quadrant+for+Enterprise+Data+Loss+Prevention) agents on mobile phones and laptops. These require deployment on all organization assets and configuration and monitoring for specific data types.
 
-    * Monitor or Manage the laptop and mobile application provisioning and operating system settings (screenlock/encryption/VPN setting/etc…) using  [Mobile Device Management](https://www.google.com/search?q=gartner+enterprise+mobility+management) agents. Google G-Suite has a built-in basic MDM capabilities.
+    * Monitor or Manage the laptop and mobile application provisioning and operating system settings (screenlock/encryption/VPN setting/etc…) using [Mobile Device Management](https://www.google.com/search?q=gartner+enterprise+mobility+management) agents. Google G-Suite has a built-in basic MDM capabilities.
 
     * Protect all data stores with Authentication and Authorization. Audit relevant transactions for forensic investigations and monitoring of data.
 
@@ -346,7 +346,7 @@ If you are attacked by the Mossad, give up. No amount of money will protect you 
 
 If however you are attacked by not-Mossad you can actually protect yourself effectively with a reasonable investment. A good benchmark for deciding when your investment has transitioned from Not-Mossad to Mossad is to consider a possible, hard to stop, highly illegal attack - e.g. bribing an employee with privileged access. In other words, if the cost of hacking your passwords (i.e. brute forcing your passwords) is higher than the cost of bribing an employee with access, than there is no sense in investing more resources to protect it.
 
-### Deciding on  budget - various considerations
+### Deciding on budget - various considerations
 
 * Remember that as your company grows, your attack surface and also the motivation for attacking you grows too. Over time your security budget will have to grow accordingly. This budget shows your investors that you take security seriously.
 
@@ -449,7 +449,7 @@ Server Vulnerabilities</td>
     <td>Medium</td>
   </tr>
   <tr>
-    <td>Customers hacked  through your service</td>
+    <td>Customers hacked through your service</td>
     <td>Server Vulnerabilities
 Credentials Theft</td>
     <td>Medium</td>
