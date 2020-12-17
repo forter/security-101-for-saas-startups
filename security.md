@@ -144,7 +144,7 @@ Using git would allow you to add outsource/freelance developers for a limited ti
 
 * Most products have an export/import functionality, which makes it easier to set up.
 
-* There are extra protection products on top of an antivirus called EDR (e.g. Cybereason, Carbon Black) but these are usually costly.  
+* There are extra protection products on top of an antivirus called EDR (e.g. Cybereason, Black Cobalt) but these are usually costly.  
 
 ### Hash your customer's passwords with a proper password hashing function
 
