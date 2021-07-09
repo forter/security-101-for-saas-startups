@@ -31,3 +31,9 @@ So which security considerations are relevant at an early stage?
 We grouped together the expected security recommendations by the different phases a start-up goes through. The more money and data the startup handles, the bigger the investment in security:
 
 [continue reading](https://github.com/forter/security-101-for-saas-startups/blob/english/security.md)
+
+## Sponsor
+![Scheduling API](https://user-images.githubusercontent.com/9488406/125080407-0dd25780-e0c5-11eb-9f70-ef958968674a.png)
+
+This repo is sponsored by [**Spurwing**](https://www.spurwing.io/), where their API Makes Adding Scheduling Quick, Reliable and Scalable.
+Use Spurwing to build and integrate Scheduling, Booking & Calendar features in your project. Read more about Spurwing [**Scheduling API on GitHub**](https://github.com/Spurwing/Appointment-Scheduling-API).
