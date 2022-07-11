@@ -158,7 +158,7 @@ However, if you decide to develop your own authentication implementation, follow
 
 ### Physical Security
 
-* Configure laptops to sleep after (at most) five minutes you are away from your desk, and require a password to re-open it. Ask employees to lock their laptops manually when they leave their desks, for example using [hot corners on macOS](https://support.apple.com/kb/PH18796), or by pressing logo key + L on Windows.
+* Configure laptops to sleep after (at most) five minutes you are away from your desk, and require a password to re-open it. Ask employees to lock their laptops manually when they leave their desks, for example using [hot corners on macOS](https://support.apple.com/en-mide/guide/mac-help/mchlp3000/mac), or by pressing logo key + L on Windows.
 
 * Never let a stranger within arms reach of a computer (especially if it has a USB port). Physical access is the fastest way to getting your system and product and customers compromised.
 
