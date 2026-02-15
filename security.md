@@ -233,7 +233,7 @@ At this point you should already have automated testing, and (at least semi-) au
 
 ### Identity Management and SSO
 
-* At a certain point the number of SaaS vendors times the number of employees makes password managers difficult to manage, especially when employees join or leave the organisation. Password is only for admins, all of the other SaaS applications should use the same identity management service (that supports Single Sign On).
+* At a certain point the number of SaaS vendors times the number of employees makes password managers difficult to manage, especially when employees join or leave the organisation. Password is only for admins, all of the other SaaS applications should use the same identity management service (that supports [Single Sign On](https://www.loginradius.com/blog/start-with-identity/2019/05/what-is-single-sign-on/)).
 
 * Integrating such a platform takes some time. For starters, Google G-Suite can perform SSO to all sites that support OAuth or SAML. Identity as a Service providers, supports also browser based authentications, smart 2FA rules to reduce friction with employees, and integration with VPN/SSH via ldap or radius.
 
