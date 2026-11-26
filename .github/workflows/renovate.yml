@@ -1,0 +1,225 @@
+# The org INCIDENT-ONLY golden Renovate workflow, installed by Janus's
+# `janus-incident-patch` preset for repos that want incident coverage without
+# the weekly dependency lanes. The standard golden minus everything an
+# incident-patch-only repo cannot reach: the CVE-additions staging (the
+# ox-cve-additions dispatch never fires here), the scheduled triggers, and the
+# CVE-day config switch. Pins, runner, lookup routing, and the composer stay
+# identical — scripts/validate-incident-golden.mjs enforces that in CI. `name:`
+# stays `Renovate`: the Janus caller's workflow_run matches by name.
+name: Renovate
+
+on:
+  repository_dispatch:
+    types: [incident-patch]
+
+permissions:
+  contents: read
+
+run-name: ${{ github.event.action == 'incident-patch' && format('Renovate targeted-bump {0}', github.event.client_payload.id) || 'Renovate' }}
+
+concurrency:
+  group: ${{ github.event.action == 'incident-patch' && format('renovate-targeted-{0}', github.event.client_payload.id) || 'renovate' }}
+  cancel-in-progress: ${{ github.event.action != 'incident-patch' }}
+
+jobs:
+  renovate:
+    runs-on: forter-ci;arch=arm64;cpu>=4;has(docker_engine);has(sudo);memory>=8GiB;os=linux;storage>=20GB
+    timeout-minutes: 45
+
+    steps:
+      - name: Resolve token repositories
+        id: token-repositories
+        env:
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          current_repo="${REPOSITORY#*/}"
+          {
+            echo "names<<EOF"
+            echo "$current_repo"
+            if [ "$current_repo" != "renovate-config" ]; then
+              echo "renovate-config"
+            fi
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.RENOVATE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.RENOVATE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ steps.token-repositories.outputs.names }}
+
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Discover private lookup repositories
+        id: lookup-discover
+        continue-on-error: true
+        env:
+          OWNER: ${{ github.repository_owner }}
+          REPOSITORY: ${{ github.repository }}
+          EXTRA: ${{ vars.RENOVATE_READ_REPOSITORIES }}
+        run: |
+          set -euo pipefail
+          owner_lc="$(printf '%s' "$OWNER" | tr '[:upper:]' '[:lower:]')"
+          self_lc="$(printf '%s' "${REPOSITORY#*/}" | tr '[:upper:]' '[:lower:]')"
+          files="$(git ls-files)"
+          action_files="$(grep -E '(^|/)(\.github/workflows/[^/]+|action)\.ya?ml$' <<<"$files" || true)"
+          preset_files="$(grep -E '^(\.github/)?(renovate[^/]*\.json5?|\.renovaterc(\.json5?)?)$' <<<"$files" || true)"
+          {
+            if [ -n "$action_files" ]; then
+              xargs -d '\n' grep -hoiE "uses:[[:space:]]*['\"]?${owner_lc}/[A-Za-z0-9._-]+" <<<"$action_files" \
+                | sed -E 's#.*/##' || true
+            fi
+            if [ -n "$preset_files" ]; then
+              xargs -d '\n' grep -hoiE "github>${owner_lc}/[A-Za-z0-9._-]+" <<<"$preset_files" \
+                | sed -E 's#.*/##' || true
+            fi
+            printf '%s\n' "${EXTRA:-}" | tr -s ', ' '\n'
+          } | tr '[:upper:]' '[:lower:]' | sed -E 's/\.git$//' \
+            | grep -E '^[a-z0-9_][a-z0-9._-]{0,99}$' \
+            | grep -vxF -e "$self_lc" -e renovate-config \
+            | sort -u > /tmp/lookup-candidates || true
+          count="$(wc -l < /tmp/lookup-candidates | tr -d ' ')"
+          if [ "$count" -gt 50 ]; then
+            echo "::warning::${count} lookup repositories discovered; only the first 50 are requested."
+            head -n 50 /tmp/lookup-candidates > /tmp/lookup-candidates.capped
+            mv /tmp/lookup-candidates.capped /tmp/lookup-candidates
+            count=50
+          fi
+          echo "count=${count}" >> "$GITHUB_OUTPUT"
+          echo "Lookup candidates (${count}):"
+          cat /tmp/lookup-candidates
+
+      - name: Generate a metadata-only token
+        id: lookup-metadata-token
+        if: steps.lookup-discover.outputs.count != '' && steps.lookup-discover.outputs.count != '0'
+        continue-on-error: true
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.RENOVATE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.RENOVATE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          permission-metadata: read
+
+      - name: Filter lookup repositories to the installation
+        id: lookup-filter
+        if: steps.lookup-metadata-token.outcome == 'success'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ steps.lookup-metadata-token.outputs.token }}
+          OWNER: ${{ github.repository_owner }}
+          API_URL: ${{ github.api_url }}
+        run: |
+          set -euo pipefail
+          owner_lc="$(printf '%s' "$OWNER" | tr '[:upper:]' '[:lower:]')"
+          : > /tmp/lookup-installed
+          for page in $(seq 1 100); do
+            body="$(curl -fsSL \
+              -H "Authorization: Bearer ${GH_TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              "${API_URL}/installation/repositories?per_page=100&page=${page}")"
+            jq -r --arg o "$owner_lc" \
+              '.repositories[] | select((.owner.login | ascii_downcase) == $o) | .name | ascii_downcase' \
+              <<<"$body" >> /tmp/lookup-installed
+            [ "$(jq '.repositories | length' <<<"$body")" -lt 100 ] && break
+          done
+          sort -u /tmp/lookup-installed -o /tmp/lookup-installed
+          comm -12 /tmp/lookup-candidates /tmp/lookup-installed > /tmp/lookup-granted
+          comm -23 /tmp/lookup-candidates /tmp/lookup-installed > /tmp/lookup-skipped
+          if [ -s /tmp/lookup-skipped ]; then
+            echo "::notice::Not in the Renovate App installation, so not readable by Renovate: $(paste -sd ' ' /tmp/lookup-skipped)"
+          fi
+          {
+            echo "count=$(wc -l < /tmp/lookup-granted | tr -d ' ')"
+            echo "names<<EOF"
+            cat /tmp/lookup-granted
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Generate the read-only lookup token
+        id: lookup-token
+        if: steps.lookup-filter.outputs.count != '' && steps.lookup-filter.outputs.count != '0'
+        continue-on-error: true
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.RENOVATE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.RENOVATE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ steps.lookup-filter.outputs.names }}
+          permission-contents: read
+          permission-metadata: read
+          permission-actions: read
+
+      # An incident run carries no Janus rules — the composer's config is the
+      # only repo config — so stage an empty static file for the routing step
+      # below, which merges its lookup overrides into it.
+      - name: Route private lookups to the read-only token
+        if: steps.lookup-token.outcome == 'success'
+        continue-on-error: true
+        env:
+          OWNER: ${{ github.repository_owner }}
+          SERVER_URL: ${{ github.server_url }}
+          API_URL: ${{ github.api_url }}
+          NAMES: ${{ steps.lookup-filter.outputs.names }}
+          READ_TOKEN: ${{ steps.lookup-token.outputs.token }}
+        run: |
+          set -euo pipefail
+          echo '{}' > /tmp/janus-rules.json
+          repos="$(jq -Rn --arg o "$OWNER" '[inputs | select(length > 0) | "\($o)/\(.)"]' <<<"$NAMES")"
+          host_rules="$(jq -nc --argjson r "$repos" --arg t "$READ_TOKEN" \
+            --arg s "$SERVER_URL" --arg a "$API_URL" \
+            '[$r[] | {matchHost: "\($s)/\(.)", token: $t}, {matchHost: "\($a)/repos/\(.)/", token: $t}]')"
+          jq --argjson r "$repos" --arg s "$SERVER_URL" '
+            .packageRules = (.packageRules // []) + [
+              {
+                matchDatasources: ["github-tags", "github-releases"],
+                matchPackageNames: $r,
+                overrideDatasource: "git-tags",
+                overridePackageName: ($s + "/{{{packageName}}}")
+              },
+              {
+                matchDatasources: ["github-digest"],
+                matchPackageNames: $r,
+                overrideDatasource: "git-refs",
+                overridePackageName: ($s + "/{{{packageName}}}")
+              }
+            ]' /tmp/janus-rules.json > /tmp/janus-rules.json.new
+          mv /tmp/janus-rules.json.new /tmp/janus-rules.json
+          echo "RENOVATE_HOST_RULES=${host_rules}" >> "$GITHUB_ENV"
+          {
+            echo "### Renovate read-only lookup token"
+            echo
+            echo "contents:read + metadata:read + actions:read, scoped to:"
+            jq -r '.[] | "- `\(.)`"' <<<"$repos"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Compose targeted config
+        id: targeted
+        uses: forter/renovate-config/.github/actions/compose-targeted-config@v1
+        with:
+          client-payload: ${{ toJSON(github.event.client_payload) }}
+
+      - name: Point Renovate at the targeted config
+        env:
+          CONFIG_FILE: ${{ steps.targeted.outputs.config-file }}
+        run: |
+          set -euo pipefail
+          echo "RENOVATE_CONFIG_FILE=$CONFIG_FILE" >> "$GITHUB_ENV"
+          echo "RENOVATE_REQUIRE_CONFIG=ignored" >> "$GITHUB_ENV"
+          cat "$CONFIG_FILE"
+
+      - name: Run Renovate
+        uses: renovatebot/github-action@acdd6bda8b035c99ce59d5675816af2aa65a1774 # v46.3.14
+        env:
+          RENOVATE_TOKEN: ${{ steps.app-token.outputs.token }}
+          GITHUB_COM_TOKEN: ${{ steps.app-token.outputs.token }}
+          RENOVATE_PLATFORM_COMMIT: enabled
+          RENOVATE_REPOSITORIES: ${{ github.repository }}
+          RENOVATE_X_STATIC_REPO_CONFIG_FILE: /tmp/janus-rules.json
+          WORKFLOW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          LOG_LEVEL: info
+          NODE_OPTIONS: --max-old-space-size=6144
