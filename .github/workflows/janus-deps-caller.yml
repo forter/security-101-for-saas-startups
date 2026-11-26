@@ -1,0 +1,181 @@
+# Janus deps — the incident-only caller for the `janus-incident-patch` preset
+# (forter/janus).
+#
+# The incident variant of templates/janus-deps-caller.yml, same contract version:
+# the repo's Renovate runs ONLY on `incident-patch` dispatches (renovate-config's
+# targeted-bump flow), so this caller keeps exactly the triggers Janus needs to
+# operate on incident PRs and drops the rest — no `issue_comment` (`/janus-deps`
+# is for repos with dependency lanes; incident PRs are assessed by their own
+# Renovate run). All four jobs stay: dispatch targets a workflow by FILENAME,
+# and the incident sweep forces fix + CI heal on (janus-deps-sweep.yml), so the
+# `heal`/`fix` jobs are load-bearing here.
+name: Janus Deps
+run-name: Janus Deps (${{ github.event_name == 'workflow_run' && github.event.workflow_run.event || github.event_name }} @ v1)
+
+on:
+  # The incident half of the flow: when this repo's incident Renovate run
+  # finishes (workflow `name` is `Renovate`), the sweep assesses only that
+  # incident's PRs.
+  workflow_run:
+    workflows: ["Renovate"]
+    types: [completed]
+    branches: [english]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Leave EMPTY for a normal run (assess when a pr_number is given, else sweep). Janus sets heal/fix itself.'
+        required: false
+        type: string
+        default: ''
+      pr_number:
+        description: 'PR to assess. Leave empty to sweep ALL open dependency-bump PRs.'
+        required: false
+        type: string
+      lane:
+        description: 'mode=fix only — B (surgical) or C (broad).'
+        required: false
+        type: string
+      failed_run_id:
+        description: 'mode=fix only — the failed run whose logs the fix agent reads.'
+        required: false
+        type: string
+      assessment_payload:
+        description: 'mode=fix only — bounded run-correlated assessment JSON. Set by Janus.'
+        required: false
+        type: string
+      heal_payload:
+        description: 'mode=heal only — JSON describing the failed run. Set by Janus.'
+        required: false
+        type: string
+
+# Minimal floor: Janus does all GitHub writes via its App token. The sweep and heal
+# jobs raise this for themselves.
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  assess:
+    # On-demand single-PR assessment: a dispatch with a pr_number. There is no
+    # comment trigger in the incident variant. `mode` must be empty, or a heal/fix
+    # dispatch would also kick off an assessment.
+    if: >-
+      (github.event.inputs.mode == '' || github.event.inputs.mode == null) &&
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.pr_number != '' && github.event.inputs.pr_number != null)
+    uses: forter/janus/.github/workflows/janus-deps.yml@v1
+    with:
+      caller_version: "9"
+      repo: ${{ github.repository }}
+      pr_number: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.pr_number || github.event.issue.number }}
+      # Incident PRs are always merged by a human: the sweep forces auto-merge
+      # off for them, and false here is the same rule for the on-demand path.
+      enable_auto_merge: false
+      enable_ci_heal: true
+      enable_lane_fix: true
+      # Names the same channel as the pin above — a repo in the canary group
+      # (config/janus-version-groups.json) gets the agent from v1-canary too, so
+      # a mixed channel never happens.
+      agent_ref: v1
+    secrets: inherit
+
+  sweep:
+    # Post-Renovate sweep (success or failure — Renovate exits 1 on any logged
+    # ERROR yet still opens PRs), or a dispatch with no pr_number. On an
+    # incident run it selects only that incident's PRs and forces fix + CI heal
+    # on, auto-merge off.
+    if: >-
+      (github.event.inputs.mode == '' || github.event.inputs.mode == null) &&
+      ((github.event_name == 'workflow_run' && contains(fromJSON('["success", "failure"]'), github.event.workflow_run.conclusion)) ||
+       (github.event_name == 'workflow_dispatch' && (github.event.inputs.pr_number == '' || github.event.inputs.pr_number == null)))
+    # Do NOT drop this block: sweep's finalize job needs actions:read, and a
+    # job-level permissions block replaces the top-level default entirely.
+    permissions:
+      contents: read
+      id-token: write
+      actions: read
+    uses: forter/janus/.github/workflows/janus-deps-sweep.yml@v1
+    with:
+      repo: ${{ github.repository }}
+      # Incident PRs are never handed to Prime (the sweep enforces this on the
+      # incident path too); false here covers a sweep that finds something else.
+      enable_auto_merge: false
+      enable_ci_heal: true
+      enable_lane_fix: true
+      weekly_digest_channel: ${{ vars.JANUS_WEEKLY_DIGEST_CHANNEL }}
+      agent_ref: v1
+    secrets: inherit
+
+  heal:
+    # Dispatched by janus-deps when a bump PR is substantive-red: drives agentbox's
+    # CI Failure Doctor toward green, re-assessing after each fix. Not for hand use.
+    # The presence checks are not redundant with `mode`: a hand dispatch of
+    # mode=heal without the metadata would pass empty strings straight through to
+    # ci-heal.yml (its inputs are `required`, and "" satisfies that), and collapse
+    # the concurrency group to `janus-deps-heal-`. Skip instead of running on nulls.
+    if: >-
+      github.event.inputs.mode == 'heal' &&
+      github.event.inputs.pr_number != '' &&
+      github.event.inputs.pr_number != null &&
+      github.event.inputs.heal_payload != '' &&
+      github.event.inputs.heal_payload != null
+    # One heal at a time per PR; a newer dispatch supersedes an in-flight one.
+    # Job-level, not workflow-level, so heal / fix / assess never queue behind one
+    # another. Keyed off pr_number (a plain string) rather than the payload's
+    # head_branch: one bump PR is one branch, and it keeps fromJSON out of a key
+    # that may be evaluated before `if:` skips this job.
+    concurrency:
+      group: janus-deps-heal-${{ github.event.inputs.pr_number }}
+      cancel-in-progress: true
+    # Must cover everything ci-heal.yml's heal job requests (actions: write for
+    # the Doctor's cache saves): a called job can't exceed its caller's grant.
+    permissions:
+      actions: write
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+    uses: forter/janus/.github/workflows/ci-heal.yml@v1
+    with:
+      pr_number: ${{ github.event.inputs.pr_number }}
+      workflow_run_id: ${{ fromJSON(github.event.inputs.heal_payload || '{}').workflow_run_id }}
+      workflow_run_name: ${{ fromJSON(github.event.inputs.heal_payload || '{}').workflow_run_name }}
+      workflow_run_number: ${{ fromJSON(github.event.inputs.heal_payload || '{}').workflow_run_number }}
+      workflow_run_html_url: ${{ fromJSON(github.event.inputs.heal_payload || '{}').workflow_run_html_url }}
+      workflow_run_head_branch: ${{ fromJSON(github.event.inputs.heal_payload || '{}').workflow_run_head_branch }}
+      workflow_run_head_sha: ${{ fromJSON(github.event.inputs.heal_payload || '{}').workflow_run_head_sha }}
+      workflow_run_actor: ${{ fromJSON(github.event.inputs.heal_payload || '{}').workflow_run_actor }}
+      workflow_run_conclusion: ${{ fromJSON(github.event.inputs.heal_payload || '{}').workflow_run_conclusion }}
+    # The Doctor's own secrets ONLY — deliberately not `secrets: inherit`. This job
+    # is dispatchable, so forward the minimum it declares (blast-radius containment).
+    secrets:
+      TOOLCHAIN_API_KEY: ${{ secrets.TOOLCHAIN_API_KEY }}
+      CI_DOCTOR_APP_ID: ${{ secrets.CI_DOCTOR_APP_ID }}
+      CI_DOCTOR_APP_PRIVATE_KEY: ${{ secrets.CI_DOCTOR_APP_PRIVATE_KEY }}
+      CI_DOCTOR_LANGFUSE_PUBLIC_KEY: ${{ secrets.CI_DOCTOR_LANGFUSE_PUBLIC_KEY }}
+      CI_DOCTOR_LANGFUSE_SECRET_KEY: ${{ secrets.CI_DOCTOR_LANGFUSE_SECRET_KEY }}
+
+  fix:
+    # Dispatched by janus-deps when a bump PR routes to Lane B (surgical) or C
+    # (broad), regardless of CI status: janus-fix authors and commits the fix.
+    # Not for hand use.
+    #
+    # No concurrency block here on purpose: janus-fix.yml declares the identical
+    # group (`janus-fix-<pr>`, cancel-in-progress) at WORKFLOW level, which covers
+    # both this call and a direct dispatch. `heal` needs its own because ci-heal.yml
+    # declares none.
+    if: >-
+      github.event.inputs.mode == 'fix' &&
+      github.event.inputs.pr_number != '' &&
+      github.event.inputs.pr_number != null &&
+      github.event.inputs.lane != '' &&
+      github.event.inputs.lane != null &&
+      github.event.inputs.assessment_payload != '' &&
+      github.event.inputs.assessment_payload != null
+    uses: forter/janus/.github/workflows/janus-fix.yml@v1
+    with:
+      pr_number: ${{ github.event.inputs.pr_number }}
+      lane: ${{ github.event.inputs.lane }}
+      failed_run_id: ${{ github.event.inputs.failed_run_id }}
+      assessment_payload: ${{ github.event.inputs.assessment_payload }}
+      agent_ref: v1
+    secrets: inherit
